@@ -9,4 +9,11 @@ module ApplicationHelper
 	    link_to link_text, link_path
 	  end
 	end
+	def language_logo
+		I18n.locale.to_s.eql?("no") ? "english-logo" : "norwegian-logo" 
+	end
+	def language_link
+		I18n.locale.to_s.eql?("no") ? "?locale=en" : "?locale=no"
+	end
+
 end
