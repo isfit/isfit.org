@@ -2,12 +2,14 @@
 	<section id="intro">
 		<div class="row">
 			<div class="orange-well col-md-4">
-				<h3>Om ISFiT</h3>
-				<p>ISFiT står for ”Internasjonal Studentfestivalen i Trondheim”. Det navnet imidlertid ikke forteller, er at ISFiT også er verdens største internasjonale studentfestival.</p>
+				<h3>Insta</h3>
+                <% parse_instagram_url.each do |url|%>
+                  <%= image_tag url, class:"img-responsive" %>
+                  <% end %>
 			</div>
           <div class="col-md-8">
           <div class="cn_wrapper">
-            <div class="col-md-6">
+            <div class="col-md-6 no_padding">
             <div id="cn_preview" class="cn_preview">
               <div class="cn_content">
                 <%= image_tag "polaroidphotobar.jpg" %>
