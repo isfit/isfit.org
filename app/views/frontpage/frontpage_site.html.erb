@@ -1,25 +1,113 @@
 <div class="container">
 	<section id="intro">
 		<div class="row">
-			<div class="grey-well col-md-4">
+			<div class="orange-well col-md-4">
 				<h3>Om ISFiT</h3>
 				<p>ISFiT står for ”Internasjonal Studentfestivalen i Trondheim”. Det navnet imidlertid ikke forteller, er at ISFiT også er verdens største internasjonale studentfestival.</p>
 			</div>
-			<div class=" div-explore-logo col-md-4">
-				<div id="jstwitter">
-				</div>
-			</div>
-			<div class="grey-well col-md-4">
-				<h3>Nye saker</h3>
-				<ul>
-					<li>hallo</li>
-					<li>hallo</li>
-					<li>hallo</li>
+          <div class="col-md-8">
+          <div class="cn_wrapper">
+            <div class="col-md-6">
+            <div id="cn_preview" class="cn_preview">
+              <div class="cn_content">
+                <%= image_tag "polaroidphotobar.jpg" %>
+                <h1>Isfit news</h1>
+                <span class="cn_date">13/08/2014</span>
+                <span class="cn_category">Isfitness</span>
+                <p>In this tutorial we are going to create an image gallery with a Polaroid look.
+                  We will have albums that will expand to sets of slightly rotated thumbnails
+                  that pop out on hover.</p>
+                <a href="http://elg.no/" target="_blank" class="cn_more">Read more</a>
+              </div>
 
-				</ul>
-			</div>
+              <div class="cn_content cn_content_invisible">
+                <%= image_tag "fullpageimagegallery.jpg" %>
+                <h1>Dalai drama</h1>
+                <span class="cn_date">14/08/2014</span>
+                <span class="cn_category">Dagbladet</span>
+                <p>In this tutorial we are going to create a stunning full page gallery with
+                  scrollable thumbnails and a scrollable full screen preview.
+                </p>
+                <a href="http://ulv.no" target="_blank" class="cn_more">Read more</a>
+              </div>
+
+              <div class="cn_content cn_content_invisible">
+                <%= image_tag "fullpageimagegallery.jpg" %>
+                <h1>Hi</h1>
+                <span class="cn_date">15/08/2014</span>
+                <span class="cn_category">Ha Ho!</span>
+                <p>In this tutorial we are going to create a stunning full page gallery with
+                  scrollable thumbnails and a scrollable full screen preview.
+                </p>
+                <a href="http://sau.no" target="_blank" class="cn_more">Read more</a>
+              </div>
+
+            </div>
+            </div>
+
+            <div id="cn_list" class="cn_list">
+              <div class="cn_page" style="display:block;">
+                <div class="cn_item selected">
+                  <h2>Isfit news</h2>
+                  <p>Isfitness</p>
+                </div>
+                <div class="cn_item">
+                  <h2>Dalai drama</h2>
+                  <p>Dagbladet kommenterer</p>
+                </div>
+                <div class="cn_item">
+                  <h2>Hi</h2>
+                  <p>Ha Ho!</p>
+                </div>
+            </div>
+          </div>
+          <div>
+          </div>
+          </div>
 		</div>
+            </div>
 	</section>
 	<section id="articles">
 	</section>
 	</div>
+<!-- The JavaScript -->
+<%= javascript_include_tag 'application'%>
+<script type="text/javascript">
+    $(function() {
+        //caching
+        //wrapper of the left items
+        var $cn_list 	= $('#cn_list');
+        //list of news (left items)
+        var $items 		= $cn_list.find('.cn_item');
+        //the current item being viewed (right side)
+        var $cn_preview = $('#cn_preview');
+        //index of the item being viewed.
+        //the default is the first one
+        var current		= 1;
+
+        /*
+         for each item we store its index relative to all the document.
+         we bind a click event that slides up or down the current item
+         and slides up or down the clicked one.
+         Moving up or down will depend if the clicked item is after or
+         before the current one
+         */
+        $items.each(function(i){
+            var $item = $(this);
+            $item.data('idx',i+1);
+
+            $item.bind('click',function(){
+                var $this 		= $(this);
+                $cn_list.find('.selected').removeClass('selected');
+                $this.addClass('selected');
+                var idx			= $(this).data('idx');
+                var $current 	= $cn_preview.find('.cn_content:nth-child('+current+')');
+                var $next		= $cn_preview.find('.cn_content:nth-child('+idx+')');
+                $current.addClass('cn_content_invisible')
+                $next.removeClass('cn_content_invisible');
+                current = idx;
+            });
+        });
+
+    });
+</script>
