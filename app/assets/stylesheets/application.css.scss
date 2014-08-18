@@ -13,36 +13,37 @@
  * file per style scope.
  *
  *= require_tree .
+  *= require font-awesome
  *= require_self
  */
  // Extra small screen / phone
-// Note: Deprecated $screen-xs and $screen-phone as of v3.0.1
-$screen-xs:                  480px !default;
-$screen-xs-min:              $screen-xs !default;
-$screen-phone:               $screen-xs-min !default;
+ // Note: Deprecated $screen-xs and $screen-phone as of v3.0.1
+ $screen-xs:                  480px !default;
+ $screen-xs-min:              $screen-xs !default;
+ $screen-phone:               $screen-xs-min !default;
 
-// Small screen / tablet
-// Note: Deprecated $screen-sm and $screen-tablet as of v3.0.1
-$screen-sm:                  1300px !default;
-$screen-sm-min:              $screen-sm !default;
-$screen-tablet:              $screen-sm-min !default;
+ // Small screen / tablet
+ // Note: Deprecated $screen-sm and $screen-tablet as of v3.0.1
+ $screen-sm:                  1300px !default;
+ $screen-sm-min:              $screen-sm !default;
+ $screen-tablet:              $screen-sm-min !default;
 
-// Medium screen / desktop
-// Note: Deprecated $screen-md and $screen-desktop as of v3.0.1
-$screen-md:                  1300px !default;
-$screen-md-min:              $screen-md !default;
-$screen-desktop:             $screen-md-min !default;
+ // Medium screen / desktop
+ // Note: Deprecated $screen-md and $screen-desktop as of v3.0.1
+ $screen-md:                  1300px !default;
+ $screen-md-min:              $screen-md !default;
+ $screen-desktop:             $screen-md-min !default;
 
-// Large screen / wide desktop
-// Note: Deprecated $screen-lg and $screen-lg-desktop as of v3.0.1
-$screen-lg:                  1300px !default;
-$screen-lg-min:              $screen-lg !default;
-$screen-lg-desktop:          $screen-lg-min !default;
+ // Large screen / wide desktop
+ // Note: Deprecated $screen-lg and $screen-lg-desktop as of v3.0.1
+ $screen-lg:                  1300px !default;
+ $screen-lg-min:              $screen-lg !default;
+ $screen-lg-desktop:          $screen-lg-min !default;
 
-// So media queries don't overlap when required, provide a maximum
-$screen-xs-max:              ($screen-sm-min - 1) !default;
-$screen-sm-max:              ($screen-md-min - 1) !default;
-$screen-md-max:              ($screen-lg-min - 1) !default;
+ // So media queries don't overlap when required, provide a maximum
+ $screen-xs-max:              ($screen-sm-min - 1) !default;
+ $screen-sm-max:              ($screen-md-min - 1) !default;
+ $screen-md-max:              ($screen-lg-min - 1) !default;
  @import "bootstrap";
  html {
   // Enable webkits anti-alized font-smoothing on Mac.
@@ -52,9 +53,16 @@ html, body, div, aside, footer, header, span, h1, h2, h3, h4, h5, h6 {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-
 .navbar-right{
 
+}
+
+body {
+}
+.row{
+  width: 100%;
+  position: relative;
+  overflow: scroll;
 }
 body > .container{
   padding-top: 60px;
@@ -79,43 +87,44 @@ body > .container{
 
 nav.navbar {
   background-color: #0099CC !important;
-    -webkit-background-image: none;
-    -moz-background-image: none;
-    -ms-background-image: none;
-    background-image: none;
-    filter: none !important;
-    border: none;
-    border-radius: 0;
-    text-align: center;
+  -webkit-background-image: none;
+  -moz-background-image: none;
+  -ms-background-image: none;
+  background-image: none;
+  filter: none !important;
+  border: none;
+  border-radius: 0;
+  text-align: center;
 
 }
-.nav .nav-navbar .active{
+.nav .nav-navbar .current{
   background-color: #0099CC !important;
-    -webkit-background-image: none;
-    -moz-background-image: none;
-    -ms-background-image: none;
-    background-image: none;
-    filter: none !important;
-    border: none;
-    border-radius: 0;
+  -webkit-background-image: none;
+  -moz-background-image: none;
+  -ms-background-image: none;
+  background-image: none;
+  filter: none !important;
+  border: none;
+  border-radius: 0;
 }
- .navbar-nav > li.tabs{
+.navbar-nav > li.tabs{
 
 
   border-bottom:4px solid #1390B9;
   margin-left:1px;
 
-
 }
- li.active {
+.ul-navbar-logo {
+}
+.navbar-nav > li.current {
   border-bottom:4px solid #EFAB44;
   margin-left:1px;
 }
-.navbar-default .navbar-nav > .active > a{
+.navbar-default .navbar-nav > .current > a{
   background-color: #0099CC !important;
   color:#FFFFFF;
   text-transform: uppercase;
-   font-weight:500;
+  font-weight:500;
 
 
 }
@@ -123,7 +132,7 @@ nav.navbar .navbar-nav > li > a {
   background-color: #0099CC !important;
   color:#FFFFFF;
   text-transform: uppercase;
- font-weight:500;
+  font-weight:500;
 }
 nav.navbar .navbar-nav > li > a:hover {
   color: #EFAB44 !important;
@@ -136,37 +145,35 @@ nav.navbar .navbar-nav > li > p {
   color:#FFFFFF;
   text-transform: uppercase;
   padding-top: 15px;
-   font-weight:500;
+  font-weight:500;
 
   
 }
 .collapse .navbar-collapse .navbar-ex1-collapse{
   text-align: center;
 }
-       
+.container{
+}
 .navbar{
-    margin: 0 auto;
+  margin: 0 auto;
 }​
 .container {
-margin-right: auto;
-margin-left: auto;
-padding-left: 15px;
-padding-right: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 .sticky {
   position:fixed;
   top:0;
 }
 .menu-padding {
-    padding-top:40px;
+  margin-top:200px;
 }
 .navbar-brand{
 
 }
-
 .footer{
-
-
   text-align: center;
   background-color: #0099CC;
   width: 100%;
@@ -175,8 +182,7 @@ padding-right: 15px;
   margin-top: 100px;
 }
 .push{
-    height: auto;
-
+  height: auto;
 }
 .facebook-logo{
   padding-left:20px;
@@ -192,35 +198,34 @@ padding-right: 15px;
   background:url('nestenalleikoner.png') no-repeat -124px -43px;
   width: 8px;
   height: 13px;
-
 }
 .twitter-logo{
-    padding-left:25px;
-    background:url('nestenalleikoner.png') no-repeat -63px -43px;
-    display: inline-block;
-    width: 18px;
-    height: 13px;
-    zoom: 1;
-    *display:inline;
+  padding-left:25px;
+  background:url('nestenalleikoner.png') no-repeat -63px -43px;
+  display: inline-block;
+  width: 18px;
+  height: 13px;
+  zoom: 1;
+  *display:inline;
 }
-.twitter-logo:hover{
-  background: url('nestenalleikoner.png') no-repeat -96px -43px;
-}
-.vimeo-logo{
+  .twitter-logo:hover{
+    background: url('nestenalleikoner.png') no-repeat -96px -43px;
+  }
+  .vimeo-logo{
     padding-left:25px;
     background:url('nestenalleikoner.png') no-repeat -35px -43px;
     display: inline-block;
-  width: 16px;
-  height: 13px;
+    width: 16px;
+    height: 13px;
     zoom: 1;
     *display:inline;
-}
-.vimeo-logo:hover{
+  }
+  .vimeo-logo:hover{
     width: 16px;
-  height: 13px;
-  background: url('nestenalleikoner.png') no-repeat -8px -43px;
-}
-.norwegian-logo{
+    height: 13px;
+    background: url('nestenalleikoner.png') no-repeat -8px -43px;
+  }
+  .norwegian-logo{
     padding-left:25px;
     display: inline-block;
     background:url('nestenalleikoner.png')  no-repeat -3px -114px;
@@ -228,8 +233,8 @@ padding-right: 15px;
     height: 18px;
     zoom: 1;
     *display:inline;
-}
-.english-logo{
+  }
+  .english-logo{
     padding-left:25px;
     display: inline-block;
     background:url('nestenalleikoner.png')  no-repeat -44px -113px;
@@ -237,58 +242,107 @@ padding-right: 15px;
     height: 19px;
     zoom: 1;
     *display:inline;
-}
-.information-logo{
-  padding-left:25px;
-  display: inline-block;
-  background:url('nestenalleikoner.png') no-repeat -77px -114px;
-  width: 6px;
-  height: 16px;
-  zoom: 1;
-  *display:inline;
+  }
+  .information-logo{
+    padding-left:25px;
+    display: inline-block;
+    background:url('nestenalleikoner.png') no-repeat -77px -114px;
+    width: 6px;
+    height: 16px;
+    zoom: 1;
+    *display:inline;
 
-}
-.information-logo:hover{
-  padding-left:25px;
-  display: inline-block;
-  background:url('nestenalleikoner.png') no-repeat -99px -113px;
-  width: 20px;
-  height: 18px;
-  zoom: 1;
-  *display:inline;
-}
-.contact-logo{
-  padding-left:25px;
-  display: inline-block;
-  background:url('nestenalleikoner.png')  no-repeat -140px -113px;
-  width: 13px;
-  height: 18px;
-  zoom: 1;
-  *display:inline;
-}
-.contact-logo:hover{
-  padding-left:25px;
-  display: inline-block;
-  background:url('nestenalleikoner.png')  no-repeat -120px -113px;
-  width: 15px;
-  height: 18px;
-  zoom: 1;
-  *display:inline;
-}
-.navbar-logos{
-  width: 40px;
-}
+  }
+  .information-logo:hover{
+    padding-left:25px;
+    display: inline-block;
+    width: 20px;
+    height: 18px;
+    zoom: 1;
+    *display:inline;
+  }
+  .contact-logo{
+    padding-left:25px;
+    display: inline-block;
+    background:url('nestenalleikoner.png')  no-repeat -140px -113px;
+    width: 13px;
+    height: 18px;
+    zoom: 1;
+    *display:inline;
+  }
+  .contact-logo:hover{
+    padding-left:25px;
+    display: inline-block;
+    background:url('nestenalleikoner.png')  no-repeat -120px -113px;
+    width: 15px;
+    height: 18px;
+    zoom: 1;
+    *display:inline;
+  }
+  .navbar-logos{
+    width: 40px;
+  }
 
-.footer .socialmedia-logo{
-  margin-top: 1%;
-}
+  .footer .socialmedia-logo{
+    margin-top: 1%;
+  }
 
-.footer > p {
-  color: #FFFFFF;
-}
-.isfit-logo{
-  padding-top: 10px;
-  background: url('nestenalleikoner.png') no-repeat -6px -166px;
-  width: 124px;
-  height: 34px;
-}
+  .footer > p {
+    color: #FFFFFF;
+  }
+  .isfit-logo{
+    padding-top: 10px;
+    background: url('nestenalleikoner.png') no-repeat -6px -166px;
+    width: 124px;
+    height: 34px;
+  }
+  @media (max-width: 1300px) {
+    .navbar-nav > li.tabs{
+      border-bottom:0;
+      margin-left:1px;
+    }
+    .navbar-nav > li.current {
+      border-bottom: 0;
+    }
+    nav.navbar {
+      background-color: #0099CC !important;
+      -webkit-background-image: none;
+      -moz-background-image: none;
+      -ms-background-image: none;
+      background-image: none;
+      filter: none !important;
+      border: none;
+      border-radius: 0;
+      text-align: left;
+    }
+    .nav .nav-navbar .current{
+      background-color: #1390B9 !important;
+      -webkit-background-image: none;
+      -moz-background-image: none;
+      -ms-background-image: none;
+      background-image: none;
+      filter: none !important;
+      border: none;
+      border-radius: 0;
+    }
+    .navbar-default .navbar-nav > .current > a{
+      background-color: #1390B9 !important;
+      color:#FFFFFF;
+      text-transform: uppercase;
+      font-weight:500;
+
+
+    }
+    .ul-navbar-logo li{
+      display: inline;
+    }
+    .ul-navbar-logo .navbar-logos > a{
+      display: inline;
+    }
+    nav.navbar .navbar-nav > li > a {
+      background-color: #0099CC !important;
+      color:#FFFFFF;
+      text-transform: uppercase;
+      font-weight:500;
+    }
+  }

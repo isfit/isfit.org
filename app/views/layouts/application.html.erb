@@ -12,7 +12,6 @@
 		<%= link_to image_tag("LogoIsfit2.png", class: "brand"), root_path %>
 	</div>
 
-
 	<nav class="navbar navbar-default" role="navigation">
 		<div class="container">
 			<!-- Brand and toggle get grouped for better mobile display -->
@@ -31,13 +30,13 @@
 			<div class="collapse navbar-collapse" id="collapsemenu">
 				<ul class="nav navbar-nav">
 					<% tabs.each do |p| %>
-					<%= nav_link p.name, p.path.to_sym %>
+						<%= nav_link p.name, p.path, p.id %>
 					<% end %>
 				</ul>
-				<ul class="nav navbar-nav navbar-right">
+				<ul class="nav navbar-nav ul-navbar-logo">
 					<li class="navbar-logos">			
 						<%= link_to language_link do %>
-						<span class="<%= language_logo %>"</span>
+						<i class="fa fa-camera-retro"></i> 
 						<% end %>
 					</li>
 					<li class="navbar-logos">			
@@ -57,8 +56,9 @@
 
 		</div><!-- /.container-fluid -->
 	</nav>
-
-	<%= yield %>
+	<div class="content">
+		<%= yield %>
+	</div>
 	<div class="footer">
 		<%= link_to "https://www.facebook.com/ISFiTNorway" do %>
 		<span class="facebook-logo"></span>
