@@ -1,0 +1,37 @@
+<div class="row"  data-spy="scroll" data-target=".navbar-left" offset="-54">
+	<div class="container">
+		<div class="col-md-9">
+			<% @pages.each_with_index do |page, index| %>
+			<%content_for :head do %>
+			<meta property="og:title" content="<%if page.title%><%=page.title%><%end%>."/>
+			<meta property="og:type" content="non_profit"/>
+			<meta property="og:image" content="<%="http://www.isfit.org/images/isfitliten.png"%>"/>
+			<meta property="og:url" content="<%=(request.url).match(/([A-Za-z0-9:._\/]+)/)[1]%>"/>
+			<meta property="og:site_name" content="ISFiT 2015"/>
+			<meta property="fb:app_id" content="111446192243028"/>
+			<meta property="og:description" content="<%=page.ingress%>"/>
+			<%end%>
+			<section class="tab-page tab-content" id="<%= index %>" name="<%= index %>">
+				<header>
+					<h1>
+						<%= page.title %>
+					</h1>
+				</header>
+
+				<div id="page-ingress" class="lead">
+					<%=raw format( page.ingress )%>
+				</div>
+
+				<p>
+					<%=raw format ( page.body ) %>
+				</p>
+			</section>
+
+
+			<%end%>
+		</div>
+		<%= render 'sidebar' %>
+	</div>
+</div>
+
+

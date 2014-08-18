@@ -53,3 +53,9 @@ gem 'rails-i18n'
 #has_attached_file 
 gem 'paperclip'
 
+#html conversion
+gem 'bluecloth'
+
+#nice icons
+gem 'font-awesome-sass'
+

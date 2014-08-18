@@ -1,0 +1,65 @@
+// Place all the styles related to the Tabs controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.tab-page {
+  header h1 {
+    font-size: 3.5em;
+    line-height: 1.5em;
+  }
+  #page-ingress > p > img {
+  	width:80%;
+    display: block;
+  }
+  
+  #page-ingress p {
+    font-size: 1.2em;
+    line-height: 1.3em;
+  }
+  #page-ingress > p > small{
+    font-size: 0.8em;
+    line-height: 1.3em;
+  }
+
+
+  p {
+    line-height: 1.5em;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    line-height: 2em;
+    color: #EFAB44;
+  }
+
+
+}
+.sidebar{
+  position: fixed;
+  margin-top: 30px;
+  text-align: center;
+}
+.navbar-left{
+  background-color: #FFFFFF !important;
+}
+.navbar-left > ul > li > a {
+  color: #000000;
+}
+.navbar-left > ul {
+  list-style: none;
+}
+.navbar-left > ul > li > a:hover {
+  background-color: #FFFFFF;
+  color: #EFAB44;
+}
+.nav-left > li.active {
+  border-left:2px solid #EFAB44;
+}
+.nav-left > li {
+  border-left:2px solid #0099CC;
+}
+
+@media (max-width: 1300px) {
+  .sidebar{
+    position: relative;
+    margin-top: 30px;
+    text-align: center;
+  }
+}
