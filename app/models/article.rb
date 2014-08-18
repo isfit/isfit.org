@@ -18,7 +18,7 @@ class Article < ActiveRecord::Base
       articles = articles.where("title_no > ''")
     end
 
-    @articles = articles.order("weight DESC").limit(4)
+    @articles = articles.order("weight DESC").limit(6)
   end
 
   def self.blog_articles language
@@ -38,6 +38,9 @@ class Article < ActiveRecord::Base
   end
   def sub_title
   	I18n.locale.to_s.eql?("no") ? self.sub_title_no : self.sub_title_en
+  end
+  def ingress
+    I18n.locale.to_s.eql?("no") ? self.ingress_no : self.ingress_en
   end
 
   private

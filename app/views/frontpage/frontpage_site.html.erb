@@ -1,25 +1,112 @@
 <div class="container">
-	<section id="intro">
-		<div class="row">
-			<div class="grey-well col-md-4">
-				<h3>Om ISFiT</h3>
-				<p>ISFiT står for ”Internasjonal Studentfestivalen i Trondheim”. Det navnet imidlertid ikke forteller, er at ISFiT også er verdens største internasjonale studentfestival.</p>
-			</div>
-			<div class=" div-explore-logo col-md-4">
-				<div id="jstwitter">
-				</div>
-			</div>
-			<div class="grey-well col-md-4">
-				<h3>Nye saker</h3>
-				<ul>
-					<li>hallo</li>
-					<li>hallo</li>
-					<li>hallo</li>
+  <section id="intro">
+    <div class="row">
+      <div id="instagram-div" class="orange-well col-md-4">
+        <h3 class="col-md-12"><%= image_tag "instagramBadge.png"%>  #isfit2015</h3>
 
-				</ul>
-			</div>
-		</div>
-	</section>
-	<section id="articles">
-	</section>
-	</div>
+      </div>
+      <div class="col-md-8">
+        <div class="cn_wrapper">
+          <div class="col-md-6 no_padding">
+            <div id="cn_preview" class="cn_preview">
+              <% @articles.each_with_index do |article, i| %>
+                  <% if i == 0%>
+                      <div class="cn_content">
+                  <% else %>
+                      <div class="cn_content cn_content_invisible">
+                  <% end %>
+                  <%= image_tag article.frontend_article_image.url %>
+                  <h1><%=article.title%></h1>
+                  <span class="cn_date"><%=article.created_at%></span>
+                  <span class="cn_category"><%= article.byline.html_safe%></span>
+                  <p><%=article.ingress%></p>
+                  <a href="http://elg.no/" target="_blank" class="cn_more">Read more</a>
+                  </div>
+
+              <% end %>
+              </div>
+            </div>
+
+
+              <div id="cn_list" class="cn_list">
+                <div class="cn_page" style="display:block;">
+                  <% @articles.each_with_index do |article, i| %>
+                  <% if i == 0%>
+                  <div class="cn_item selected">
+                    <% else %>
+                      <div class="cn_item">
+                        <% end %>
+                    <h2><%=article.title%></h2>
+                    <p><%=truncate(article.ingress, length: 50)%></p>
+                  </div>
+                  <% end %>
+                </div>
+              </div>
+              <div>
+              </div>
+              </div>
+        </div>
+      </div>
+  </section>
+  <section id="articles">
+  </section>
+</div>
+<!-- The JavaScript -->
+<%= javascript_include_tag 'application'%>
+<script type="text/javascript">
+    $(function() {
+        var $cn_list 	= $('#cn_list');
+        var $items 		= $cn_list.find('.cn_item');
+        var $cn_preview = $('#cn_preview');
+        var current		= 1;
+        $items.each(function(i){
+            var $item = $(this);
+            $item.data('idx',i+1);
+
+            $item.bind('click',function(){
+                var $this 		= $(this);
+                $cn_list.find('.selected').removeClass('selected');
+                $this.addClass('selected');
+                var idx			= $(this).data('idx');
+                var $current 	= $cn_preview.find('.cn_content:nth-child('+current+')');
+                var $next		= $cn_preview.find('.cn_content:nth-child('+idx+')');
+                $current.addClass('cn_content_invisible')
+                $next.removeClass('cn_content_invisible');
+                current = idx;
+            });
+        });
+
+    });
+</script>
+<script type="text/javascript">
+    function pollInstagram(next_url) {
+        $.ajax({
+            method: "GET",
+            url: next_url,
+            dataType: "jsonp",
+            jsonp: "callback",
+            jsonpCallback: "jsonpcallback",
+            success: function (data) {
+                $.each(data.data, function (i, item) {
+                    var div = document.getElementById('instagram-div');
+                    div.innerHTML += '<img src="' + item.images.standard_resolution.url + '" class="col-md-6"/>';
+
+                });
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+            }
+        });
+    }
+    var ready;
+    ready = function() {
+        $(document).ready(function(){
+
+            pollInstagram('https://api.instagram.com/v1/tags/isfit2015/media/recent?client_id=802d634befd6476c80cc18dbee1ce8e0&count=4');
+
+        });
+    };
+
+    $(document).ready(ready);
+    $(document).on('page:load', ready);
+
+</script>
