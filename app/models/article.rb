@@ -39,6 +39,9 @@ class Article < ActiveRecord::Base
   def sub_title
   	I18n.locale.to_s.eql?("no") ? self.sub_title_no : self.sub_title_en
   end
+  def ingress
+    I18n.locale.to_s.eql?("no") ? self.ingress_no : self.ingress_en
+  end
 
   private
   def self.visible_articles

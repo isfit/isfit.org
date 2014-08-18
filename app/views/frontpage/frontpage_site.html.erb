@@ -1,75 +1,56 @@
 <div class="container">
-	<section id="intro">
-		<div class="row">
-			<div id="instagram-div" class="orange-well col-md-4">
-				<h3 class="col-md-12"><%= image_tag "instagramBadge.png"%>  #isfit2015</h3>
+  <section id="intro">
+    <div class="row">
+      <div id="instagram-div" class="orange-well col-md-4">
+        <h3 class="col-md-12"><%= image_tag "instagramBadge.png"%>  #isfit2015</h3>
 
-			</div>
-          <div class="col-md-8">
-          <div class="cn_wrapper">
-            <div class="col-md-6 no_padding">
+      </div>
+      <div class="col-md-8">
+        <div class="cn_wrapper">
+          <div class="col-md-6 no_padding">
             <div id="cn_preview" class="cn_preview">
-              <div class="cn_content">
-                <%= image_tag "polaroidphotobar.jpg" %>
-                <h1>Isfit news</h1>
-                <span class="cn_date">13/08/2014</span>
-                <span class="cn_category">Isfitness</span>
-                <p>In this tutorial we are going to create an image gallery with a Polaroid look.
-                  We will have albums that will expand to sets of slightly rotated thumbnails
-                  that pop out on hover.</p>
-                <a href="http://elg.no/" target="_blank" class="cn_more">Read more</a>
+              <% @articles.each_with_index do |article, i| %>
+                  <% if i == 0%>
+                      <div class="cn_content">
+                  <% else %>
+                      <div class="cn_content cn_content_invisible">
+                  <% end %>
+                  <%= image_tag article.frontend_article_image.url %>
+                  <h1><%=article.title%></h1>
+                  <span class="cn_date"><%=article.created_at%></span>
+                  <span class="cn_category"><%= article.byline.html_safe%></span>
+                  <p><%=article.ingress%></p>
+                  <a href="http://elg.no/" target="_blank" class="cn_more">Read more</a>
+                  </div>
+
+              <% end %>
               </div>
+            </div>
 
-              <div class="cn_content cn_content_invisible">
-                <%= image_tag "fullpageimagegallery.jpg" %>
-                <h1>Dalai drama</h1>
-                <span class="cn_date">14/08/2014</span>
-                <span class="cn_category">Dagbladet</span>
-                <p>In this tutorial we are going to create a stunning full page gallery with
-                  scrollable thumbnails and a scrollable full screen preview.
-                </p>
-                <a href="http://ulv.no" target="_blank" class="cn_more">Read more</a>
+
+              <div id="cn_list" class="cn_list">
+                <div class="cn_page" style="display:block;">
+                  <% @articles.each_with_index do |article, i| %>
+                  <% if i == 0%>
+                  <div class="cn_item selected">
+                    <% else %>
+                      <div class="cn_item">
+                        <% end %>
+                    <h2><%=article.title%></h2>
+                    <p><%=truncate(article.ingress, length: 50)%></p>
+                  </div>
+                  <% end %>
+                </div>
               </div>
-
-              <div class="cn_content cn_content_invisible">
-                <%= image_tag "fullpageimagegallery.jpg" %>
-                <h1>Hi</h1>
-                <span class="cn_date">15/08/2014</span>
-                <span class="cn_category">Ha Ho!</span>
-                <p>In this tutorial we are going to create a stunning full page gallery with
-                  scrollable thumbnails and a scrollable full screen preview.
-                </p>
-                <a href="http://sau.no" target="_blank" class="cn_more">Read more</a>
+              <div>
               </div>
-
-            </div>
-            </div>
-
-            <div id="cn_list" class="cn_list">
-              <div class="cn_page" style="display:block;">
-                <div class="cn_item selected">
-                  <h2>Isfit news</h2>
-                  <p>Isfitness</p>
-                </div>
-                <div class="cn_item">
-                  <h2>Dalai drama</h2>
-                  <p>Dagbladet kommenterer</p>
-                </div>
-                <div class="cn_item">
-                  <h2>Hi</h2>
-                  <p>Ha Ho!</p>
-                </div>
-            </div>
-          </div>
-          <div>
-          </div>
-          </div>
-		</div>
-            </div>
-	</section>
-	<section id="articles">
-	</section>
-	</div>
+              </div>
+        </div>
+      </div>
+  </section>
+  <section id="articles">
+  </section>
+</div>
 <!-- The JavaScript -->
 <%= javascript_include_tag 'application'%>
 <script type="text/javascript">
