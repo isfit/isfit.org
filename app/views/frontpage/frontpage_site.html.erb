@@ -1,8 +1,11 @@
-<div class="container">
+<div class="container top-margin">
   <section id="intro">
     <div class="row">
-      <div id="instagram-div" class="orange-well col-md-4">
-        <h3 class="col-md-12"><%= image_tag "instagramBadge.png"%>  #isfit2015</h3>
+      <div class="blank-well col-md-4">
+        <h3 class="col-md-12"><i class="fa fa-instagram fa-2x orange-text"></i> #isfit2015</h3>
+        <div id="instagram-div">
+
+        </div>
 
       </div>
       <div class="col-md-8">
@@ -47,6 +50,8 @@
               </div>
         </div>
       </div>
+    </div>
+  </div>
   </section>
   <section id="articles">
   </section>
@@ -87,11 +92,13 @@
             jsonp: "callback",
             jsonpCallback: "jsonpcallback",
             success: function (data) {
+                var output = "";
+                var div = document.getElementById('instagram-div');
                 $.each(data.data, function (i, item) {
-                    var div = document.getElementById('instagram-div');
-                    div.innerHTML += '<img src="' + item.images.standard_resolution.url + '" class="col-md-6"/>';
+                    output += '<img src="' + item.images.standard_resolution.url + '" class="col-md-6 bottom-margin"/>';
 
                 });
+                div.innerHTML = output;
             },
             error: function (jqXHR, textStatus, errorThrown) {
             }

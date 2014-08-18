@@ -49,6 +49,17 @@
   border-radius: 0;
   color: #FFFFFF;
 }
+.blank-well{
+  min-height: 20px;
+  padding: 19px;
+  margin-bottom: 20px;
+  border: 1px solid #f5f1f1 ;
+  border-radius: 0;
+  color: #000000;
+}
+.orange-text{
+  color: #EFAB44;
+}
 .cn_wrapper{
   width: 100%;
   position:relative;
@@ -93,7 +104,7 @@
   font-size:11px;
   padding:1px 3px;
   background:#ccc;
-  border:1px solid #ddd;
+
   color:#000;
 
 }
@@ -113,7 +124,7 @@ a.cn_more{
   letter-spacing:1px;
   text-transform:uppercase;
   text-decoration: none;
-  border:1px solid #4c7ecb;
+
   outline:none;
   cursor:pointer;
   background-color: #0099CC;
@@ -130,6 +141,7 @@ a.cn_more:hover{
   color:#000000;
   padding:5px;
   white-space: nowrap;
+  border-left:2px solid #0099CC;
   /*margin:0px 0px 0px 0px*/;
 
   background:#FFFFFF;
@@ -137,19 +149,22 @@ a.cn_more:hover{
 .no_padding{
   padding-right: 0px !important;
 }
-.cn_item:hover, .selected{
-  border-color:#4c7ecb;
+.cn_item:hover{
   background-color: #f5f5f5;
+  border-left:2px solid #EFAB44;
+}
+.selected{
+  background-color: #f5f5f5;
+  border-left:2px solid #EFAB44;
 }
 .cn_item:hover h2,
 .cn_list .selected h2,
 .cn_item:active h2{
-  border-color:#2C5FAC;
 }
 .cn_item:hover p,
 .cn_list .selected p,
 .cn_item:active p{
-  border-color:#527CBB;
+
 }
 .cn_item:active {
   color: #011c44;;
@@ -161,4 +176,19 @@ a.cn_more:hover{
 }
 .cn_page{
   display:none;
+}
+
+.nav-left > li.active {
+  border-left:2px solid #EFAB44;
+}
+.nav-left > li {
+  border-left:2px solid #0099CC;
+}
+
+.top-margin{
+  margin-top: 30px;
+}
+
+.bottom-margin{
+  margin-bottom:20px;
 }

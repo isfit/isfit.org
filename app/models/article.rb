@@ -42,6 +42,9 @@ class Article < ActiveRecord::Base
   def ingress
     I18n.locale.to_s.eql?("no") ? self.ingress_no : self.ingress_en
   end
+  def body
+    I18n.locale.to_s.eql?("no") ? self.body_no : self.body_en
+  end
 
   private
   def self.visible_articles
