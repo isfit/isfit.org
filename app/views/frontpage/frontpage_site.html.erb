@@ -1,11 +1,9 @@
 <div class="container">
 	<section id="intro">
 		<div class="row">
-			<div class="orange-well col-md-4">
-				<h3>Insta</h3>
-                <% parse_instagram_url.each do |url|%>
-                  <%= image_tag url, class:"img-responsive" %>
-                  <% end %>
+			<div id="instagram-div" class="orange-well col-md-4">
+				<h3 class="col-md-12"><%= image_tag "instagramBadge.png"%>  #isfit2015</h3>
+
 			</div>
           <div class="col-md-8">
           <div class="cn_wrapper">
@@ -76,24 +74,10 @@
 <%= javascript_include_tag 'application'%>
 <script type="text/javascript">
     $(function() {
-        //caching
-        //wrapper of the left items
         var $cn_list 	= $('#cn_list');
-        //list of news (left items)
         var $items 		= $cn_list.find('.cn_item');
-        //the current item being viewed (right side)
         var $cn_preview = $('#cn_preview');
-        //index of the item being viewed.
-        //the default is the first one
         var current		= 1;
-
-        /*
-         for each item we store its index relative to all the document.
-         we bind a click event that slides up or down the current item
-         and slides up or down the clicked one.
-         Moving up or down will depend if the clicked item is after or
-         before the current one
-         */
         $items.each(function(i){
             var $item = $(this);
             $item.data('idx',i+1);
@@ -112,4 +96,36 @@
         });
 
     });
+</script>
+<script type="text/javascript">
+    function pollInstagram(next_url) {
+        $.ajax({
+            method: "GET",
+            url: next_url,
+            dataType: "jsonp",
+            jsonp: "callback",
+            jsonpCallback: "jsonpcallback",
+            success: function (data) {
+                $.each(data.data, function (i, item) {
+                    var div = document.getElementById('instagram-div');
+                    div.innerHTML += '<img src="' + item.images.standard_resolution.url + '" class="col-md-6"/>';
+
+                });
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+            }
+        });
+    }
+    var ready;
+    ready = function() {
+        $(document).ready(function(){
+
+            pollInstagram('https://api.instagram.com/v1/tags/isfit2015/media/recent?client_id=802d634befd6476c80cc18dbee1ce8e0&count=4');
+
+        });
+    };
+
+    $(document).ready(ready);
+    $(document).on('page:load', ready);
+
 </script>
