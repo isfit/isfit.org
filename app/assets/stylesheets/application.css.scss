@@ -62,7 +62,6 @@ body {
 .row{
   width: 100%;
   position: relative;
-  overflow: scroll;
 }
 body > .container{
   padding-top: 60px;
@@ -149,6 +148,7 @@ nav.navbar .navbar-nav > li > p {
 
   
 }
+
 .collapse .navbar-collapse .navbar-ex1-collapse{
   text-align: center;
 }
@@ -296,6 +296,9 @@ nav.navbar .navbar-nav > li > p {
     width: 124px;
     height: 34px;
   }
+.fa-custom-size{
+  font-size: 1.3em; 
+}
   @media (max-width: 1300px) {
     .navbar-nav > li.tabs{
       border-bottom:0;
@@ -346,3 +349,5 @@ nav.navbar .navbar-nav > li > p {
       font-weight:500;
     }
   }
+
+

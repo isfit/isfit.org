@@ -12,11 +12,11 @@
 		<%= link_to image_tag("LogoIsfit2.png", class: "brand"), root_path %>
 	</div>
 
-	<nav class="navbar navbar-default" role="navigation">
+	<nav class="navbar navbar-default navbar-top" role="navigation">
 		<div class="container">
 			<!-- Brand and toggle get grouped for better mobile display -->
 			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapsemenu">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".collapse">
 					<span class="sr-only">Toggle navigation</span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
@@ -34,19 +34,20 @@
 					<% end %>
 				</ul>
 				<ul class="nav navbar-nav ul-navbar-logo">
+
 					<li class="navbar-logos">			
+						<%= link_to root_path do %>
+							<i class="fa fa-info fa-custom-size"></i>						
+						<% end %>
+					</li>
+					<li class="navbar-logos">			
+						<%= link_to root_path do %>
+							<i class="fa fa-phone fa-custom-size"></i>
+						<% end %>
+					</li>
+										<li class="navbar-logos">			
 						<%= link_to language_link do %>
-						<i class="fa fa-camera-retro"></i> 
-						<% end %>
-					</li>
-					<li class="navbar-logos">			
-						<%= link_to root_path do %>
-						<span class="information-logo"></span>
-						<% end %>
-					</li>
-					<li class="navbar-logos">			
-						<%= link_to root_path do %>
-						<span class="contact-logo"></span>
+						<span class="<%= language_logo %> fa-custom-siz"</span>
 						<% end %>
 					</li>
 				</ul>
