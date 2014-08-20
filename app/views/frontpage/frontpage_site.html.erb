@@ -1,14 +1,25 @@
 <div class="container top-margin">
   <section id="intro">
     <div class="row">
-      <div class="blank-well col-md-4">
-        <h3 class="col-md-12"><i class="fa fa-instagram fa-2x orange-text"></i> #isfit2015</h3>
+      <div class="col-md-4">
+        <div class="row">
+          <%= link_to t("volunteers.apply"), '#', class:"orange-well col-md-12"%>
+        </div>
+        <div class="row">
+            <%= link_to t("ambassadors.apply"), '#', class:"blue-well col-md-12"%>
+        </div>
+        <div class="row">
+            <%= link_to t("participant.apply"), '#', class:"orange-well col-md-12"%>
+        </div>
+      <div class="blank-well row">
+        <h3 class="col-md-12"><i class="fa fa-instagram fa-2x orange-text"></i> #tradeyourideas</h3>
         <div id="instagram-div">
 
         </div>
-
+      </div>
       </div>
       <div class="col-md-8">
+
         <div class="cn_wrapper">
           <div class="col-md-6 no_padding">
             <div id="cn_preview" class="cn_preview">
@@ -18,12 +29,12 @@
                   <% else %>
                       <div class="cn_content cn_content_invisible">
                   <% end %>
-                  <%= image_tag article.frontend_article_image.url %>
+                  <%= image_tag ('placeholder' + i.to_s + '.jpg') %>
                   <h1><%=article.title%></h1>
                   <span class="cn_date"><%=article.created_at%></span>
                   <span class="cn_category"><%= article.byline.html_safe%></span>
                   <p><%=article.ingress%></p>
-                  <%= link_to "Read more", article_path(article), class: 'cn_more' %>
+                  <%= link_to "Read more", article_path(article), class: 'blue-well' %>
                   </div>
 
               <% end %>
@@ -44,9 +55,13 @@
                   </div>
                   <% end %>
                   </div>
+
                 </div>
+                <a href="#" class="orange-well">
+                  Archive
+                </a>
               </div>
-              <div>
+
               </div>
               </div>
         </div>
@@ -57,57 +72,3 @@
   <section id="articles">
   </section>
 </div>
-<%= javascript_include_tag 'application'%>
-<script type="text/javascript">
-    function getInstagram(url) {
-        $.ajax({
-            method: "GET",
-            url: url,
-            dataType: "jsonp",
-            jsonp: "callback",
-            jsonpCallback: "jsonpcallback",
-            success: function (data) {
-                var output = "";
-                var div = document.getElementById('instagram-div');
-                $.each(data.data, function (i, item) {
-                    output += '<div class="col-md-6 bottom-margin"><img src="' + item.images.standard_resolution.url + '" class="instagram_image"/></div>';
-
-                });
-                div.innerHTML = output;
-            }
-        });
-    }
-    var ready;
-    ready = function() {
-        $(document).ready(function(){
-            $(function() {
-                var $cn_list 	= $('#cn_list');
-                var $items 		= $cn_list.find('.cn_item');
-                var $cn_preview = $('#cn_preview');
-                var current		= 1;
-                $items.each(function(i){
-                    var $item = $(this);
-                    $item.data('idx',i+1);
-
-                    $item.bind('click',function(){
-                        var $this 		= $(this);
-                        $cn_list.find('.selected').removeClass('selected');
-                        $this.addClass('selected');
-                        var idx			= $(this).data('idx');
-                        var $current 	= $cn_preview.find('.cn_content:nth-child('+current+')');
-                        var $next		= $cn_preview.find('.cn_content:nth-child('+idx+')');
-                        $current.addClass('cn_content_invisible')
-                        $next.removeClass('cn_content_invisible');
-                        current = idx;
-                    });
-                });
-
-            });
-            getInstagram('https://api.instagram.com/v1/tags/isfit2015/media/recent?client_id=802d634befd6476c80cc18dbee1ce8e0&count=4');
-        });
-    };
-
-    $(document).ready(ready);
-    $(document).on('page:load', ready);
-
-</script>

@@ -1,0 +1,48 @@
+function getInstagram(url) {
+    $.ajax({
+        method: "GET",
+        url: url,
+        dataType: "jsonp",
+        jsonp: "callback",
+        jsonpCallback: "jsonpcallback",
+        success: function (data) {
+            var output = "";
+            var div = document.getElementById('instagram-div');
+            $.each(data.data, function (i, item) {
+                output += '<div class="col-md-6 bottom-margin"><img src="' + item.images.standard_resolution.url + '" class="instagram_image"/></div>';
+
+            });
+            div.innerHTML = output;
+        }
+    });
+}
+var ready;
+ready = function() {
+        $(function() {
+            var $cn_list 	= $('#cn_list');
+            var $items 		= $cn_list.find('.cn_item');
+            var $cn_preview = $('#cn_preview');
+            var current		= 1;
+            $items.each(function(i){
+                var $item = $(this);
+                $item.data('idx',i+1);
+
+                $item.bind('click',function(){
+                    var $this 		= $(this);
+                    $cn_list.find('.selected').removeClass('selected');
+                    $this.addClass('selected');
+                    var idx			= $(this).data('idx');
+                    var $current 	= $cn_preview.find('.cn_content:nth-child('+current+')');
+                    var $next		= $cn_preview.find('.cn_content:nth-child('+idx+')');
+                    $current.addClass('cn_content_invisible')
+                    $next.removeClass('cn_content_invisible');
+                    current = idx;
+                });
+            });
+
+        });
+        getInstagram('https://api.instagram.com/v1/tags/tradeyourideas/media/recent?client_id=802d634befd6476c80cc18dbee1ce8e0&count=4');
+};
+
+$(document).ready(ready);
+$(document).on('page:load', ready);

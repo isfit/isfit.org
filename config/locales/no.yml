@@ -163,10 +163,15 @@
     more: "Flere saker"
     header: "Siste nyheter"
   participant:
+    apply: 'Søk som deltaker'
     must_match_passport: 'Navnet må stemme overens med navnet i passet ditt'
     address_hint: ''
     country_code: 'Husk landskoden'
     travel_amount_hint: 'Beløpet du søker om (maksimum 3000 USD)'
+  ambassadors:
+    apply: 'Bli ambassadør'
+  volunteers:
+    apply: 'Søk på posisjon som frivillig'
   position:
     no_new_positions: "Vi har dessverre ingen opptak for tiden, men følg med på nettsiden for nye oppdateringer"
     new_positions: "ISFiT har for øyeblikket opptak på følgende stillinger"

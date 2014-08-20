@@ -127,10 +127,15 @@ en:
     more: "More news"
     header: "Latest news"
   participant:
+    apply: 'Apply as participant'
     must_match_passport: 'Name must match passport name'
     address_hint: 'Hint for the address?'
     country_code: 'Add the country code'
     travel_amount_hint: 'Amount of money that you are applying for(maximum $3000)'
+    ambassadors:
+      apply: 'Become an ambassador'
+    volunteers:
+      apply: 'Apply for volunteer position'
   position:
     no_new_positions: "We do not currently have any open positions for volunteers. Please check back later."
     new_positions: "Currently ISFiT has admissions for the following positions"
