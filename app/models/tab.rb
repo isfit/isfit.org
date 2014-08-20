@@ -11,7 +11,7 @@ class Tab < ActiveRecord::Base
   		self.slug = self.name_en.parameterize
   	end
   end
- 	def to_param
-  	"#{id} #{name_no}".parameterize
-	end
+  def to_param
+   	name_en.parameterize
+  end
 end

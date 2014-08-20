@@ -55,23 +55,30 @@
 });*/
 
 ready = function () {
-  console.log("hei");
-  $('ul.nav-left li a').bind('click', function() {
-    console.log("HALLA");
-    var link = $(this).attr('href');
-    var posi = $(link).offset().top - 54;
-    $('body,html').animate({scrollTop:posi},700);
+
+
+
+  $('ul.nav-left li a[href^="#"]').on('click', function(e) {
+    e.preventDefault();
+    var target = this.hash,
+    $target = $(target);
+
+    $('html, body').stop().animate({
+          'scrollTop': $target.offset().top - 54
+    }, 300, 'swing', function () {
+          window.location.hash = target;
+      });
     return false;
   });
   //you know the position.
   $(window).scroll(function () { 
-    if ($(window).scrollTop() > 99) {
-      $('.navbar').addClass('navbar-fixed-top');
+    if ($(window).scrollTop() > $(".header").height()) {
+      $('.navbar-top').addClass('navbar-fixed-top');
       $("body").css("padding-top", 54);
     }
     if ($(window).scrollTop() < 100) {
       $("body").css("padding-top", 0);
-      $('.navbar').removeClass('navbar-fixed-top');
+      $('.navbar-top').removeClass('navbar-fixed-top');
     }
   });
 
@@ -79,14 +86,33 @@ ready = function () {
   $('body').scrollspy({
     offset: 200
   });
+  var active_link_clone   = $('.navbar .nav.navbar-nav .current').clone(true);
+  change_subnavbar_behaviour();
+  $(window).resize(function() {
+    change_subnavbar_behaviour();
+  });
+
+  function change_subnavbar_behaviour() {
+    var active_link = $('.navbar .nav.navbar-nav .current');
+      if ($('.navbar-left').length) {
+        if ($(window).innerWidth() < 1300) {
+          if (!active_link.hasClass('appended')) {
+            $('.navbar-left div').html()
+            active_link.append($('.navbar-left').html());
+            active_link.addClass('appended');
+          }
+        }
+        else {
+          active_link.html(active_link_clone.html());
+          active_link.removeClass('appended');
+        }
+      }
+    }
 }
 $(document).ready(ready)
 $(document).on('page:load', ready)
 
 $(document).ready(function() {
-  //change the integers below to match the height of your upper dive, which I called
-  //banner.  Just add a 1 to the last number.  console.log($(window).scrollTop())
-  //to figure out what the scroll position is when exactly you want to fix the nav
-  //bar or div or whatever.  I stuck in the console.log for you.  Just remove when
+
 
 });

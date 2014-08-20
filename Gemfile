@@ -59,3 +59,6 @@ gem 'bluecloth'
 #nice icons
 gem 'font-awesome-sass'
 
+#nice urls
+gem 'friendly_id'
+
