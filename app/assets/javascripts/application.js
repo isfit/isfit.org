@@ -72,7 +72,7 @@ ready = function () {
   });
   //you know the position.
   $(window).scroll(function () { 
-    if ($(window).scrollTop() > 99) {
+    if ($(window).scrollTop() > $(".header").height()) {
       $('.navbar-top').addClass('navbar-fixed-top');
       $("body").css("padding-top", 54);
     }

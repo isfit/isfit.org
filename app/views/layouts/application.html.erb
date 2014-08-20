@@ -9,7 +9,7 @@
 <body>
 
 	<div class="header">
-		<%= link_to image_tag("LogoIsfit2.png", class: "brand"), root_path %>
+		<%= link_to image_tag("headerlogo.png", class: "brand"), root_path %>
 	</div>
 
 	<nav class="navbar navbar-default navbar-top" role="navigation">
@@ -30,19 +30,19 @@
 			<div class="collapse navbar-collapse" id="collapsemenu">
 				<ul class="nav navbar-nav">
 					<% tabs.each do |p| %>
-						<%= nav_link p.name, p.path, p.id %>
+						<%= nav_link p.name, p.path, p.id, p %>
 					<% end %>
 				</ul>
 				<ul class="nav navbar-nav ul-navbar-logo">
 
 					<li class="navbar-logos">			
 						<%= link_to root_path do %>
-							<i class="fa fa-info fa-custom-size"></i>						
+							<i class="fa fa-info-circle fa-custom-size"></i>						
 						<% end %>
 					</li>
 					<li class="navbar-logos">			
 						<%= link_to root_path do %>
-							<i class="fa fa-phone fa-custom-size"></i>
+							<i class="fa fa-phone-square fa-custom-size"></i>
 						<% end %>
 					</li>
 										<li class="navbar-logos">			
@@ -62,13 +62,13 @@
 	</div>
 	<div class="footer">
 		<%= link_to "https://www.facebook.com/ISFiTNorway" do %>
-		<span class="facebook-logo"></span>
+		<i class="fa fa-facebook-square fa-custom-size"></i>
 		<% end %>
 		<%= link_to "https://twitter.com/ISFiT" do %>
-		<span class="twitter-logo"></span>
+		<i class="fa fa-twitter-square fa-custom-size"></i>
 		<% end %>
 		<%= link_to "http://vimeo.com/user12652193" do %>
-		<span class="vimeo-logo"></span>
+		<i class="fa fa-vimeo-square fa-custom-size"></i>
 		<% end %>
 		<p>
 			Redaktør: Simen Sundsbø, headofeditorial[at]isfit.no. <br />

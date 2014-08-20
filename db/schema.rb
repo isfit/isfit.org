@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140811162530) do
+ActiveRecord::Schema.define(version: 20140820185629) do
 
   create_table "alumni_reservations", force: true do |t|
     t.string   "firstname"
@@ -324,6 +324,15 @@ ActiveRecord::Schema.define(version: 20140811162530) do
     t.boolean "deleted",    default: false, null: false
   end
 
+  create_table "pages_tabs", id: false, force: true do |t|
+    t.integer  "id",         default: 0, null: false
+    t.integer  "page_id"
+    t.integer  "tab_id"
+    t.integer  "order"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
   create_table "participants", force: true do |t|
     t.datetime "registered_time",                                        null: false
     t.datetime "checked_in"
@@ -473,13 +482,14 @@ ActiveRecord::Schema.define(version: 20140811162530) do
   create_table "tabs", force: true do |t|
     t.string   "name_en"
     t.string   "name_no"
-    t.string   "tag"
     t.integer  "order"
     t.string   "icon"
     t.boolean  "deleted"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "path"
+    t.string   "tag_no"
+    t.string   "tag_en"
   end
 
   create_table "workshops", id: false, force: true do |t|
