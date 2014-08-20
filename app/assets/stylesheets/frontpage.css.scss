@@ -69,13 +69,12 @@
 
 .cn_wrapper h1{
   font-size:20px;
-  /*text-transform:uppercase;*/
 }
 .cn_wrapper h2{
   font-size:16px;
   border-bottom:1px solid #000;
   padding-bottom:4px;
-  text-transform:uppercase;
+  color: #EFAB44;
   margin-top: 0px;
 }
 .cn_preview, .cn_list{
@@ -103,34 +102,35 @@
   left:8px;
   font-size:11px;
   padding:1px 3px;
-  background:#ccc;
-
-  color:#000;
-
+  background:#EFAB44;
+  color:#000000;
+}
+.cn_category a{
+  color:#000000;
 }
 .cn_content p{
-  height:57px;
   margin-top:2px;
   overflow:hidden;
 }
+.cn_content h1{
+  color: #EFAB44;
+}
 a.cn_more{
-  padding: 4px 0px;
-  left:0px;
-  bottom:0px;
+  padding: 4px 2px;
   width:236px;
   color:#fff;
   text-align:center;
   font-size:12px;
   letter-spacing:1px;
   text-transform:uppercase;
-  text-decoration: none;
-
   outline:none;
-  cursor:pointer;
   background-color: #0099CC;
 }
 a.cn_more:hover{
   color: #011c44;
+}
+.instagram_image{
+  width: 100%;
 }
 .cn_item{
 
@@ -142,8 +142,6 @@ a.cn_more:hover{
   padding:5px;
   white-space: nowrap;
   border-left:2px solid #0099CC;
-  /*margin:0px 0px 0px 0px*/;
-
   background:#FFFFFF;
 }
 .no_padding{
@@ -157,15 +155,6 @@ a.cn_more:hover{
   background-color: #f5f5f5;
   border-left:2px solid #EFAB44;
 }
-.cn_item:hover h2,
-.cn_list .selected h2,
-.cn_item:active h2{
-}
-.cn_item:hover p,
-.cn_list .selected p,
-.cn_item:active p{
-
-}
 .cn_item:active {
   color: #011c44;;
 }
@@ -178,17 +167,9 @@ a.cn_more:hover{
   display:none;
 }
 
-.nav-left > li.active {
-  border-left:2px solid #EFAB44;
-}
-.nav-left > li {
-  border-left:2px solid #0099CC;
-}
-
 .top-margin{
   margin-top: 30px;
 }
-
 .bottom-margin{
   margin-bottom:20px;
 }
