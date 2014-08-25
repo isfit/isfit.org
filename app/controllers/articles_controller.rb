@@ -1,6 +1,4 @@
 class ArticlesController < ApplicationController
-
-  
   # GET /articles
   # GET /articles.xml
 
@@ -24,11 +22,12 @@ class ArticlesController < ApplicationController
   # GET /articles/all
   # GET /articles/all.xml
   def all
-    @articles = Article.find(:all, :conditions=>"(show_article <='"+Time.now.strftime("%Y-%m-%d %H:%M:%S")+"' OR show_article IS NULL) AND deleted='0'AND list='1'", :order => "weight DESC")
-    if Language.to_s =="en"
-      @articles.reject!{|x| x.title_en == "" }
+    #@articles = Article.find(:all, :conditions=>"(show_article <='"+Time.now.strftime("%Y-%m-%d %H:%M:%S")+"' OR show_article IS NULL) AND deleted='0'AND list='1'", :order => "weight DESC")
+
+    if I18n.locale.to_s =="en"
+      @articles = Article.where("(show_article <='"+Time.now.strftime("%Y-%m-%d %H:%M:%S")+"' OR show_article IS NULL) AND deleted='0'AND list='1'").all
     else
-      @articles.reject!{|x| x.title_no == "" }
+      @articles = Article.where("(show_article <='"+Time.now.strftime("%Y-%m-%d %H:%M:%S")+"' OR show_article IS NULL) AND deleted='0'AND list='1'").all
     end
     
     @articles = @articles.paginate(:page => params[:page], per_page: 10)

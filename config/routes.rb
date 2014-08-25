@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get 'test' => "frontpage#frontpage_site"
   get 'galla' => "frontpage#frontpage_site"
   get 'halla' => "frontpage#frontpage_site"
+  get 'articles/all', controller: "articles", action: "all"
   resources :articles
   resources :tabs, except: :index
   #get "tabs/:page_slug", controller: "tabs", action: "show"
