@@ -1,6 +1,6 @@
 module ApplicationHelper
 	def tabs
-		Tab.all.order(:order)
+		Tab.all.order(:weight)
 	end
 	def nav_link(link_text, link_path, tab_id, tab)
 		if(link_path.eql?('tabs'))

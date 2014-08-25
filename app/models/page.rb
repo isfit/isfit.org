@@ -1,6 +1,6 @@
 class Page < ActiveRecord::Base
 	self.primary_key = :id
-	has_and_belongs_to_many :tabs
+	belongs_to :tabs
 	def title
 		I18n.locale.to_s.eql?("no") ? self.title_no : self.title_en
 	end
