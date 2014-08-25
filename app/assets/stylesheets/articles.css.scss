@@ -1,3 +1,41 @@
 // Place all the styles related to the Articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.article-image {
+}
+.article-image img {
+  width:100%;
+}
+.article {
+  h1 {
+    font-size: 3.5em;
+    line-height: 1.5em;
+    color: #EFAB44;
+  }
+  #page-ingress > p > img {
+    width: 80%;
+    display: block;
+  }
+
+  #page-ingress p {
+    font-size: 1.2em;
+    line-height: 1.3em;
+  }
+  #page-ingress > p > small {
+    font-size: 0.8em;
+    line-height: 1.3em;
+  }
+  #date {
+    float: right;
+  }
+  h2, h3, h4, h5, h6 {
+    line-height: 2em;
+    color: #EFAB44;
+  }
+}
+
+
+p {
+  line-height: 1.5em;
+}
+

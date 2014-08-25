@@ -1,0 +1,22 @@
+<div class="well">
+
+  <h1><%= t('article.header') %></h1>
+
+  <% @articles.each do |article| %>
+
+      <a href="<%=article_path(article, :tab=>params[:tab])%>" style="margin: 0; padding: 0;">
+
+            <%= image_tag 'placeholder0.jpg' %>
+        <%= article.ingress%>
+      </a>
+  <%end%>
+
+  <div style="margin-top: 2em;">
+    <div class="pagination pagination-centered">
+      <ul>
+        <%= will_paginate @articles, :container => false, renderer:  BootstrapPagination::Rails  %>
+      </ul>
+    </div>
+  </div>
+
+</div>

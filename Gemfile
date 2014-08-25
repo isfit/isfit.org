@@ -62,3 +62,6 @@ gem 'font-awesome-sass'
 #nice urls
 gem 'friendly_id'
 
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
+gem 'will_paginate-bootstrap'
