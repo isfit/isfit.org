@@ -19,4 +19,6 @@ class TabsController < ApplicationController
       #return
     #end
 	end
+	def show_tab_page
+	end
 end
