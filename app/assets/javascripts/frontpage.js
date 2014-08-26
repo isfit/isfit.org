@@ -34,12 +34,34 @@ ready = function() {
                     var idx			= $(this).data('idx');
                     var $current 	= $cn_preview.find('.cn_content:nth-child('+current+')');
                     var $next		= $cn_preview.find('.cn_content:nth-child('+idx+')');
-                    $current.addClass('cn_content_invisible')
+                    $current.addClass('cn_content_invisible');
                     $next.removeClass('cn_content_invisible');
                     current = idx;
                 });
             });
 
+        });
+        $(function(){
+            var $video_list     = $('#video_list');
+            var $items          = $video_list.find('.video_item');
+            var $show_video     = $('#show_video');
+            var current         = 1;
+            $items.each(function(i){
+               var $item = $(this);
+                $item.data('idx', i+1);
+
+                $item.bind('click',function(){
+                    var $this       = $(this);
+                    $video_list.find('.selected_video').removeClass('selected_video');
+                    $this.addClass('selected_video');
+                    var idx         = $(this).data('idx');
+                    var $current    = $show_video.find('.video_content:nth-child(' + current + ')');
+                    var $next       = $show_video.find('.video_content:nth-child(' + idx + ')');
+                    $current.addClass('video_content_invisible');
+                    $next.removeClass('video_content_invisible');
+                    current = idx;
+                });
+            });
         });
         getInstagram('https://api.instagram.com/v1/tags/tradeyourideas/media/recent?client_id=802d634befd6476c80cc18dbee1ce8e0&count=4');
 };

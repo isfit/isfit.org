@@ -97,11 +97,21 @@
   width:100%;
   right:6px;
 }
+.show_video{
+  width:100%;
+}
 .cn_content{
   width:100%;
   background-color:#FFFFFF;
 }
+.video_content{
+  width:100%;
+}
 .cn_content_invisible{
+  visibility: hidden;
+  display: none;
+}
+.video_content_invisible{
   visibility: hidden;
   display: none;
 }
@@ -160,6 +170,12 @@ a.cn_more:hover{
   border-left:2px solid #0099CC;
   background:#FFFFFF;
 }
+.video_item{
+
+}
+.selected_video{
+  color:blue;
+}
 .no_padding{
   padding-right: 0px !important;
   padding-left: 0px !important;
@@ -179,6 +195,9 @@ a.cn_more:hover{
   height:29px;
   padding-top:2px;
   overflow:hidden;
+}
+.video_list {
+  height: 20px;
 }
 .cn_page{
   display:none;
