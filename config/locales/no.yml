@@ -34,6 +34,7 @@
       photos: 'Foto'
       archive: 'Arkiv'
       galleries: 'Galleri'
+      read_more: 'Les mer'
     positions:
       main: 'Opptak'
       info: 'Kontakt styret'
