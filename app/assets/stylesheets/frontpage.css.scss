@@ -43,22 +43,26 @@
 .orange-well{
   display:block;
   min-height: 20px;
-  padding: 19px;
+  padding: 14px;
   margin-bottom: 20px;
   background-color: #EFAB44;
   border: 1px solid #f5f1f1 ;
   border-radius: 0;
   color: #FFFFFF;
+  font-size: 1.1em;
+  font-weight: bold;
 }
 .blue-well{
   display:block;
   min-height: 20px;
-  padding: 19px;
+  padding: 14px;
   margin-bottom: 20px;
   background-color: #0099CC;
   border: 1px solid #f5f1f1 ;
   border-radius: 0;
   color: #FFFFFF;
+  font-size: 1.1em;
+  font-weight: bold;
 }
 .blank-well{
   min-height: 20px;
@@ -93,16 +97,38 @@
   width:100%;
   right:6px;
 }
+.show_video{
+  width:100%;
+}
 .cn_content{
   width:100%;
+  height: 596px;
   background-color:#FFFFFF;
+  overflow: hidden;
+}
+.read_more {
+  /*
+  position:absolute;
+  bottom:0px;
+  */
+  width: 100%;
+}
+.video_content{
+  width:100%;
 }
 .cn_content_invisible{
   visibility: hidden;
   display: none;
 }
+.video_content_invisible{
+  visibility: hidden;
+  display: none;
+}
 .cn_content img{
   width:100%;
+}
+.add_top_margin{
+  margin-top:4px;
 }
 .cn_date{
   bottom:30px;
@@ -156,6 +182,13 @@ a.cn_more:hover{
   border-left:2px solid #0099CC;
   background:#FFFFFF;
 }
+.video_item{
+  cursor: pointer;
+  font-size: 1em;
+}
+.selected_video{
+  color: #0099CC;
+}
 .no_padding{
   padding-right: 0px !important;
   padding-left: 0px !important;
@@ -176,6 +209,9 @@ a.cn_more:hover{
   padding-top:2px;
   overflow:hidden;
 }
+.video_list {
+  height: 20px;
+}
 .cn_page{
   display:none;
 }
@@ -193,4 +229,15 @@ a.cn_more:hover{
   font-size: 3.5em;
   line-height: 1.5em;
   color: #EFAB44;
+}
+div.show_video:hover input
+{
+  display: block;
+}
+
+div.show_video input {
+  position:absolute;
+  top:0;
+  left:0;
+  display:none;
 }

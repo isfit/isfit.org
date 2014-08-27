@@ -23,11 +23,11 @@ class ArticlesController < ApplicationController
   # GET /articles/all.xml
   def all
     #@articles = Article.find(:all, :conditions=>"(show_article <='"+Time.now.strftime("%Y-%m-%d %H:%M:%S")+"' OR show_article IS NULL) AND deleted='0'AND list='1'", :order => "weight DESC")
-
+    #Includes Blog
     if I18n.locale.to_s =="en"
-      @articles = Article.where("(show_article <='"+Time.now.strftime("%Y-%m-%d %H:%M:%S")+"' OR show_article IS NULL) AND deleted='0'AND list='1'").all
+      @articles = Article.where("(show_article <='"+Time.now.strftime("%Y-%m-%d %H:%M:%S")+"' OR show_article IS NULL) AND deleted='0'AND list='1' AND title_en != ''").order("id DESC").all
     else
-      @articles = Article.where("(show_article <='"+Time.now.strftime("%Y-%m-%d %H:%M:%S")+"' OR show_article IS NULL) AND deleted='0'AND list='1'").all
+      @articles = Article.where("(show_article <='"+Time.now.strftime("%Y-%m-%d %H:%M:%S")+"' OR show_article IS NULL) AND deleted='0'AND list='1' AND title_no != ''").order("id DESC").all
     end
     
     @articles = @articles.paginate(:page => params[:page], per_page: 10)
@@ -56,8 +56,13 @@ class ArticlesController < ApplicationController
   # GET /articles/1
   # GET /articles/1.xml
   def show
-    #@article = Article.where(:id=>params[:id]).where("(show_article <='"+Time.now.strftime("%Y-%m-%d %H:%M:%S")+"' OR show_article IS NULL) AND deleted='0'AND list='1'").first
-    @article = Article.find(params[:id])
+    @article = Article.where(:id=>params[:id]).where("(show_article <='"+Time.now.strftime("%Y-%m-%d %H:%M:%S")+"' OR show_article IS NULL) AND deleted='0'AND list='1'").first
+    if !@article
+      flash[:alert] = 'Article not found'
+      redirect_to articles_all_path
+      return
+    end
+    #@article = Article.find(params[:id])
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @article }

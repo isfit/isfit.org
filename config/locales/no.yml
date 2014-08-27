@@ -20,7 +20,10 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 "no":
-
+  will_paginate:
+    previous_label: "Forrige"
+    next_label: "Neste"
+    page_gap: "…"
   footer:
     editor: "Redaktør"
     copyright: Alt av skriftlig materiale og ISFiT-logoen er kopibeskyttet Stiftelsen ISFiT.
@@ -31,6 +34,7 @@
       photos: 'Foto'
       archive: 'Arkiv'
       galleries: 'Galleri'
+      read_more: 'Les mer'
     positions:
       main: 'Opptak'
       info: 'Kontakt styret'

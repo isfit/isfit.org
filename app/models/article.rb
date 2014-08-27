@@ -18,7 +18,7 @@ class Article < ActiveRecord::Base
       articles = articles.where("title_no > ''")
     end
 
-    @articles = articles.order("weight DESC").limit(6)
+    @articles = articles.order("weight DESC").limit(7)
   end
 
   def self.blog_articles language

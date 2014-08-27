@@ -1,4 +1,8 @@
 en:
+  will_paginate:
+    previous_label: "Previous"
+    next_label: "Next"
+    page_gap: "…"
   footer:
     editor: "Editor in Chief"
     copyright: All written material and the ISFiT logo is copyrighted the ISFiT Foundation © 2013.
@@ -9,6 +13,7 @@ en:
       photos: 'Photos'
       archive: 'Archive'
       galleries: 'Galleries'
+      read_more: 'Read more'
     theme:
       main: 'Theme 2015'
       globaltrade: 'Global Trade'
