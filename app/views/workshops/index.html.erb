@@ -1,0 +1,21 @@
+<div class="workshops container">
+	<h1>ISFiT Workshops 2015</h1><p><a href="http://www.isfit.org/pages/53">Read more about the idea behind the workshops</a></p>
+	<div class="col-md-6">
+		<% @workshops.each_with_index do |workshop, i| %>
+		<% if i.even? %>
+			<div class="workshop-field workshop-field-0" rank="<%=workshop.rank%>">
+		<% else %>
+			<div class="workshop-field workshop-field-1" rank="<%=workshop.rank%>">
+		<% end %>
+			<p><%= link_to workshop.name , workshop_path(workshop.id), :class => "workshopclass" %></p>
+			<% if i == 8 %>
+					</div>
+				</div>
+				<div class="col-md-6">
+			<% else %>
+				</div>
+			<% end %> 
+		<% end %>
+	</div>
+</div>
+

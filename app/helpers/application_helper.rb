@@ -49,5 +49,16 @@ module ApplicationHelper
   def yt_tag(text)
     text.gsub!(/##yt (\w+) yt##/, "<iframe id='ytplayer' type='text/html' width='580' height='302' src='http://www.youtube.com/embed/\\1?showinfo=0&controls=0' frameborder='0' allowfullscreen></iframe>")
   end
+  def is_contact_or_info tab
+  	name = tab.name
+  	if name.eql?("Contact") || name.eql?("Kontakt")
+  		@contact_tab = tab
+  		return true
+  	elsif name.eql?("Information") || name.eql?("Informasjon")
+  		@info_tab = tab
+  		return true
+  	end	
+  	return false
+  end
 
 end

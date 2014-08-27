@@ -42,6 +42,7 @@
 .navbar-left > ul > li > a {
   color: #000000;
 }
+
 .sidebar .nav {
   text-align: left;
   list-style: none;
@@ -63,8 +64,9 @@
     margin-top: 30px;
     text-align: center;
   }
-  .nav-left{
-  }
+.navbar-left{
+  display:none;
+}
   .appended .nav-left > li > a{
     color: #FFFFFF;
   }
@@ -73,4 +75,11 @@
     background-color: #0099CC;
 
   }
+  .nav-left > li.active {
+  border-left:2px solid #EFAB44;
+}
+.nav-left > li {
+  border-left:2px solid #0099CC;
+}
+
 }

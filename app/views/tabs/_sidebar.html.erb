@@ -1,15 +1,17 @@
 <div class="col-md-3">
 	<div class="sidebar">
 		<nav class="navbar navbar-default navbar-left" role="navigation">
+			<div class="div-sidebar collapse navbar-collapse" id="collapsemenu">
 				<ul class="nav nav-left">
 					<% @pages.each_with_index do |page, i| %>
 					<%if i.eql?(0) %>
-					<li><a href="#<%= i %>"></i><%= page.title %></a></li>
+					<li class="sidebar-link"><a href="#<%= i %>"></i><%= page.title %></a></li>
 					<% else %>
-					<li><a href="#<%= i %>"></i><%= page.title %></a></li>
+					<li class="sidebar-link"><a href="#<%= i %>"></i><%= page.title %></a></li>
 					<% end %>
 					<% end %>
 				</ul>
+			</div>
 		</nav>
 	</div>
 </div>
