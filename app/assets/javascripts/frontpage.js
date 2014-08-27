@@ -62,6 +62,22 @@ ready = function() {
                     current = idx;
                 });
             });
+            var $left_button    = $('#button_left');
+            var $right_button   = $('#button_right');
+            $left_button.bind('click', function(){
+               slide(-1);
+            });
+            $right_button.bind('click', function(){
+                slide(1);
+            });
+            function slide(places){
+                var idx         = current + places;
+                var $current    = $show_video.find('.video_content:nth-child(' + current + ')');
+                var $next       = $show_video.find('.video_content:nth-child(' + idx + ')');
+                $current.addClass('video_content_invisible');
+                $next.removeClass('video_content_invisible');
+                current = idx;
+            }
         });
         getInstagram('https://api.instagram.com/v1/tags/tradeyourideas/media/recent?client_id=802d634befd6476c80cc18dbee1ce8e0&count=4');
 };

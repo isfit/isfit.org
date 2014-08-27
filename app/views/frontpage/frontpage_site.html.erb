@@ -1,23 +1,106 @@
 <div class="container top-margin">
   <section id="intro">
     <div class="row">
-      <div class="col-md-4" style="margin-right: -50px">
-        <div class="row" style="padding-left:17px; padding-right: 17px">
-          <div id="show_video" class="show_video">
-            <input type="button" value="<" />
-            <div class="video_content">
-                <iframe width="100%" height="345px" src="//www.youtube.com/embed/7aSb6mOMR9M?list=PL8EFD841AD7BB062B" frameborder="0" allowfullscreen></iframe>
+      <div class="col-md-8 no_padding_left">
+
+        <div class="cn_wrapper">
+          <div class="col-md-6 no_padding_left">
+            <div id="cn_list" class="cn_list">
+              <div class="cn_page" style="display:block;">
+                <% @articles.each_with_index do |article, i| %>
+                    <% if i == 0%>
+                        <div class="cn_item selected">
+                    <% else %>
+                        <div class="cn_item">
+                    <% end %>
+                    <h2><%=article.title%></h2>
+                    <p><%=truncate(article.ingress, length: 50)%></p>
+                    </div>
+                <% end %>
+                </div>
+
+              </div>
+              <a href="articles/all" class="orange-well add_top_margin">
+                <%= t("tabs.articles.archive") %> <i class="fa fa-archive"></i>
+              </a>
+
             </div>
-            <div class="video_content video_content_invisible">
-              <iframe src="//player.vimeo.com/video/84474484" width="100%" height="345px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+          <div class="col-md-6 no_padding">
+            <div id="cn_preview" class="cn_preview">
+              <div class="col-md-12">
+                <% @articles.each_with_index do |article, i| %>
+                    <% if i == 0%>
+                        <div class="cn_content">
+                    <% else %>
+                        <div class="cn_content cn_content_invisible">
+                    <% end %>
+                    <%= image_tag ('placeholder' + i.to_s + '.jpg') %>
+                    <h1 style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis"><%=article.title%></h1>
+                    <span class="cn_date"><%=article.created_at%></span>
+                    <span class="cn_category"><%= article.byline.html_safe%></span>
+                    <p style="height: 102px; margin-bottom: 2px"><%=article.ingress%></p>
+                    <div class="read_more">
+                      <%= link_to t("tabs.articles.read_more"), article_path(article), class: 'blue-well'%>
+                    </div>
+                    </div>
+
+                <% end %>
+                </div>
+              </div>
             </div>
-            <div class="video_content video_content_invisible">
-              <iframe width="100%" height="345px" src="//www.youtube.com/embed/hAd0jVZOJ8s?list=UUSpylPithNDro4OIieIrfRA" frameborder="0" allowfullscreen></iframe>
+
+
+
+
             </div>
+          </div>
+          <div class="col-md-4 no_padding_right">
+            <div class="row">
+              <div class="col-md-12 no_padding_right">
+                <%= link_to t("volunteers.apply"), '#', class:"orange-well"%>
+              </div>
             </div>
+            <div class="row">
+              <div class="col-md-12 no_padding_right">
+                <%= link_to t("ambassadors.apply"), '#', class:"blue-well"%>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12 no_padding_right">
+                <%= link_to t("participant.apply"), '#', class:"orange-well"%>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12 no_padding_right">
+              <h3 style="margin-top: 20px; margin-bottom: 20px; margin-left: 25px"><i class="fa fa-twitter"></i> #isfit2015 #tradeyourideas</h3>
+              <a width="100%" height="300px" class="twitter-timeline" href="https://twitter.com/search?q=%23isfit+%7C%7C+%23tradeyourideas" data-widget-id="503989856049983488">Tweets about "#isfit || #tradeyourideas"</a>
+              <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+              </div>
+            </div>
+
+
+          </div>
+
         </div>
-        <div class="row" style="padding-bottom: 17px">
-            <div id="video_list" class="video_item" style="text-align: center">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="row video_wrapper">
+              <span id="button_left" class="button_left"><i class="fa fa-arrow-circle-left"></i></span>
+              <span id="button_right" class="button_right"><i class="fa fa-arrow-circle-right"></i></span>
+              <div id="show_video" class="show_video">
+                <div class="video_content">
+                  <iframe width="100%" height="555px" src="//www.youtube.com/embed/7aSb6mOMR9M?list=PL8EFD841AD7BB062B" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="video_content video_content_invisible">
+                  <iframe src="//player.vimeo.com/video/84474484" width="100%" height="345px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                </div>
+                <div class="video_content video_content_invisible">
+                  <iframe width="100%" height="345px" src="//www.youtube.com/embed/hAd0jVZOJ8s?list=UUSpylPithNDro4OIieIrfRA" frameborder="0" allowfullscreen></iframe>
+                </div>
+              </div>
+            </div>
+            <div class="row" style="padding-bottom: 17px">
+              <div id="video_list" class="video_item" style="text-align: center">
               <span class="video_item selected_video">
                 <i class="fa fa-circle"></i>
               </span>
@@ -27,97 +110,26 @@
               <span class="video_item">
                 <i class="fa fa-circle"></i>
               </span>
-            </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12">
-          <%= link_to t("volunteers.apply"), '#', class:"orange-well"%>
-            </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12">
-            <%= link_to t("ambassadors.apply"), '#', class:"blue-well"%>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12">
-            <%= link_to t("participant.apply"), '#', class:"orange-well"%>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-8">
-
-        <div class="cn_wrapper">
-          <div class="col-md-6 no_padding">
-            <div id="cn_preview" class="cn_preview">
-              <div class="col-md-12">
-              <% @articles.each_with_index do |article, i| %>
-                  <% if i == 0%>
-                      <div class="cn_content">
-                  <% else %>
-                      <div class="cn_content cn_content_invisible">
-                  <% end %>
-                  <%= image_tag ('placeholder' + i.to_s + '.jpg') %>
-                  <h1 style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis"><%=article.title%></h1>
-                  <span class="cn_date"><%=article.created_at%></span>
-                  <span class="cn_category"><%= article.byline.html_safe%></span>
-                  <p style="height: 102px"><%=article.ingress%></p>
-                    <div class="read_more">
-                  <%= link_to t("tabs.articles.read_more"), article_path(article), class: 'blue-well'%>
-                    </div>
-                  </div>
-
-              <% end %>
-                </div>
               </div>
+
             </div>
 
-            <div class="col-md-6">
-              <div id="cn_list" class="cn_list">
-                <div class="cn_page" style="display:block;">
-                  <% @articles.each_with_index do |article, i| %>
-                  <% if i == 0%>
-                  <div class="cn_item selected">
-                    <% else %>
-                      <div class="cn_item">
-                        <% end %>
-                    <h2><%=article.title%></h2>
-                    <p><%=truncate(article.ingress, length: 50)%></p>
-                  </div>
-                  <% end %>
-                  </div>
-
-                </div>
-                <a href="articles/all" class="orange-well add_top_margin">
-                  <%= t("tabs.articles.archive") %> <i class="fa fa-archive"></i>
-                </a>
-              </div>
-
-              </div>
-              </div>
-        </div>
-        <div class="row hidden-xs hidden-sm">
-          <div class="col-md-6">
-            <div class="blank-well row">
-              <h3 class="col-md-12"><i class="fa fa-instagram fa-2x orange-text"></i> #tradeyourideas</h3>
-              <div id="instagram-div">
-
-              </div>
-            </div>
           </div>
           <div class="col-md-6">
-            <a class="twitter-timeline" href="https://twitter.com/search?q=%23isfit+%7C%7C+%23tradeyourideas" data-widget-id="503989856049983488">Tweets about "#isfit || #tradeyourideas"</a>
-            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+            <h3 style="margin-top:0px; padding-left: 20px"><i class="fa fa-instagram fa-2x orange-text"></i> #tradeyourideas</h3>
+            <div id="instagram-div">
 
-
+            </div>
           </div>
+
         </div>
+
       </div>
 
     </div>
 
   </div>
-  </section>
-  <section id="articles">
+
+
   </section>
 </div>
