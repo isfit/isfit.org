@@ -76,7 +76,7 @@ ready = function () {
       $('.navbar-top').addClass('navbar-fixed-top');
       $("body").css("padding-top", 54);
     }
-    if ($(window).scrollTop() < 100) {
+    if ($(window).scrollTop() < $(".header").height()) {
       $("body").css("padding-top", 0);
       $('.navbar-top').removeClass('navbar-fixed-top');
     }

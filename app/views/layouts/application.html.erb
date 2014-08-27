@@ -1,8 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>NewIsfitOrg</title>
+	<title>ISFiT 2015</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <%= yield :meta %>
+  <meta name="description" content="ISFiT 2015 is the worlds largest international student festival. Trade Your Ideas."/>
+  <meta name="og:description" content="ISFiT 2015 is the worlds largest international student festival. Trade Your Ideas."/>
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
 	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 	<%= csrf_meta_tags %>
@@ -12,10 +18,8 @@
 	<div class="header hidden-xs hidden-sm">
 		<% if norwegian? %>
 			<%= link_to image_tag("http://imgur.com/5tZPjfT.png", class: "brand-no", onmouseover: "this.src='http://imgur.com/kDtmBEx.png'", onmouseout: "this.src='http://imgur.com/5tZPjfT.png'"), root_path %>
-			<%#= link_to image_tag("http://imgur.com/kDtmBEx.png", class: "brand-hover"), root_path %>
 		<% else %>
 			<%= link_to image_tag("http://imgur.com/s5nAsmJ.png", class: "brand-en", onmouseover: "this.src='http://imgur.com/iEtPQmh.png'", onmouseout: "this.src='http://imgur.com/s5nAsmJ.png'"), root_path %>
-			<%#= link_to image_tag("http://imgur.com/iEtPQmh.png", class: "brand-hover"), root_path %>
 		<% end %>
 	</div>
 
@@ -68,6 +72,7 @@
 		<%= yield %>
 	</div>
 	<div class="footer">
+		<p>Connect with us at: </p>
 		<%= link_to "https://www.facebook.com/ISFiTNorway", :target => "_blank" do %>
 		<i class="fa fa-facebook-square fa-custom-size"></i>
 		<% end %>
@@ -78,13 +83,19 @@
 		<i class="fa fa-vimeo-square fa-custom-size"></i>
 		<% end %>
 		<p>
-			Redaktør: Simen Sundsbø, headofeditorial[at]isfit.no. <br/>
-			<%= link_to 'Contact', tab_path('contact') %> | 
-			<%= link_to 'Information', tab_path('information') %>
+			<%= t("footer.editor") %>: Simen Sundsbø, headofeditorial[at]isfit.no. <br/>
+		</p>
+		<p>
+			<%= link_to t("tabs.info.contact"), tab_path('contact') %> | 
+			<%= link_to t("tabs.info.main"), tab_path('information') %>
+		</p>
+		<p>
+			<%= t("footer.copyright") %>
 		</p>
 		<p>
 			&copy ISFiT 2015.
 		</p>
+
 	</div>
 
 </body>
