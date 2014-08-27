@@ -184,6 +184,7 @@ a.cn_more:hover{
 }
 .video_item{
   cursor: pointer;
+  font-size: 1em;
 }
 .selected_video{
   color: #0099CC;
@@ -228,4 +229,15 @@ a.cn_more:hover{
   font-size: 3.5em;
   line-height: 1.5em;
   color: #EFAB44;
+}
+div.show_video:hover input
+{
+  display: block;
+}
+
+div.show_video input {
+  position:absolute;
+  top:0;
+  left:0;
+  display:none;
 }
