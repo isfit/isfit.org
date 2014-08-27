@@ -1,0 +1,30 @@
+<% @isfit_online = get_isfit_online %>
+<section class="tab-page tab-content" id="<%= @global_index + 1 %>" name="<%= @global_index + 1 %>">
+  <header>
+    <h1>
+      ISFiT Online 
+    </h1>
+  </header>
+  <h2>#tradeyourideas</h2>
+  <% if @isfit_online %>
+    <% if not norwegian? %>
+      <%= raw @isfit_online.description %>
+    <% else %>
+      <%= raw @isfit_online.description_no %>
+    <% end %>
+      <%= raw @isfit_online.embed_code %>
+  <% else %>
+    <p>
+      <% if not norwegian? %>
+        The next ISFiT Online will be held on May 9th at 4:00 PM Norwegian time(GMT + 2:00). This will be
+        an oppourtunity for everyone to see what is happening in the
+        ISFiT organization right now, as well as getting you questions
+        answered by the organizers.
+      <% else %>
+        Neste ISFiT Online vil bli holdt 9. mai 16:00 norsk tid. Dette vil bli en mulighet
+        for alle til å se hva som skjer i ISFIT-organisasjonen akkurat nå, i tillegg
+        til å få spørsmålene sine besvart av de frivillige som arrangerer ISFiT.
+      <% end %>
+    </p>
+  <% end %>
+</section>

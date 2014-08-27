@@ -19,6 +19,9 @@ module ApplicationHelper
 
 
 	end
+  def norwegian?
+    I18n.locale.to_s.eql?("no")
+  end
 	def language_logo
 		I18n.locale.to_s.eql?("no") ? "english-logo" : "norwegian-logo" 
 	end
