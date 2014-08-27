@@ -1,3 +1,35 @@
-// Place all the styles related to the workshops controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.workshop-field-1{
+	background-color: #EFAB44;
+	margin-top: 5px;
+	height: 40px;
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.workshop-field-0{
+	background-color: #0099CC;
+	margin-top: 5px;
+	height: 40px;
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.workshop-field > p > a{
+	color: #FFF;
+	font-weight: bold;
+}
+.workshop-field-0{
+	margin-top: 5px;
+	height: 40px;
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.workshops > h1 {
+	color: #EFAB44;
+}
+.hover{
+	background-size: 100% 100%;
+	background-image: url('http://i.imgur.com/VMP9e.jpg');
+}

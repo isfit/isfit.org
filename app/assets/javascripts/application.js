@@ -84,7 +84,8 @@ ready = function () {
 
 
   $('body').scrollspy({
-    offset: 200
+    offset: 200,
+    target: ''
   });
   var active_link_clone   = $('.navbar .nav.navbar-nav .current').clone(true);
   change_subnavbar_behaviour();
@@ -100,11 +101,13 @@ ready = function () {
             $('.navbar-left div').html()
             active_link.append($('.navbar-left').html());
             active_link.addClass('appended');
+            $('body').scrollspy('refresh');
           }
         }
         else {
           active_link.html(active_link_clone.html());
           active_link.removeClass('appended');
+          $('body').scrollspy('refresh');
         }
       }
     }
