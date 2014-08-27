@@ -1,0 +1,49 @@
+<section class="tab-page tab-content" id="<%= @global_index + 1 %>" name="<%= @global_index + 1 %>">
+	<%@workshops = get_workshops %>
+	<header>
+		<h1>
+			ISFiT Workshops 2015
+		</h1>
+	</header>
+	<div class="col-md-6 workshop-list" id="workshop-list">
+		<div class="col-md-6">
+			<% @workshops.each_with_index do |workshop, i| %>
+			<%= link_to workshop_path(workshop.id), :class => "workshop-link" do %>
+			<% if i.even? %>
+				<div class="workshop-field workshop-field-0" rank="<%=workshop.rank%>">
+			<% else %>
+				<div class="workshop-field workshop-field-1" rank="<%=workshop.rank%>">
+			<% end %>
+				<p class="workshopclass"><%= workshop.name %><i class="fa fa-comment-o"></i></p>
+				<% if i == 8 %>
+						</div>
+					</div>
+					<div class="col-md-6">
+				<% else %>
+					</div>
+				<% end %>
+			<% end %>
+			<% end %>
+		</div>
+	</div>
+	<div class="col-md-6 workshop-preview" id="workshop-preview">
+		<% @workshops.each_with_index do |workshop, i| %>
+			<% if i == 0%>
+        <div class="workshop_content">
+					<h1> <%= workshop.name %> </h1>        	
+					<div class="ingress"> <p> <%= workshop.ingress %> </p> </div>
+					<hr>
+					<p><%=raw (truncate(workshop.body, length: 200, separator: ' ', escape: false))  %></p>
+
+        </div>
+      <% else %>
+      	<div class="workshop_content workshop_content_invisible">
+      		<h1> <%= workshop.name %> </h1>
+        	<div class="ingress"> <p> <%= workshop.ingress %> </p> </div>
+        	<hr>
+        	<p><%=raw (truncate(workshop.body, length: 200, separator: ' ', escape: false))  %></p>
+      	</div>
+      <% end %>
+    <% end %>
+  </div>
+</section>

@@ -57,6 +57,79 @@
 .nav-left > li {
   border-left:2px solid #0099CC;
 }
+.workshop_content_invisible{
+  display: none;
+}
+.workshop-picture{
+  width: 100%;
+}
+.workshop-field-1{
+  border-left: 3px solid #EFAB44;
+  margin-top: 5px;
+  height: 40px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.workshop-field-0{
+  border-left: 3px solid #0099CC;
+  margin-top: 5px;
+  height: 40px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.workshop-link{
+  text-decoration:none !important;
+}
+.workshop-field-0 .fa-comment-o {
+  display: none;
+}
+.workshop-field-1 .fa-comment-o {
+  display: none;
+}
+.workshop-field-0:hover .fa-comment-o {
+  color: #FFF;
+  display: inline;
+}
+.workshop-field-1:hover .fa-comment-o {
+  color: #FFF;
+  display: inline;
+}
+.fa-comment-o{
+  margin-left: 3px;
+}
+.workshop-field > p{
+  color: #000;
+  margin-left: 3px;
+}
+.workshop-field-0{
+  margin-top: 5px;
+  height: 40px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.workshops > h1 {
+  color: #EFAB44;
+}
+.workshop-field-0:hover{
+  background-color: #0099CC;
+}
+.workshop-field-1:hover{
+  background-color: #EFAB44;
+
+}
+.workshop-field-0:hover > p{
+  color: #FFF;
+  text-decoration:none;
+}
+.workshop-field-1:hover > p{
+  color: #FFF;
+  text-decoration:none;
+}
+.tab-content img {
+  max-width: 100%;
+}
+
+
 
 @media (max-width: 1300px) {
   .sidebar{

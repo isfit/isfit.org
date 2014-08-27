@@ -1,6 +1,7 @@
 <div class="row" >
 	<div class="container">
 		<div class="col-md-9">
+
 			<% @pages.each_with_index do |page, index| %>
 			<%content_for :head do %>
 			<meta property="og:title" content="<%if page.title%><%=page.title%><%end%>."/>
@@ -12,6 +13,7 @@
 			<meta property="og:description" content="<%=page.ingress%>"/>
 			<%end%>
 			<section class="tab-page tab-content" id="<%= index %>" name="<%= index %>">
+				<%@global_index = index%>
 				<header>
 					<h1>
 						<%= page.title %>
@@ -26,9 +28,13 @@
 					<%=raw format ( page.body ) %>
 				</p>
 			</section>
-
-
 			<%end%>
+			<%if @tab.name_en.eql?("ISFiT 2015") %>
+				<%= render 'workshops' %>
+			<% elsif @tab.name_en.eql?('Be a part of ISFiT') %>
+				<%= render 'isfit_online' %>
+			<% end %>
+
 		</div>
 		<%= render 'sidebar' %>
 	</div>
