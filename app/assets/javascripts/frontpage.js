@@ -80,8 +80,12 @@ ready = function() {
                 {
                     idx = $items.length;
                 }
+
                 var $current    = $show_video.find('.video_content:nth-child(' + current + ')');
                 var $next       = $show_video.find('.video_content:nth-child(' + idx + ')');
+                var $currentIndicator = $items.get(idx - 1);
+                $video_list.find('.selected_video').removeClass('selected_video');
+                $($currentIndicator).addClass('selected_video');
                 $current.addClass('video_content_invisible');
                 $next.removeClass('video_content_invisible');
                 current = idx;
