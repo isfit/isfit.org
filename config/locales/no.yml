@@ -24,6 +24,14 @@
     previous_label: "Forrige"
     next_label: "Neste"
     page_gap: "…"
+  frontpage:
+    button_images:
+      participant: "http://i.imgur.com/TMW7IfD.png"
+      participant_hover: "http://i.imgur.com/8sgeTwh.png"
+      dialog: "http://i.imgur.com/fOVgyBu.png"
+      dialog_hover: "http://i.imgur.com/9FfaHPX.png"
+      volunteer: "http://i.imgur.com/3QXJUbJ.png"
+      volunteer_hover: "http://i.imgur.com/uSbLvIG.png"
   footer:
     editor: "Redaktør"
     copyright: Alt av skriftlig materiale og ISFiT-logoen er kopibeskyttet Stiftelsen ISFiT.

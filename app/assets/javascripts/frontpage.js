@@ -72,6 +72,14 @@ ready = function() {
             });
             function slide(places){
                 var idx         = current + places;
+                if(idx > $items.length)
+                {
+                    idx = 1;
+                }
+                else if(idx <= 0)
+                {
+                    idx = $items.length;
+                }
                 var $current    = $show_video.find('.video_content:nth-child(' + current + ')');
                 var $next       = $show_video.find('.video_content:nth-child(' + idx + ')');
                 $current.addClass('video_content_invisible');
