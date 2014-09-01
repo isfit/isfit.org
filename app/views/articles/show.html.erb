@@ -21,11 +21,12 @@
 </div>
 
     <div class="article-image">
-    <% if @article.frontend_article_image %>
-        <%= image_tag 'placeholder0.jpg' %>
-    <% else %>
+      <% if @article.frontend_article_image %>
+        <%= image_tag @article.frontend_article_image.url(:frontpage_large) %>
+      <% else %>
         <%=image_tag "article_images/"+@article.id.to_s + "_3.jpg"%><br>
-    <% end %>
+      <% end %>
+
       <% if @article.image_credits != ''%>
         <i>Photo:<%=@article.image_credits%></i>
           <% end %>
