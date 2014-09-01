@@ -2,22 +2,25 @@ module ApplicationHelper
 	def tabs
 		Tab.all.order(:weight)
 	end
-	def nav_link(link_text, link_path, tab_id, tab)
+	def nav_link(link_text, link_path, tab_id, tab, index)
 		if(link_path.eql?('tabs'))
-			new_link_path = link_path
-			class_name = current_page?((tab_path(tab))) ? 'current' : 'tabs'
+			new_link_path = link_path      
+      class_name = current_page?((tab_path(tab))) ? 'current' : 'tabs'
+
 			content_tag(:li, :class => class_name) do
 	    	link_to link_text, tab_path(tab)
 	  	end
 		else
 			new_link_path = link_path
-			class_name = current_page?(new_link_path.to_sym) ? 'current' : 'tabs'
+      if index == 0
+			 class_name = current_page?(new_link_path.to_sym) ? 'current first' : 'tabs first'
+      else
+        class_name = current_page?(new_link_path.to_sym) ? 'current' : 'tabs'
+      end
 	  	content_tag(:li, :class => class_name) do
 	    	link_to link_text, new_link_path.to_sym
 	  	end
 		end
-
-
 	end
   def norwegian?
     I18n.locale.to_s.eql?("no")

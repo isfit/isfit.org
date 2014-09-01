@@ -21,7 +21,7 @@
 
               </div>
               <a href="articles/all" class="orange-well add_top_margin">
-                <%= t("tabs.articles.archive") %> <i class="fa fa-archive"></i>
+               <i class="fa fa-archive"> </i> <%= t("tabs.articles.archive") %> 
               </a>
 
             </div>
@@ -40,7 +40,7 @@
                     <span class="cn_category"><%= article.byline.html_safe%></span>
                     <p style="height: 102px; margin-bottom: 2px"><%=article.ingress%></p>
                     <div class="read_more">
-                      <%= link_to t("tabs.articles.read_more"), article_path(article), class: 'blue-well'%>
+                      <%= link_to '<i class="fa fa-share"></i>'.html_safe + " " + t("tabs.articles.read_more"), article_path(article), class: 'blue-well' %>
                     </div>
                     </div>
 
@@ -72,9 +72,22 @@
             </div>
             <div class="row">
               <div class="col-md-12 no_padding_right">
-
+   
               <a width="100%" height="341px" class="twitter-timeline" href="https://twitter.com/search?q=%23isfit+%7C%7C+%23tradeyourideas" data-widget-id="503989856049983488"></a>
-              <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+              <script src="//platform.twitter.com/widgets.js"></script>
+              <script>$ ->
+                twttr.ready ->
+                  renderTimelines()
+                  $(document).on 'page:change', renderTimelines
+
+                  renderTimelines = ->
+                  $('.twitter-timeline').each ->
+                  $container = $(this)
+                  widgetId = $container.data 'widget-id'
+                  widgetOptions = $container.data 'widget-options'
+                  $container.empty()
+                  twttr?.widgets.createTimeline widgetId, $container[0], null, widgetOptions
+              </script>
               </div>
             </div>
 
@@ -82,6 +95,7 @@
           </div>
 
         </div>
+        <hr>
         <div class="row">
           <div class="col-md-6">
             <div class="row video_wrapper">
