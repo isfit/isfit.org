@@ -6,6 +6,31 @@
 .article-image img {
   width:100%;
 }
+.blue-well{
+  display:block;
+  min-height: 20px;
+  padding: 14px;
+  margin-bottom: 20px;
+  background-color: #0099CC;
+  border: 1px solid #f5f1f1 ;
+  border-radius: 0;
+  color: #FFFFFF;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+.twitter-widget-0{
+  width: 100%;
+}
+.no_padding{
+  padding-right: 0px !important;
+  padding-left: 0px !important;
+}
+.no_padding_left{
+  padding-left: 0px !important;
+}
+.no_padding_right{
+  padding-right: 0px !important;
+}
 .article {
   h1 {
     font-size: 3.5em;

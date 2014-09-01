@@ -22,22 +22,19 @@ class ArticlesController < ApplicationController
   # GET /articles/all
   # GET /articles/all.xml
   def all
-    #@articles = Article.find(:all, :conditions=>"(show_article <='"+Time.now.strftime("%Y-%m-%d %H:%M:%S")+"' OR show_article IS NULL) AND deleted='0'AND list='1'", :order => "weight DESC")
-    #Includes Blog
-    if I18n.locale.to_s =="en"
-      @articles = Article.where("(show_article <='"+Time.now.strftime("%Y-%m-%d %H:%M:%S")+"' OR show_article IS NULL) AND deleted='0'AND list='1' AND title_en != ''").order("id DESC").all
-    else
-      @articles = Article.where("(show_article <='"+Time.now.strftime("%Y-%m-%d %H:%M:%S")+"' OR show_article IS NULL) AND deleted='0'AND list='1' AND title_no != ''").order("id DESC").all
-    end
-    
-    @articles = @articles.paginate(:page => params[:page], per_page: 10)
+    @blog = false
+    @articles = get_all_articles(@blog).paginate(:page => params[:page], per_page: 10)
 
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @articles }
     end
   end
-
+  def all_blog
+    @blog = true
+    @articles = get_all_articles(@blog).paginate(:page => params[:page], per_page: 10)
+    render 'articles/all'
+  end
   def latest_blogpost
     @article = Article.where(blog: 1).order("created_at").last
 
@@ -69,4 +66,12 @@ class ArticlesController < ApplicationController
     end
   end
 
+  private
+  def get_all_articles blog
+    if I18n.locale.to_s =="en"
+      Article.where("(show_article <='"+Time.now.strftime("%Y-%m-%d %H:%M:%S")+"' OR show_article IS NULL) AND deleted='0'AND list='1' AND title_en != '' AND blog='" + (blog ? 1.to_s : 0.to_s) + "'").order("id DESC").all
+    else
+      Article.where("(show_article <='"+Time.now.strftime("%Y-%m-%d %H:%M:%S")+"' OR show_article IS NULL) AND deleted='0'AND list='1' AND title_no != '' AND blog='" + (blog ? 1.to_s : 0.to_s) + "'").order("id DESC").all
+    end
+  end
 end

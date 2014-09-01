@@ -19,9 +19,10 @@ en:
     articles:
       main: 'News'
       photos: 'Photos'
-      archive: 'Archive'
+      archive: 'Article archive'
       galleries: 'Galleries'
       read_more: 'Read more'
+      blog_archive: 'All blog posts'
     theme:
       main: 'Theme 2015'
       globaltrade: 'Global Trade'

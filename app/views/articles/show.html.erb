@@ -1,3 +1,16 @@
+<div class="row">
+  <div class="container">
+  <div class="col-md-9">
+
+    <h1>
+      <%= I18n.locale.to_s == 'no' ? @article.title_no : @article.title_en%>
+    </h1>
+    <section class="article-ingress">
+      <%=raw format(I18n.locale.to_s == 'no' ? @article.ingress_no : @article.ingress_en) %>
+    </section>
+      </div>
+  </div>
+  </div>
 <div class="row"  data-spy="scroll" data-target=".nav-left" offset="-54">
   <div class="container">
     <div class="col-md-9">
@@ -5,25 +18,6 @@
 
       <div class="article">
     <div class="article-header">
-
-
-      <div class="header-text">
-        <h1>
-              <%= I18n.locale.to_s == 'no' ? @article.title_no : @article.title_en%>
-        </h1>
-        <section class="article-ingress">
-          <%=raw format(I18n.locale.to_s == 'no' ? @article.ingress_no : @article.ingress_en) %>
-        </section>
-
-
-
-
-      </div>
-
-
-
-
-
 </div>
 
     <div class="article-image">
@@ -54,6 +48,39 @@
     </div>
   </div>
 </div>
+    <% if @article.blog == true %>
+    <div class="col-md-3">
+      <div class="row">
+        <div class="col-md-12 blue-well">
+
+          <%if I18n.locale.to_s == 'no'%>
+              <div id="content" class="well">
+                <h2>President Marius Jones</h2>
+                <hr>
+                <p>
+                  Marius Jones (25), president for ISFiT 2015, og student i samfunnsøkonomi ved NTNU. Jeg skal frem mot festival i februar 2015 blogge om ISFiT, korrupsjon, nyhetsbildet generelt, og andre ting jeg er nysgjerrig på. Jeg vil veldig gjerne høre dine tanker, og nås lettest på twitter!
+                </p>
+                <p><img src="http://i.imgur.com/WqLIlUX.jpg" alt="Marius Jones" width="100%"></p>
+                <% end %>
+          </div>
+        </div>
+        </div>
+      <div class="row">
+        <div class="col-md-12 no_padding">
+        <a class="twitter-timeline" height="400" href="https://twitter.com/MariusJones89" data-widget-id="493710902634356737">Tweets fra @MariusJones89</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    </div>
+        </div>
+      </div>
+        <% end %>
+
+
+  </div>
+      </div>
+    </div>
+<div class="row">
+  <div class="container">
+  <div class="col-md-9">
     <div id="disqus_thread"></div>
     <script type="text/javascript">
         /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
@@ -72,7 +99,6 @@
         $('body aside').remove();
         $('#content').attr('class', 'span12');
     </script>
-
   </div>
-      </div>
     </div>
+</div>

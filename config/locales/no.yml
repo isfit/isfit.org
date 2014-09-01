@@ -40,9 +40,10 @@
     articles:
       main: 'Nyheter'
       photos: 'Foto'
-      archive: 'Arkiv'
+      archive: 'Artikkelarkiv'
       galleries: 'Galleri'
       read_more: 'Les mer'
+      blog_archive: 'Alle bloggposter'
     positions:
       main: 'Opptak'
       info: 'Kontakt styret'
