@@ -1,11 +1,6 @@
-<section class="tab-page tab-content" id="<%= @global_index + 1 %>" name="<%= @global_index + 1 %>">
-	<%@workshops = get_workshops %>
-	<header>
-		<h1>
-			ISFiT Workshops 2015
-		</h1>
-	</header>
+<div class="row">
 	<div class="col-md-6 workshop-list" id="workshop-list">
+		<%@workshops = get_workshops %>
 		<div class="col-md-6">
 			<% @workshops.each_with_index do |workshop, i| %>
 			<%= link_to workshop_path(workshop.id), :class => "workshop-link" do %>
@@ -46,4 +41,4 @@
       <% end %>
     <% end %>
   </div>
-</section>
+ </div>

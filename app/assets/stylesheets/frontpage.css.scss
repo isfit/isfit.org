@@ -40,27 +40,38 @@
 	color: #666666;
 }
 
+.orange-well:hover{
+  background-color: #EFAB44;
+  color: #FFFFFF;
+  text-decoration: none;
+}
 .orange-well{
   display:block;
   min-height: 20px;
   padding: 14px;
   margin-bottom: 20px;
-  background-color: #EFAB44;
-  border: 1px solid #f5f1f1 ;
+  border: 1px solid #EFAB44;
+  border-left: 3px solid #EFAB44;
   border-radius: 0;
-  color: #FFFFFF;
+  color: #000;
   font-size: 1.1em;
   font-weight: bold;
+
+}
+.blue-well:hover{
+  background-color: #0099CC;
+  text-decoration: none;
+  color: #FFF;
 }
 .blue-well{
   display:block;
   min-height: 20px;
   padding: 14px;
   margin-bottom: 20px;
-  background-color: #0099CC;
-  border: 1px solid #f5f1f1 ;
+  border: 1px solid #0099CC ;
+  border-left: 3px solid #0099CC ;
   border-radius: 0;
-  color: #FFFFFF;
+  color: #000;
   font-size: 1.1em;
   font-weight: bold;
 }
@@ -179,7 +190,7 @@ a.cn_more:hover{
   color:#000000;
   padding:5px;
   white-space: nowrap;
-  border-left:2px solid #0099CC;
+  border-left:3px solid #0099CC;
   background:#FFFFFF;
 }
 .video_item{
@@ -205,7 +216,7 @@ a.cn_more:hover{
 }
 .selected{
   background-color: #f5f5f5;
-  border-left:2px solid #EFAB44;
+  border-left:3px solid #EFAB44;
 }
 .cn_item:active {
   color: #011c44;;

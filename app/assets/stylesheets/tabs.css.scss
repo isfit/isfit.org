@@ -134,6 +134,7 @@
 
 
 
+
 @media (max-width: 1300px) {
   .sidebar{
     position: relative;
@@ -156,6 +157,18 @@
 }
 .nav-left > li {
   border-left:2px solid #0099CC;
+}
+h1{
+  word-wrap: break-word;
+}
+a{
+  word-wrap: break-word;
+}
+iframe{
+  max-width: 100%;
+}
+#player{
+  max-width: 100%;
 }
 
 }

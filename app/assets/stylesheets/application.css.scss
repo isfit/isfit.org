@@ -157,12 +157,19 @@ nav.navbar .navbar-nav > li > p {
 
   
 }
-
+#collapsemenu{
+  padding-left: 0;
+}
+li.first{
+  padding-left: 0;
+}
+nav .container {
+  padding-left: 0;
+}
 .collapse .navbar-collapse .navbar-ex1-collapse{
   text-align: center;
 }
-.container{
-}
+
 .navbar{
   margin: 0 auto;
 }​
@@ -180,7 +187,7 @@ nav.navbar .navbar-nav > li > p {
   margin-top:200px;
 }
 .navbar-brand{
-
+  display: none;
 }
 .footer{
   text-align: center;
@@ -326,6 +333,9 @@ nav.navbar .navbar-nav > li > p {
     .navbar-nav > li.current {
       border-bottom: 0;
     }
+    .navbar-brand{
+      display: inline;
+    }
     nav.navbar {
       background-color: #0099CC !important;
       -webkit-background-image: none;
@@ -366,6 +376,14 @@ nav.navbar .navbar-nav > li > p {
       color:#FFFFFF;
       text-transform: uppercase;
       font-weight:500;
+    }
+    #collapsemenu{
+      padding-left: 15px;
+    }
+    li.first{
+    }
+    nav .container {
+      padding-left: 15px;
     }
   }
 

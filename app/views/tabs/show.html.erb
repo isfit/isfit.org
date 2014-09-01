@@ -23,15 +23,17 @@
 				<div id="page-ingress" class="lead">
 					<%=raw format( page.ingress )%>
 				</div>
-
-				<p>
-					<%=raw format ( page.body ) %>
-				</p>
+				<% if page.title_en.eql?("ISFiT Workshops 2015") %>
+					<%= render 'workshops' %>
+				<% else %>
+					<p>
+						<%=raw format ( page.body ) %>
+					</p>
+				<% end %>
 			</section>
-			<hr class="section-divider">
+			<hr>
 			<%end%>
 			<%if @tab.name_en.eql?("ISFiT 2015") %>
-				<%= render 'workshops' %>
 			<% elsif @tab.name_en.eql?('Be a part of ISFiT') %>
 				<%= render 'isfit_online' %>
 			<% end %>
