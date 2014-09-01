@@ -3,6 +3,14 @@ en:
     previous_label: "Previous"
     next_label: "Next"
     page_gap: "…"
+  frontpage:
+    button_images:
+      participant: "http://i.imgur.com/c3mCyCU.png"
+      participant_hover: "http://i.imgur.com/xjNkT3b.png"
+      dialog: "http://i.imgur.com/UTl3anP.png"
+      dialog_hover: "http://i.imgur.com/21dMm7W.png"
+      volunteer: "http://i.imgur.com/sqU0UHX.png"
+      volunteer_hover: "http://i.imgur.com/40SadXh.png"
   footer:
     editor: "Editor in Chief"
     copyright: All written material and the ISFiT logo is copyrighted the ISFiT Foundation © 2013.

@@ -23,6 +23,7 @@ ready = function() {
             var $items 		= $cn_list.find('.cn_item');
             var $cn_preview = $('#cn_preview');
             var current		= 1;
+            var i;
             $items.each(function(i){
                 var $item = $(this);
                 $item.data('idx',i+1);
@@ -39,7 +40,38 @@ ready = function() {
                     current = idx;
                 });
             });
+            i = setInterval(function() {
+                slideNews(1);
+            }, 20000);
 
+
+                $('#cn_list').hover(function() {
+                    clearInterval(i);
+                }, function() {
+                    i = setInterval(function() {
+                        slideNews(1);
+                    }, 20000);
+                });
+            function slideNews(places){
+                var idx         = current + places;
+                if(idx > $items.length)
+                {
+                    idx = 1;
+                }
+                else if(idx <= 0)
+                {
+                    idx = $items.length;
+                }
+
+                var $current    = $cn_preview.find('.cn_content:nth-child(' + current + ')');
+                var $next       = $cn_preview.find('.cn_content:nth-child(' + idx + ')');
+                var $currentIndicator = $items.get(idx - 1);
+                $cn_list.find('.selected').removeClass('selected');
+                $($currentIndicator).addClass('selected');
+                $current.addClass('cn_content_invisible');
+                $next.removeClass('cn_content_invisible');
+                current = idx;
+            }
         });
         $(function(){
             var $video_list     = $('#video_list');
@@ -65,15 +97,27 @@ ready = function() {
             var $left_button    = $('#button_left');
             var $right_button   = $('#button_right');
             $left_button.bind('click', function(){
-               slide(-1);
+               slideVideo(-1);
             });
             $right_button.bind('click', function(){
-                slide(1);
+                slideVideo(1);
             });
-            function slide(places){
+            function slideVideo(places){
                 var idx         = current + places;
+                if(idx > $items.length)
+                {
+                    idx = 1;
+                }
+                else if(idx <= 0)
+                {
+                    idx = $items.length;
+                }
+
                 var $current    = $show_video.find('.video_content:nth-child(' + current + ')');
                 var $next       = $show_video.find('.video_content:nth-child(' + idx + ')');
+                var $currentIndicator = $items.get(idx - 1);
+                $video_list.find('.selected_video').removeClass('selected_video');
+                $($currentIndicator).addClass('selected_video');
                 $current.addClass('video_content_invisible');
                 $next.removeClass('video_content_invisible');
                 current = idx;
