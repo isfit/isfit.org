@@ -1,3 +1,9 @@
+set :rvm_ruby_string, '1.9.2-p290'
+set :rvm_type, :user
+
+
+set :bundle_gemfile, -> { release_path.join("Gemfile") }
+
 # config valid only for Capistrano 3.1
 lock '3.2.1'
 

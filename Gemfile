@@ -34,6 +34,8 @@ gem 'spring',        group: :development
 
 # Use Capistrano for deployment
 gem 'capistrano-rails', group: :development
+gem 'capistrano-rvm', group: :development
+gem 'capistrano-bundler', group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
@@ -65,4 +67,6 @@ gem 'friendly_id'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
 gem 'will_paginate-bootstrap'
+
+gem 'therubyracer'
 

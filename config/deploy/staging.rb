@@ -22,8 +22,10 @@ set :deploy_to, "/srv/www/staging.isfit.org"
 set :deploy_via, :copy
 set :branch, "master"
 
-run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
-run "ln -nfs #{shared_path}/config/oauth.yml #{release_path}/config/oauth.yml"
+on roles(:web) do
+  execute "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
+  execute "ln -nfs #{shared_path}/config/oauth.yml #{release_path}/config/oauth.yml"
+end
 
 # Custom SSH Options
 # ==================
