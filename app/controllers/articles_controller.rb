@@ -56,7 +56,7 @@ class ArticlesController < ApplicationController
     @article = Article.where(:id=>params[:id]).where("(show_article <='"+Time.now.strftime("%Y-%m-%d %H:%M:%S")+"' OR show_article IS NULL) AND deleted='0'AND list='1'").first
     if !@article
       flash[:alert] = 'Article not found'
-      redirect_to articles_all_path
+      redirect_to articles_path
       return
     end
     #@article = Article.find(params[:id])
