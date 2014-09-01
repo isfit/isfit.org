@@ -22,7 +22,11 @@ set :deploy_to, "/srv/www/staging.isfit.org"
 set :deploy_via, :copy
 set :branch, "master"
 
+set :rails_env, 'production'
+
 on roles(:web) do
+  puts "LOLOLOL #{shared_path}"
+  puts "release #{release_path}"
   execute "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
   execute "ln -nfs #{shared_path}/config/oauth.yml #{release_path}/config/oauth.yml"
 end
