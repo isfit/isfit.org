@@ -1,26 +1,26 @@
 <div class="container top-margin">
-    <div class="row">
-      <div class="col-md-8 no_padding_left">
-        <div class="cn_wrapper">
-          <div class="col-md-6 no_padding_left">
-            <div id="cn_list" class="cn_list">
-              <div class="cn_page" style="display:block;">
-                <% @articles.each_with_index do |article, i| %>
-                    <% if i == 0%>
-                        <div class="cn_item selected">
-                    <% else %>
-                        <div class="cn_item">
-                    <% end %>
-                    <h2><%=article.title%></h2>
-                    <p><%=truncate(article.ingress, length: 50)%></p>
-                    </div>
-                <% end %>
-                </div>
+  <div class="row">
+    <div class="col-md-8 no_padding_left">
+      <div class="cn_wrapper">
+        <div class="col-md-6 no_padding_left">
+          <div id="cn_list" class="cn_list">
+            <div class="cn_page" style="display:block;">
+              <% @articles.each_with_index do |article, i| %>
+                  <% if i == 0%>
+                      <div class="cn_item selected">
+                  <% else %>
+                      <div class="cn_item">
+                  <% end %>
+                  <h2><%=article.title%></h2>
+                  <p><%=truncate(article.ingress, length: 50)%></p>
+                  </div>
+              <% end %>
               </div>
-              <a href="articles" class="orange-well-front add_top_margin">
-               <i class="fa fa-archive"> </i> <%= t("articles.archive") %>
-              </a>
             </div>
+            <a href="articles" class="orange-well-front add_top_margin">
+              <i class="fa fa-archive"> </i> <%= t("articles.archive") %>
+            </a>
+          </div>
           <div class="col-md-6 no_padding">
             <div id="cn_preview" class="cn_preview">
               <div class="col-md-12">
@@ -48,53 +48,53 @@
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+        <div class="col-md-4 no_padding_right">
+          <div class="row">
+            <div class="col-md-12 no_padding_right">
+              <%= link_to image_tag(t("frontpage.button_images.volunteer"),class: "link_button", onmouseover: "this.src='" + t("frontpage.button_images.volunteer_hover") + "'", onmouseout: "this.src='"+ t("frontpage.button_images.volunteer") + "'"), 'https://opptak.isfit.org' %>
             </div>
           </div>
-          <div class="col-md-4 no_padding_right">
-            <div class="row">
-              <div class="col-md-12 no_padding_right">
-                <%= link_to image_tag(t("frontpage.button_images.volunteer"),class: "link_button", onmouseover: "this.src='" + t("frontpage.button_images.volunteer_hover") + "'", onmouseout: "this.src='"+ t("frontpage.button_images.volunteer") + "'"), 'https://opptak.isfit.org' %>
-              </div>
+          <div class="row">
+            <div class="col-md-12 no_padding_right">
+              <%= link_to image_tag(t("frontpage.button_images.participant"),class: "link_button", onmouseover: "this.src='" + t("frontpage.button_images.participant_hover") + "'", onmouseout: "this.src='"+ t("frontpage.button_images.participant") + "'"), 'https://participant.isfit.org' %>
             </div>
-            <div class="row">
-              <div class="col-md-12 no_padding_right">
-                <%= link_to image_tag(t("frontpage.button_images.participant"),class: "link_button", onmouseover: "this.src='" + t("frontpage.button_images.participant_hover") + "'", onmouseout: "this.src='"+ t("frontpage.button_images.participant") + "'"), 'https://participant.isfit.org' %>
-              </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 no_padding_right">
+              <%= link_to image_tag(t("frontpage.button_images.dialog"),class: "link_button", onmouseover: "this.src='" + t("frontpage.button_images.dialog_hover") + "'", onmouseout: "this.src='"+ t("frontpage.button_images.dialog") + "'"), 'https://participant.isfit.org' %>
             </div>
-            <div class="row">
-              <div class="col-md-12 no_padding_right">
-                <%= link_to image_tag(t("frontpage.button_images.dialog"),class: "link_button", onmouseover: "this.src='" + t("frontpage.button_images.dialog_hover") + "'", onmouseout: "this.src='"+ t("frontpage.button_images.dialog") + "'"), 'https://participant.isfit.org' %>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-12 no_padding_right">
-   
+          </div>
+          <div class="row">
+            <div class="col-md-12 no_padding_right">
+
               <a width="100%" height="341px" class="twitter-timeline" href="https://twitter.com/search?q=%23isfit+%7C%7C+%23tradeyourideas" data-widget-id="503989856049983488"></a>
               <script src="//platform.twitter.com/widgets.js"></script>
-              </div>
             </div>
           </div>
         </div>
-        <hr>
-        <div class="row">
-          <div class="col-md-6">
-            <div class="row video_wrapper">
-              <span id="button_left" class="button_left"><i class="fa fa-arrow-circle-left"></i></span>
-              <span id="button_right" class="button_right"><i class="fa fa-arrow-circle-right"></i></span>
-              <div id="show_video" class="show_video">
-                <div class="video_content">
-                  <iframe width="100%" height="555px" src="//www.youtube.com/embed/7aSb6mOMR9M?list=PL8EFD841AD7BB062B" frameborder="0" allowfullscreen></iframe>
-                </div>
-                <div class="video_content video_content_invisible">
-                  <iframe src="//player.vimeo.com/video/84474484" width="100%" height="555px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-                </div>
-                <div class="video_content video_content_invisible">
-                  <iframe width="100%" height="555px" src="//www.youtube.com/embed/hAd0jVZOJ8s?list=UUSpylPithNDro4OIieIrfRA" frameborder="0" allowfullscreen></iframe>
-                </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="row video_wrapper">
+            <span id="button_left" class="button_left"><i class="fa fa-arrow-circle-left"></i></span>
+            <span id="button_right" class="button_right"><i class="fa fa-arrow-circle-right"></i></span>
+            <div id="show_video" class="show_video">
+              <div class="video_content">
+                <iframe width="100%" height="555px" src="//www.youtube.com/embed/7aSb6mOMR9M?list=PL8EFD841AD7BB062B" frameborder="0" allowfullscreen></iframe>
+              </div>
+              <div class="video_content video_content_invisible">
+                <iframe src="//player.vimeo.com/video/84474484" width="100%" height="555px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+              </div>
+              <div class="video_content video_content_invisible">
+                <iframe width="100%" height="555px" src="//www.youtube.com/embed/hAd0jVZOJ8s?list=UUSpylPithNDro4OIieIrfRA" frameborder="0" allowfullscreen></iframe>
               </div>
             </div>
-            <div class="row" style="padding-bottom: 17px">
-              <div id="video_list" class="video_item" style="text-align: center">
+          </div>
+          <div class="row" style="padding-bottom: 17px">
+            <div id="video_list" class="video_item" style="text-align: center">
               <span class="video_item selected_video">
                 <i class="fa fa-circle"></i>
               </span>
@@ -104,15 +104,15 @@
               <span class="video_item">
                 <i class="fa fa-circle"></i>
               </span>
-              </div>
             </div>
           </div>
-          <div class="col-md-6">
-            <h3 style="margin-top:0px; padding-left: 20px"><i class="fa fa-instagram fa-2x orange-text"></i> #tradeyourideas</h3>
-            <div id="instagram-div">
-            </div>
+        </div>
+        <div class="col-md-6">
+          <h3 style="margin-top:0px; padding-left: 20px"><i class="fa fa-instagram fa-2x orange-text"></i> #tradeyourideas</h3>
+          <div id="instagram-div">
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
