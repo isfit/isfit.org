@@ -229,6 +229,9 @@ a.cn_more:hover{
   line-height: 1.5em;
   color: #EFAB44;
 }
+.video_wrapper{
+  padding-left: 15px;
+}
 .video_wrapper:hover .button_left
 {
   display: block;
@@ -262,6 +265,6 @@ a.cn_more:hover{
   min-height: 60px;
   background-size: 100%;
 }
-.twitter-widget-0{
+iframe #twitter-widget-0{
   width: 100%;
 }
