@@ -32,6 +32,10 @@
       dialog_hover: "http://i.imgur.com/9FfaHPX.png"
       volunteer: "http://i.imgur.com/3QXJUbJ.png"
       volunteer_hover: "http://i.imgur.com/uSbLvIG.png"
+  articles:
+    read_more: 'Les mer'
+    blog_archive: 'Alle bloggposter'
+    date: 'Dato'
   footer:
     editor: "Redaktør"
     copyright: Alt av skriftlig materiale og ISFiT-logoen er kopibeskyttet Stiftelsen ISFiT.
@@ -42,8 +46,6 @@
       photos: 'Foto'
       archive: 'Artikkelarkiv'
       galleries: 'Galleri'
-      read_more: 'Les mer'
-      blog_archive: 'Alle bloggposter'
     positions:
       main: 'Opptak'
       info: 'Kontakt styret'

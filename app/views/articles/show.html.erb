@@ -40,7 +40,7 @@
               <% else %>
               &nbsp;
               <% end %>
-          <span id="date">Date: <%=  @article.created_at.strftime("%F")%></span></i><hr>
+          <span id="date"><%= t("articles.date")%>: <%=  @article.created_at.strftime("%F")%></span></i><hr>
 
 
     <div>
@@ -49,27 +49,26 @@
     </div>
   </div>
 </div>
-    <% if @article.blog == true %>
+    <% if @article.blog %>
     <div class="col-md-3">
       <div class="row">
         <div class="col-md-12 blue-well">
-
-          <%if I18n.locale.to_s == 'no'%>
-              <div id="content" class="well">
-                <h2>President Marius Jones</h2>
-                <hr>
-                <p>
-                  Marius Jones (25), president for ISFiT 2015, og student i samfunnsøkonomi ved NTNU. Jeg skal frem mot festival i februar 2015 blogge om ISFiT, korrupsjon, nyhetsbildet generelt, og andre ting jeg er nysgjerrig på. Jeg vil veldig gjerne høre dine tanker, og nås lettest på twitter!
-                </p>
-                <p><img src="http://i.imgur.com/WqLIlUX.jpg" alt="Marius Jones" width="100%"></p>
-                <% end %>
+          <h2>President Marius Jones</h2>
+          <hr>
+          <p>
+            <%if I18n.locale.to_s == 'no'%>
+                Marius Jones (25), president for ISFiT 2015, og student i samfunnsøkonomi ved NTNU. Jeg skal frem mot festival i februar 2015 blogge om ISFiT, korrupsjon, nyhetsbildet generelt, og andre ting jeg er nysgjerrig på. Jeg vil veldig gjerne høre dine tanker, og nås lettest på twitter!
+          <% else %>
+                Marius Jones (25), the President of ISFiT 2015, and studies Economics at NTNU. I will towards the festival in February 2015 blog about ISFiT, corruption, general news, and other things I am curious about. I would love to hear your thoughts, and the easiest place to reach out to me is Twitter!
+          <% end %>
+          </p>
+          <p><img src="http://i.imgur.com/WqLIlUX.jpg" alt="Marius Jones" width="100%"></p>
           </div>
-        </div>
         </div>
       <div class="row">
         <div class="col-md-12 no_padding">
         <a class="twitter-timeline" height="400" href="https://twitter.com/MariusJones89" data-widget-id="493710902634356737">Tweets fra @MariusJones89</a>
-        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        <script src="//platform.twitter.com/widgets.js"></script>
     </div>
         </div>
       </div>
@@ -78,7 +77,6 @@
 
   </div>
       </div>
-    </div>
 <div class="row">
   <div class="container">
   <div class="col-md-9">
