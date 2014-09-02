@@ -24,7 +24,7 @@
           <% end %>
 
           <% if @article.image_credits != ''%>
-              <i>Photo:<%=@article.image_credits%></i>
+              <i><%= t("articles.photo") %>:<%=@article.image_credits%></i>
           <% end %>
         </div>
         <hr>

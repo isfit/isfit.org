@@ -33,6 +33,8 @@
       volunteer: "http://i.imgur.com/3QXJUbJ.png"
       volunteer_hover: "http://i.imgur.com/uSbLvIG.png"
   articles:
+    photo: 'Foto'
+    archive: 'Artikkelarkiv'
     read_more: 'Les mer'
     blog_archive: 'Alle bloggposter'
     date: 'Dato'
@@ -44,7 +46,6 @@
     articles:
       main: 'Nyheter'
       photos: 'Foto'
-      archive: 'Artikkelarkiv'
       galleries: 'Galleri'
     positions:
       main: 'Opptak'

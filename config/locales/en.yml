@@ -12,6 +12,8 @@ en:
       volunteer: "http://i.imgur.com/sqU0UHX.png"
       volunteer_hover: "http://i.imgur.com/40SadXh.png"
   articles:
+    photo: 'Photo'
+    archive: 'Article archive'
     read_more: 'Read more'
     blog_archive: 'All blog posts'
     date: 'Date'
@@ -23,7 +25,6 @@ en:
     articles:
       main: 'News'
       photos: 'Photos'
-      archive: 'Article archive'
       galleries: 'Galleries'
     theme:
       main: 'Theme 2015'
