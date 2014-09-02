@@ -47,6 +47,7 @@
       main: 'Nyheter'
       photos: 'Foto'
       galleries: 'Galleri'
+      read_more: 'Les mer'
     positions:
       main: 'Opptak'
       info: 'Kontakt styret'

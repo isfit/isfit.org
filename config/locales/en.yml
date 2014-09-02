@@ -26,6 +26,7 @@ en:
       main: 'News'
       photos: 'Photos'
       galleries: 'Galleries'
+      read_more: 'Read more'
     theme:
       main: 'Theme 2015'
       globaltrade: 'Global Trade'
