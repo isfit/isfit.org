@@ -11,6 +11,12 @@ en:
       dialog_hover: "http://i.imgur.com/21dMm7W.png"
       volunteer: "http://i.imgur.com/sqU0UHX.png"
       volunteer_hover: "http://i.imgur.com/40SadXh.png"
+  articles:
+    photo: 'Photo'
+    archive: 'Article archive'
+    read_more: 'Read more'
+    blog_archive: 'All blog posts'
+    date: 'Date'
   footer:
     editor: "Editor in Chief"
     copyright: All written material and the ISFiT logo is copyrighted the ISFiT Foundation © 2013.
@@ -19,10 +25,7 @@ en:
     articles:
       main: 'News'
       photos: 'Photos'
-      archive: 'Article archive'
       galleries: 'Galleries'
-      read_more: 'Read more'
-      blog_archive: 'All blog posts'
     theme:
       main: 'Theme 2015'
       globaltrade: 'Global Trade'

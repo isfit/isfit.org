@@ -75,14 +75,6 @@
   font-size: 1.1em;
   font-weight: bold;
 }
-.blank-well{
-  min-height: 20px;
-  padding: 19px;
-  margin-bottom: 20px;
-  border: 1px solid #f5f1f1 ;
-  border-radius: 0;
-  color: #000000;
-}
 .orange-text{
   color: #EFAB44;
 }
@@ -92,7 +84,6 @@
   overflow:hidden;
   color: #000000;
 }
-
 .cn_wrapper h1{
   font-size:2em;
 }
@@ -118,10 +109,6 @@
   overflow: hidden;
 }
 .read_more {
-  /*
-  position:absolute;
-  bottom:0px;
-  */
   width: 100%;
 }
 .video_content{
@@ -182,7 +169,6 @@ a.cn_more:hover{
   width: 100%;
 }
 .cn_item{
-
   cursor:pointer;
   position:relative;
   overflow:hidden;
@@ -229,10 +215,6 @@ a.cn_more:hover{
 .video_list {
   height: 20px;
 }
-.cn_page{
-  display:none;
-}
-
 .top-margin{
   margin-top: 30px;
 }
@@ -282,70 +264,4 @@ a.cn_more:hover{
 }
 .twitter-widget-0{
   width: 100%;
-}
-.volunteer_button_no{
-  background-image: url("http://i.imgur.com/3QXJUbJ.png");
-}
-.volunteer_button_no_hover{
-  background-image: url("http://i.imgur.com/uSbLvIG.png");
-  background-position: -9999px;
-  background-repeat: no-repeat;
-}
-.volunteer_button_no:hover{
-  background-image: url("http://i.imgur.com/uSbLvIG.png");
-}
-.volunteer_button_en{
-  background-image: url("http://i.imgur.com/sqU0UHX.png");
-}
-.volunteer_button_en_hover{
-  background-image: url("http://i.imgur.com/40SadXh.png");
-  background-position: -9999px;
-  background-repeat: no-repeat;
-}
-.volunteer_button_en:hover{
-  background-image: url("http://i.imgur.com/40SadXh.png");
-}
-.participant_button_no{
-  background-image: url("http://i.imgur.com/TMW7IfD.png");
-}
-.participant_button_no_hover{
-  background-image: url("http://i.imgur.com/8sgeTwh.png");
-  background-position: -9999px;
-  background-repeat: no-repeat;
-}
-.participant_button_no:hover{
-  background-image: url("http://i.imgur.com/8sgeTwh.png");
-}
-.participant_button_en{
-  background-image: url("http://i.imgur.com/c3mCyCU.png");
-}
-.participant_button_en_hover{
-  background-image: url("http://i.imgur.com/xjNkT3b.png");
-  background-position: -9999px;
-  background-repeat: no-repeat;
-}
-.participant_button_en:hover{
-  background-image: url("http://i.imgur.com/xjNkT3b.png");
-}
-.dialog_button_no{
-  background-image: url("http://i.imgur.com/fOVgyBu.png");
-}
-.dialog_button_no_hover{
-  background-image: url("http://i.imgur.com/9FfaHPX.png");
-  background-position: -9999px;
-  background-repeat: no-repeat;
-}
-.dialog_button_no:hover{
-  background-image: url("http://i.imgur.com/9FfaHPX.png");
-}
-.dialog_button_en{
-  background-image: url("http://i.imgur.com/UTl3anP.png");
-}
-.dialog_button_en_hover{
-  background-image: url("http://i.imgur.com/21dMm7W.png");
-  background-position: -9999px;
-  background-repeat: no-repeat;
-}
-.dialog_button_en:hover{
-  background-image: url("http://i.imgur.com/21dMm7W.png");
 }

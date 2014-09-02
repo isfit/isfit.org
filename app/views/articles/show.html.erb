@@ -1,105 +1,93 @@
 <div class="row">
   <div class="container">
-  <div class="col-md-9">
-
-    <h1>
-      <%= I18n.locale.to_s == 'no' ? @article.title_no : @article.title_en%>
-    </h1>
-    <section class="article-ingress">
-      <%=raw format(I18n.locale.to_s == 'no' ? @article.ingress_no : @article.ingress_en) %>
-    </section>
-      </div>
+    <div class="col-md-9">
+      <h1>
+        <%= I18n.locale.to_s == 'no' ? @article.title_no : @article.title_en%>
+      </h1>
+      <section class="article-ingress">
+        <%=raw format(I18n.locale.to_s == 'no' ? @article.ingress_no : @article.ingress_en) %>
+      </section>
+    </div>
   </div>
-  </div>
+</div>
 <div class="row"  data-spy="scroll" data-target=".nav-left" offset="-54">
   <div class="container">
     <div class="col-md-9">
-
-
       <div class="article">
-    <div class="article-header">
-</div>
-
-    <div class="article-image">
-      <% if @article.frontend_article_image %>
-        <%= image_tag @article.frontend_article_image.url(:frontpage_large) %>
-      <% else %>
-        <%=image_tag "article_images/"+@article.id.to_s + "_3.jpg"%><br>
-      <% end %>
-
-      <% if @article.image_credits != ''%>
-        <i>Photo:<%=@article.image_credits%></i>
+        <div class="article-header">
+        </div>
+        <div class="article-image">
+          <% if @article.frontend_article_image %>
+              <%= image_tag @article.frontend_article_image.url(:frontpage_large) %>
+          <% else %>
+              <%=image_tag "article_images/"+@article.id.to_s + "_3.jpg"%><br>
           <% end %>
 
-
-    </div>
+          <% if @article.image_credits != ''%>
+              <i><%= t("articles.photo") %>:<%=@article.image_credits%></i>
+          <% end %>
+        </div>
         <hr>
         <i>
           <% if @article.byline%>
-          <%=raw @article.byline%>
-              <% else %>
+              <%=raw @article.byline%>
+          <% else %>
               &nbsp;
-              <% end %>
-          <span id="date">Date: <%=  @article.created_at.strftime("%F")%></span></i><hr>
-
-
-    <div>
-        <div data-href="<%= article_url(@article) %>" data-send="false" data-layout="box_count" data-width="60" data-show-faces="false"></div>
-        <%= raw format( I18n.locale.to_s =='no' ? @article.body_no : @article.body_en) %>
+          <% end %>
+          <span id="date"><%= t("articles.date")%>: <%=  @article.created_at.strftime("%F")%></span></i><hr>
+        <div>
+          <div data-href="<%= article_url(@article) %>" data-send="false" data-layout="box_count" data-width="60" data-show-faces="false"></div>
+          <%= raw format( I18n.locale.to_s =='no' ? @article.body_no : @article.body_en) %>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-    <% if @article.blog == true %>
-    <div class="col-md-3">
-      <div class="row">
-        <div class="col-md-12 blue-well">
-
-          <%if I18n.locale.to_s == 'no'%>
-              <div id="content" class="well">
-                <h2>President Marius Jones</h2>
-                <hr>
-                <p>
-                  Marius Jones (25), president for ISFiT 2015, og student i samfunnsøkonomi ved NTNU. Jeg skal frem mot festival i februar 2015 blogge om ISFiT, korrupsjon, nyhetsbildet generelt, og andre ting jeg er nysgjerrig på. Jeg vil veldig gjerne høre dine tanker, og nås lettest på twitter!
-                </p>
-                <p><img src="http://i.imgur.com/WqLIlUX.jpg" alt="Marius Jones" width="100%"></p>
+    <% if @article.blog %>
+        <div class="col-md-3" style="padding-left: 30px">
+          <div class="row">
+            <div class="col-md-12 blue-well">
+              <h2>President Marius Jones</h2>
+              <hr>
+              <p>
+                <%if I18n.locale.to_s == 'no'%>
+                    Marius Jones (25), president for ISFiT 2015, og student i samfunnsøkonomi ved NTNU. Jeg skal frem mot festival i februar 2015 blogge om ISFiT, korrupsjon, nyhetsbildet generelt, og andre ting jeg er nysgjerrig på. Jeg vil veldig gjerne høre dine tanker, og nås lettest på twitter!
+                <% else %>
+                    Marius Jones (25), the President of ISFiT 2015, and studies Economics at NTNU. I will towards the festival in February 2015 blog about ISFiT, corruption, general news, and other things I am curious about. I would love to hear your thoughts, and the easiest place to reach out to me is Twitter!
                 <% end %>
+              </p>
+              <p><img src="http://i.imgur.com/WqLIlUX.jpg" alt="Marius Jones" width="100%"></p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 no_padding">
+              <a class="twitter-timeline" height="400" href="https://twitter.com/MariusJones89" data-widget-id="493710902634356737">Tweets fra @MariusJones89</a>
+              <script src="//platform.twitter.com/widgets.js"></script>
+            </div>
           </div>
         </div>
-        </div>
-      <div class="row">
-        <div class="col-md-12 no_padding">
-        <a class="twitter-timeline" height="400" href="https://twitter.com/MariusJones89" data-widget-id="493710902634356737">Tweets fra @MariusJones89</a>
-        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-    </div>
-        </div>
-      </div>
-        <% end %>
-
-
+    <% end %>
   </div>
-      </div>
-    </div>
+</div>
 <div class="row">
   <div class="container">
-  <div class="col-md-9">
-    <div id="disqus_thread"></div>
-    <script type="text/javascript">
-        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-        var disqus_shortname = 'isfitorg'; // required: replace example with your forum shortname
+    <div class="col-md-9">
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+          /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+          var disqus_shortname = 'isfitorg'; // required: replace example with your forum shortname
 
-        /* * * DON'T EDIT BELOW THIS LINE * * */
-        (function() {
-            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    <script type="text/javascript">
-        $('body aside').remove();
-        $('#content').attr('class', 'span12');
-    </script>
-  </div>
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function() {
+              var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+              dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+              (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      <script type="text/javascript">
+          $('body aside').remove();
+          $('#content').attr('class', 'span12');
+      </script>
     </div>
+  </div>
 </div>
