@@ -108,7 +108,11 @@
   overflow: hidden;
 }
 .read_more {
-  width: 100%;
+  //width: 100%;
+  position:absolute;
+  bottom:0px;
+  left:15px;
+  right: 0px;
 }
 .video_content{
   width:100%;
@@ -257,6 +261,7 @@ a.cn_more:hover{
   color: #0099CC;
   font-size: 2em;
 }
+
 .link_button{
   width: 100%;
   margin-bottom: 20px;
@@ -265,5 +270,5 @@ a.cn_more:hover{
   background-size: 100%;
 }
 #twitter-widget-0{
-  width: 100%;
+  width: 100%
 }
