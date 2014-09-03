@@ -18,7 +18,7 @@ role :db,  %w{nova.isfit.org}
 server 'nova.isfit.org', user: 'passenger'
 set :use_sudo, false
 
-set :deploy_to, "/srv/www/isfit.org"
+set :deploy_to, "/srv/www/www.isfit.org"
 set :deploy_via, :remote_cache
 set :branch, "master"
 

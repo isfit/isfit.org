@@ -8,7 +8,7 @@ set :bundle_gemfile, -> { release_path.join("Gemfile") }
 lock '3.2.1'
 
 set :application, 'isfit.org'
-set :repo_url, 'git@github.com:isfit/new.isfit.org'
+set :repo_url, 'git@github.com:isfit/isfit.org'
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
