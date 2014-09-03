@@ -13,7 +13,12 @@ Rails.application.routes.draw do
   get 'contact' => "tabs/contact/", as: "contact"
   get 'articles' => "articles#all"
   get 'blogs' => "articles#all_blog"
+  get 'blog' => "articles#all_blog", as: "old_blog"
+  get 'blogg' => "articles#all_blog"
   get 'blogs/:id' => "articles#show", as: "blog"
+  get 'blog/:id' => "articles#show"
+  get 'blogg/:id' => "articles#show"
+
   get 'pages/:id' => 'tabs#redirect_page'
   resources :articles
   resources :tabs, except: :index
