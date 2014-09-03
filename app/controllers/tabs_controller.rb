@@ -20,4 +20,18 @@ class TabsController < ApplicationController
 	end
 	def show_tab_page
 	end
+	def redirect_page
+		@page = Page.find_by(id: params[:id])
+		if @page.tab_id.nil?
+			redirect_to root_path
+		else
+			@tab = Tab.find_by(id: @page.tab_id)
+			path = tab_path(@tab)
+			if path
+			  redirect_to "#{path}\##{@page.id}"
+			else
+				redirect_to root_path
+			end
+		end
+	end
 end

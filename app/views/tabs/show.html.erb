@@ -12,7 +12,7 @@
 			<meta property="fb:app_id" content="111446192243028"/>
 			<meta property="og:description" content="<%=page.ingress%>"/>
 			<%end%>
-			<section class="tab-page tab-content" id="<%= index %>" name="<%= index %>">
+			<section class="tab-page tab-content" id="<%= page.id %>" name="<%= page.id %>">
 				<%@global_index = index%>
 				<header>
 					<h1>
@@ -33,10 +33,6 @@
 			</section>
 			<hr>
 			<%end%>
-			<%if @tab.name_en.eql?("ISFiT 2015") %>
-			<% elsif @tab.name_en.eql?('Be a part of ISFiT') %>
-				<%= render 'isfit_online' %>
-			<% end %>
 
 		</div>
 		<%= render 'sidebar' %>

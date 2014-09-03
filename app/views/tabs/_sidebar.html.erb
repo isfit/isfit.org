@@ -5,15 +5,12 @@
 				<ul class="nav nav-left">
 					<% @pages.each_with_index do |page, i| %>
 					<%if i.eql?(0) %>
-					<li class="sidebar-link"><a href="#<%= i %>"></i><%= page.title %></a></li>
+					<li class="sidebar-link"><a href="#<%= page.id %>"></i><%= page.title %></a></li>
 					<% else %>
-					<li class="sidebar-link"><a href="#<%= i %>"></i><%= page.title %></a></li>
+					<li class="sidebar-link"><a href="#<%= page.id %>"></i><%= page.title %></a></li>
 					<% end %>
 					<% end %>
-					<%if @tab.name_en.eql?("ISFiT 2015") %>
-					<%elsif @tab.name_en.eql?('Be a part of ISFiT') %>
-						<li class="sidebar-link"><a href="#<%= @global_index + 1 %>"></i>ISFiT Online</a></li>
-					<% end %>
+				
 				</ul>
 			</div>
 		</nav>
