@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get 'articles' => "articles#all"
   get 'blogs' => "articles#all_blog"
   get 'blogs/:id' => "articles#show", as: "blog"
+  get 'pages/:id' => 'tabs#redirect_page'
   resources :articles
   resources :tabs, except: :index
   #get "tabs/:page_slug", controller: "tabs", action: "show"
