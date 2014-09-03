@@ -24,13 +24,13 @@
 
  // Small screen / tablet
  // Note: Deprecated $screen-sm and $screen-tablet as of v3.0.1
- $screen-sm:                  1300px !default;
+ $screen-sm:                  800px !default;
  $screen-sm-min:              $screen-sm !default;
  $screen-tablet:              $screen-sm-min !default;
 
  // Medium screen / desktop
  // Note: Deprecated $screen-md and $screen-desktop as of v3.0.1
- $screen-md:                  1300px !default;
+ $screen-md:                  800px !default;
  $screen-md-min:              $screen-md !default;
  $screen-desktop:             $screen-md-min !default;
 
@@ -325,7 +325,7 @@ nav .container {
 .fa-custom-size{
   font-size: 1.4em; 
 }
-  @media (max-width: 1300px) {
+  @media (max-width: 800px) {
     .navbar-nav > li.tabs{
       border-bottom:0;
       margin-left:1px;
