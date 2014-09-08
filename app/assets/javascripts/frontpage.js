@@ -52,6 +52,13 @@ ready = function() {
                         slideNews(1);
                     }, 20000);
                 });
+            $('.cn_content').hover(function() {
+                clearInterval(i);
+            }, function() {
+                i = setInterval(function() {
+                    slideNews(1);
+                }, 20000);
+            });
             function slideNews(places){
                 var idx         = current + places;
                 if(idx > $items.length)
