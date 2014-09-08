@@ -30,13 +30,14 @@
                     <% else %>
                         <div class="cn_content cn_content_invisible">
                     <% end %>
+                    <a href="<%= article_path(article)%>">
                     <% if article.frontend_article_image %>
                         <%= image_tag article.frontend_article_image.url(:frontpage_large) %>
                     <% else %>
                         <%=image_tag "article_images/"+article.id.to_s + "_3.jpg"%><br>
                     <% end %>
-
                     <h1 style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis"><%=article.title%></h1>
+                    </a>
                     <span class="cn_date"><%=article.created_at.strftime("%F")%></span>
                     <span class="cn_category"><%= article.byline.html_safe%></span>
                     <p style="height: 105px"><%=article.ingress%></p>
