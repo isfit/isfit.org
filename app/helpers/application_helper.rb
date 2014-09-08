@@ -1,6 +1,6 @@
 module ApplicationHelper
 	def tabs
-		Tab.all.order(:weight)
+		Tab.all.order(:weight).where('deleted != 1')
 	end
 	def nav_link(link_text, link_path, tab_id, tab, index)
 		if(link_path.eql?('tabs'))
