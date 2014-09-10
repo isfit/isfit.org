@@ -9,10 +9,10 @@ function getInstagram(url) {
             var output = "";
             var div = document.getElementById('instagram-div');
             $.each(data.data, function (i, item) {
-                output += '<div class="col-md-6 bottom-margin"><img src="' + item.images.standard_resolution.url + '" class="instagram_image"/></div>';
+                output += '<div class="col-md-6 bottom-margin"><a href="' + item.link +'"><img src="' + item.images.standard_resolution.url + '" class="instagram_image"/></a></div>';
 
             });
-            div.innerHTML = output;
+            div.innerHTML += output;
         }
     });
 }
@@ -130,7 +130,8 @@ ready = function() {
                 current = idx;
             }
         });
-        getInstagram('https://api.instagram.com/v1/tags/tradeyourideas/media/recent?client_id=802d634befd6476c80cc18dbee1ce8e0&count=4');
+        getInstagram('https://api.instagram.com/v1/tags/tradeyourideas/media/recent?client_id=802d634befd6476c80cc18dbee1ce8e0&count=2');
+        getInstagram('https://api.instagram.com/v1/tags/isfit2015/media/recent?client_id=802d634befd6476c80cc18dbee1ce8e0&count=2');
 };
 
 $(document).ready(ready);
