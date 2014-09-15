@@ -8,7 +8,6 @@ ready = function() {
           $('#fb-counter2').text(0);
         }
         else{
-          console.log("hei " + json.shares );
           $('#fb-counter1').text(json.shares);
           $('#fb-counter2').text(json.shares);
         }
@@ -21,13 +20,11 @@ ready = function() {
             jsonp: "callback",
             jsonpCallback: "jsonpcallback",
             success: function (json) {
-                console.log("Test");
                 if(typeof json.count === 'undefined'){
                     $('#twitter-counter1').text(0);
                     $('#twitter-counter2').text(0);
                 }
                 else{
-                    console.log("hei " + json.count );
                     $('#twitter-counter1').text(json.count);
                     $('#twitter-counter2').text(json.count);
                 }
