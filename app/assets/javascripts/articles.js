@@ -2,7 +2,7 @@
 
 var ready;
 ready = function() {
-    $.getJSON("http://graph.facebook.com/?id=" + "http://isfit.org" + window.location.href, function (json){
+    $.getJSON("http://graph.facebook.com/?id=" + window.location.href, function (json){
         if(typeof json.shares === 'undefined'){
           $('#fb-counter').text(0);
         }
@@ -30,7 +30,7 @@ ready = function() {
             }
         });
     }
-    getTwitterCount("http://urls.api.twitter.com/1/urls/count.json?url=" + "http://www.isfit.org" + window.location.href);
+    getTwitterCount("http://urls.api.twitter.com/1/urls/count.json?url=" + window.location.href);
 
     
 };
