@@ -1,3 +1,7 @@
+<% content_for :og_description do %><%= @article.ingress %><% end %>
+<% content_for :og_title do %><%= @article.title %><%end %>
+<% content_for :og_image do %><% if @article.frontend_article_image %><%= @article.frontend_article_image.url(:frontpage_large) %><% else %><%= "article_images/"+@article.id.to_s + "_3.jpg"%><% end %><% end %>
+<% content_for :og_type do %>article<% end %>
 <div class="row">
   <div class="container">
     <div class="col-md-9">
@@ -35,12 +39,12 @@
               &nbsp;
           <% end %>
           <span id="date"><%= t("articles.date")%>: <%=  @article.created_at.strftime("%F")%></span></i><hr>
-          <div>
+          <div style="margin-bottom: 5px">
               <a class="facebook-tag" href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + window.location.href, 'newwindow', 'width=500, height=350'); return false;">
                 <i class="fa fa-facebook"></i>
                 <span id="fb-counter">0</span>
               </a>
-              <a class="twitter-tag" href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + window.location.href, 'newwindow', 'width=500, height=350'); return false;">
+              <a class="twitter-tag" href="#" onclick="window.open('https://twitter.com/home?status=' + window.location.href, 'newwindow', 'width=500, height=350'); return false;">
                 <i class="fa fa-twitter"></i>
                 <span id="twitter-counter">0</span>
               </a>

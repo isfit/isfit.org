@@ -63,10 +63,12 @@
 }
 
 .facebook-tag{
+  vertical-align: middle;
   border: 1px solid #000;
   background-color: #3b5998;
-  height: 80px;
   text-decoration: none;
+  display: inline-block;
+  margin-right: 10px;
   .fa-facebook{
     text-decoration: none;
     background-color: #3b5998;
@@ -81,17 +83,19 @@
     text-decoration: none;
     background-color: #FFF;
     color: #000;
-
-
+    display: inline-block;
+    height: 100%;
     padding-left: 4px;
     padding-right: 4px;
   }
 }
 .twitter-tag{
+  vertical-align: middle;
   border: 1px solid #000;
   background-color: #55acee;
-  height: 80px;
   text-decoration: none;
+  display: inline-block;
+  overflow: hidden;
   .fa-twitter{
     text-decoration: none;
     background-color: #55acee;
@@ -106,7 +110,8 @@
     text-decoration: none;
     background-color: #FFF;
     color: #000;
-
+    display: inline-block;
+    height:100%;
 
     padding-left: 4px;
     padding-right: 4px;
