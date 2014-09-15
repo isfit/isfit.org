@@ -1,6 +1,5 @@
 <% content_for :og_description do %><%= @article.ingress %><% end %>
 <% content_for :og_title do %><%= @article.title %><%end %>
-<% content_for :og_image do %><% if @article.frontend_article_image %><%= @article.frontend_article_image.url(:frontpage_large) %><% else %><%= "article_images/"+@article.id.to_s + "_3.jpg"%><% end %><% end %>
 <% content_for :og_type do %>article<% end %>
 <div class="row">
   <div class="container">
