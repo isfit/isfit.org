@@ -23,7 +23,7 @@
           </div>
           <div class="col-md-6 no_padding">
             <div id="cn_preview" class="cn_preview">
-              <div class="col-md-12" style="min-height: 600px">
+              <div class="col-md-12" style="min-height: 450px">
                 <% @articles.each_with_index do |article, i| %>
                     <% if i == 0%>
                         <div class="cn_content">
@@ -32,7 +32,7 @@
                     <% end %>
                     <a href="<%= article_path(article)%>">
                     <% if article.frontend_article_image %>
-                        <%= image_tag article.frontend_article_image.url(:frontpage_large) %>
+                        <%= image_tag article.frontend_article_image.url(:frontpage_large), :style=> "max-height: 200px"%>
                     <% else %>
                         <%=image_tag "article_images/"+article.id.to_s + "_3.jpg"%><br>
                     <% end %>
@@ -40,7 +40,7 @@
                     </a>
                     <span class="cn_date"><%=article.created_at.strftime("%F")%></span>
                     <span class="cn_category"><%= article.byline.html_safe%></span>
-                    <p style="height: 105px"><%=article.ingress%></p>
+                    <p style="height: 85px; text-overflow: ellipsis"><%=article.ingress%></p>
                     <div class="read_more">
                       <%= link_to '<i class="fa fa-share"></i>'.html_safe + " " + t("tabs.articles.read_more"), article_path(article), class: 'blue-well-front' %>
                     </div>
@@ -54,11 +54,6 @@
         <div class="col-md-4 no_padding_right">
           <div class="row">
             <div class="col-md-12 no_padding_right">
-              <%= link_to image_tag(t("frontpage.button_images.volunteer"),class: "link_button", onmouseover: "this.src='" + t("frontpage.button_images.volunteer_hover") + "'", onmouseout: "this.src='"+ t("frontpage.button_images.volunteer") + "'"), 'https://opptak.isfit.org' %>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-12 no_padding_right">
               <%= link_to image_tag(t("frontpage.button_images.participant"),class: "link_button", onmouseover: "this.src='" + t("frontpage.button_images.participant_hover") + "'", onmouseout: "this.src='"+ t("frontpage.button_images.participant") + "'"), 'https://participant.isfit.org' %>
             </div>
           </div>
@@ -70,7 +65,7 @@
           <div class="row">
             <div class="col-md-12 no_padding_right">
 
-              <a width="100%" height="341px" class="twitter-timeline" href="https://twitter.com/search?q=%23isfit+%7C%7C+%23tradeyourideas" data-widget-id="503989856049983488"></a>
+              <a width="100%" height="271px" class="twitter-timeline" href="https://twitter.com/search?q=%23isfit+%7C%7C+%23tradeyourideas" data-widget-id="503989856049983488"></a>
               <script src="//platform.twitter.com/widgets.js"></script>
             </div>
           </div>
