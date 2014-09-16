@@ -18,7 +18,6 @@ ready = function() {
             url: url,
             dataType: "jsonp",
             jsonp: "callback",
-            jsonpCallback: "jsonpcallback",
             success: function (json) {
                 if(typeof json.count === 'undefined'){
                     $('#twitter-counter1').text(0);
