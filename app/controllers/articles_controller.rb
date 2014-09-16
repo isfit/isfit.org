@@ -42,8 +42,11 @@ class ArticlesController < ApplicationController
       format.html{render 'show'} # show.html.erb
       format.xml  { render :xml => @article }
     end
-  end 
-
+  end
+  def latest_blogs
+    @articles = Article.blog_articles(I18n.locale.to_s).limit(6)
+    render :latest
+  end
   def blog
     @blog_posts = Article.blog_articles(Language.to_s)
 

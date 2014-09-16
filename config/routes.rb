@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get 'blogs/:id' => "articles#show"
   get 'blog/:id' => "articles#show", as: "blog"
   get 'blogg/:id' => "articles#show"
+  get 'latest-blogposts' => "articles#latest_blogs"
 
   get 'pages/:id' => 'tabs#redirect_page'
   resources :articles

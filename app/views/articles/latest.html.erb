@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="container" style="margin-top:50px">
+    <% @articles.each_with_index do |article, i| %>
+        <% if i < 2 %>
+            <a href="<%= blog_path(article, :tab=>params[:tab])%>">
+                <div class="col-md-6">
+                    <div class="latest-blogs-image-top">
+                        <%= image_tag "http://www.isfit.org/" + article.frontend_article_image.url(:frontpage_large)%>
+                    </div>
+                    <h2><%= article.title %></h2>
+                </div>
+            </a>
+        <% else %>
+            <a href="<%= blog_path(article, :tab=>params[:tab])%>">
+                <div class="col-md-3">
+                    <div class="latest-blogs-image-bottom">
+                        <%= image_tag "http://www.isfit.org/" + article.frontend_article_image.url(:frontpage_large)%>
+                    </div>
+                    <h2><%= article.title %></h2>
+                </div>
+            </a>
+        <% end %>
+    <% end %>
+  </div>
+</div>
