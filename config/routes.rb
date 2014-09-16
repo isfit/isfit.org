@@ -15,8 +15,8 @@ Rails.application.routes.draw do
   get 'blogs' => "articles#all_blog"
   get 'blog' => "articles#all_blog", as: "old_blog"
   get 'blogg' => "articles#all_blog"
-  get 'blogs/:id' => "articles#show", as: "blog"
-  get 'blog/:id' => "articles#show"
+  get 'blogs/:id' => "articles#show"
+  get 'blog/:id' => "articles#show", as: "blog"
   get 'blogg/:id' => "articles#show"
 
   get 'pages/:id' => 'tabs#redirect_page'
