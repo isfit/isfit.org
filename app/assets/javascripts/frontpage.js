@@ -4,7 +4,6 @@ function getInstagram(url) {
         url: url,
         dataType: "jsonp",
         jsonp: "callback",
-        jsonpCallback: "jsonpcallback",
         success: function (data) {
             var output = "";
             var div = document.getElementById('instagram-div');
