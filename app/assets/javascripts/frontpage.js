@@ -8,7 +8,13 @@ function getInstagram(url, div_id) {
             var output = "";
             var div = document.getElementById(div_id);
             $.each(data.data, function (i, item) {
-                output += '<div class="col-md-6 bottom-margin"><a href="' + item.link +'"><img src="' + item.images.standard_resolution.url + '" class="instagram_image"/></a></div>';
+                output += '<div class="col-md-6 bottom-margin';
+                if(i == 1){
+                    output += ' no_padding_right';
+                } else {
+                    output += ' no_padding_left';
+                }
+                output += '"><a href="' + item.link +'"><img src="' + item.images.standard_resolution.url + '" class="instagram_image"/></a></div>';
 
             });
             div.innerHTML = output;
