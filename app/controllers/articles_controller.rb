@@ -2,6 +2,19 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.xml
 
+  def show_hashtag_articles
+    @articles = []
+    hashtag_id = Hashtag.where(:hashtag => params[:hashtag]).first.id 
+    article_ids = ArticleHashtag.where(:hashtag_id => hashtag_id)
+
+    article_ids.each do |id|
+     @articles << Article.where(:id => id.article_id).first 
+   end
+    @articles = @articles.paginate(:page => params[:page], per_page: 10)  
+    render 'articles/hashtags'
+  end
+
+
   def index
     #@articles = Article.where("(show_article <='"+Time.now.strftime("%Y-%m-%d %H:%M:%S")+"' OR show_article IS NULL)").where(deleted: 0).where(list: 1).order("weight DESC").limit(5)
     #if Language.to_s =="en"

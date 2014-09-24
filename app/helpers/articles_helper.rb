@@ -17,4 +17,14 @@ module ArticlesHelper
       url = "<div class=#{style}><img src =/assets/#{pic_url}  /><br /><i>Foto: #{picture.credits}</i><br /><i>#{picture.image_text_en}</i></div>"
     end
   end
+  def display_tag
+
+    if ArticleHashtag.where(article_id: @article.id).empty?
+      return nil
+    else
+      tag_id = ArticleHashtag.where(article_id: @article.id).first.hashtag_id 
+      tag = Hashtag.where(id: tag_id)
+      return link_to tag, hashtag_path(tag)
+    end
+  end
 end

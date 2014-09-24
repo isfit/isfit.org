@@ -2,6 +2,9 @@ class Article < ActiveRecord::Base
   self.primary_key = 'id'
   #lang_attr :title, :ingress, :body, :sub_title
 
+  has_many :article_hashtags
+  has_many :hashtag, through: :article_hashtag
+
   has_attached_file :frontend_article_image, styles:  {
     frontpage_large: {geometry: "620x362#", processors: [:cropper] },
     article_large: {geometry: "940x480#", processors: [:cropper_half] }

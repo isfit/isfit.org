@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get 'blogs/:id' => "articles#show"
   get 'blog/:id' => "articles#show", as: "blog"
   get 'blogg/:id' => "articles#show"
+  get 'hashtag/:hashtag' => "articles#show_hashtag_articles", as: "hashtag"
 
   get 'pages/:id' => 'tabs#redirect_page'
   resources :articles

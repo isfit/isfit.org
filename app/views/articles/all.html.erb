@@ -2,7 +2,8 @@
   <div class="container">
   <div class="col-md-12">
 <div class="article">
-  <h1>
+
+    <h1>
   <% if @blog %>
         <i class="fa fa-file-text-o"></i> <%= t('articles.blog_archive')%>
   <% else %>
@@ -10,23 +11,8 @@
   <% end %>
 
   </h1>
-  <% @articles.each do |article| %>
-<hr>
-      <a href="<%= (@blog ? blog_path(article, :tab=>params[:tab]) : article_path(article, :tab=>params[:tab])) %>" style="margin: 0; padding: 0;">
-        <h3></i> <%= article.title%></h3>
-        <p style="color:#000000"><%=article.ingress%></p>
-
-      </a>
-  <%end%>
-</div>
-  <div style="margin-top: 2em;">
-    <div class="pagination pagination-centered">
-      <ul>
-        <%= will_paginate @articles, renderer:  BootstrapPagination::Rails  %>
-      </ul>
-    </div>
+  <%= render 'article_list' %>
   </div>
   </div>
-
   </div>
 </div>

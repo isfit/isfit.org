@@ -1,0 +1,16 @@
+
+  <% @articles.each do |article| %>
+    <hr>
+    <a href="<%= (@blog ? blog_path(article, :tab=>params[:tab]) : article_path(article, :tab=>params[:tab])) %>" style="margin: 0; padding: 0;">
+    <h3></i> <%= article.title%></h3>
+    <p style="color:#000000"><%=article.ingress%></p>
+    </a>
+  <%end%>
+
+  <div style="margin-top: 2em;">
+    <div class="pagination pagination-centered">
+      <ul>
+        <%= will_paginate @articles, renderer:  BootstrapPagination::Rails  %>
+      </ul>
+    </div>
+  </div>
