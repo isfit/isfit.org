@@ -22,9 +22,18 @@ module ArticlesHelper
     if ArticleHashtag.where(article_id: @article.id).empty?
       return nil
     else
-      tag_id = ArticleHashtag.where(article_id: @article.id).first.hashtag_id 
-      tag = Hashtag.where(id: tag_id)
-      return link_to tag, hashtag_path(tag)
+      tag_id = ArticleHashtag.where(article_id: @article.id)
+      tag_ids = []
+      tag_id.each do |t_id|
+        tag_ids << Hashtag.where(id: t_id.hashtag_id).first
+      end 
+      s = ''
+      tag_ids.each do |t|
+        s << (link_to t.hashtag, hashtag_path(t.hashtag))
+        s << ' '
+      end
+      return s.html_safe
+      #return link_to tag, hashtag_path(tag)
     end
   end
 end
