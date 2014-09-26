@@ -6,7 +6,7 @@ class TabsController < ApplicationController
 		if I18n.locale.to_s.eql?("no")
 			@pages = Page.order(:tab_weight).where("tab_id = #{@tab.id} AND title_no > '' AND deleted != 1")
 		elsif I18n.locale.to_s.eql?("en")
-			@pages = Page.where("tab_id = #{@tab.id} AND title_en > '' AND deleted != 1")
+      @pages = Page.order(:tab_weight).where("tab_id = #{@tab.id} AND title_en > '' AND deleted != 1")
 		end
 			
 
