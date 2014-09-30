@@ -20,7 +20,7 @@
       <div class="col-md-6 no_padding">
         <div class="col-md-12">
           <% if article.frontend_article_image %>
-            <%= image_tag article.frontend_article_image.url(:frontpage_large), :style=> "max-height: 300px"%>
+            <%= image_tag article.frontend_article_image.url(:frontpage_large), :style=> "max-height: 300px; max-width: 100%;"%>
           <% else %>
             <%=image_tag "article_images/"+article.id.to_s + "_3.jpg"%><br>
           <% end %>

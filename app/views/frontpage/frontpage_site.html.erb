@@ -37,7 +37,7 @@
                     <% end %>
                     <a href="<%= article_path(article)%>">
                     <% if article.frontend_article_image %>
-                        <%= image_tag article.frontend_article_image.url(:frontpage_large), :style=> "max-height: 200px"%>
+                        <%= image_tag article.frontend_article_image.url(:frontpage_large), :style=> "max-height: 200px;"%>
                     <% else %>
                         <%=image_tag "article_images/"+article.id.to_s + "_3.jpg"%><br>
                     <% end %>
