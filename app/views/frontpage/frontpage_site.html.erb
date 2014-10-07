@@ -1,4 +1,9 @@
 <div class="container top-margin">
+  <% if I18n.locale.to_s.eql?("no") %>
+    <div class="col-md-12">
+      <%= link_to image_tag("http://i.imgur.com/jvYjqSt.jpg", :style=> "max-width: 100%; margin-bottom: 10px;"), 'https://opptak.isfit.org' %>
+    </div>
+  <% end %>
   <div class="col-md-12 no_padding">
     <div class="col-md-8 no_padding_left">
       <div class="cn_wrapper">
@@ -54,12 +59,7 @@
         <div class="col-md-4 no_padding_right">
           <div class="row">
             <div class="col-md-12 no_padding_right">
-              <%= link_to image_tag(t("frontpage.button_images.participant"),class: "link_button", onmouseover: "this.src='" + t("frontpage.button_images.participant_hover") + "'", onmouseout: "this.src='"+ t("frontpage.button_images.participant") + "'"), 'https://participant.isfit.org' %>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-12 no_padding_right">
-              <%= link_to image_tag(t("frontpage.button_images.dialog"),class: "link_button", onmouseover: "this.src='" + t("frontpage.button_images.dialog_hover") + "'", onmouseout: "this.src='"+ t("frontpage.button_images.dialog") + "'"), 'https://participant.isfit.org' %>
+              <%= link_to image_tag(t("frontpage.button_images.volunteer"),class: "link_button", onmouseover: "this.src='" + t("frontpage.button_images.volunteer_hover") + "'", onmouseout: "this.src='"+ t("frontpage.button_images.volunteer") + "'"), 'https://opptak.isfit.org' %>
             </div>
           </div>
           <div class="row">
@@ -67,7 +67,7 @@
 
               <div class="twitter-timeline-container"
                    data-widget-id="503989856049983488"
-                   data-widget-options="<%= { height: '271px' }.to_json %>">
+                   data-widget-options="<%= { height: '351px' }.to_json %>">
               </div>
             </div>
           </div>
