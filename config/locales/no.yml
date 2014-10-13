@@ -41,6 +41,10 @@
   footer:
     editor: "Redaktør"
     copyright: Alt av skriftlig materiale og ISFiT-logoen er kopibeskyttet Stiftelsen ISFiT.
+    socialmedias: "Sosiale medier"
+    contactus: "Kontakt oss"
+    didyouknow: "Viste du at..."
+    aboutisfit: "ISFiT står for Internasjonal Studentfestival i Trondheim. Det navnet imidlertidig ikke forteller, er at ISFiT også er verdens største internasjonale studentfestival."
   tabs:
     mailing_lists: 'Maillister'
     articles:
