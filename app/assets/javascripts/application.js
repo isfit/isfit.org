@@ -34,7 +34,16 @@ ready = function () {
     return false;
   });
   //you know the position.
-
+  $(window).scroll(function () { 
+    if ($(window).scrollTop() > $(".header").height()) {
+      $('.navbar-top').addClass('navbar-fixed-top');
+      $("body").css("padding-top", 54);
+    }
+    if ($(window).scrollTop() < $(".header").height()) {
+      $("body").css("padding-top", 0);
+      $('.navbar-top').removeClass('navbar-fixed-top');
+    }
+  });
 
 
   $('body').scrollspy({
