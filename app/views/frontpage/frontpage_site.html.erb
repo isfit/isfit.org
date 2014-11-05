@@ -1,145 +1,115 @@
-<div class="container top-margin">
-  <% if I18n.locale.to_s.eql?("no") %>
-    <div class="col-md-12">
-      <%= link_to image_tag("http://i.imgur.com/FOBn76A.jpg", :style=> "max-width: 100%; margin-bottom: 10px;"), 'https://opptak.isfit.org' %>
-    </div>
-  <% end %>
+<div class="container top-margin no_padding">
   <div class="col-md-12 no_padding">
-    <div class="col-md-8 no_padding_left">
-      <div class="cn_wrapper">
-        <div class="col-md-6">
-          <div id="cn_list" class="cn_list">
-            <div class="cn_page" style="display:block;">
-              <% @articles.each_with_index do |article, i| %>
-                  <% if i == 0%>
-                      <div class="cn_item selected">
-                  <% else %>
-                      <div class="cn_item">
-                  <% end %>
-                  <h2><%=article.title%></h2>
-                  <p><%=truncate(article.ingress, length: 50)%></p>
-                  </div>
-              <% end %>
-              </div>
-            </div>
-            <a href="articles" class="orange-well-front add_top_margin">
-              <i class="fa fa-archive"> </i> <%= t("articles.archive") %>
-            </a>
-          </div>
-          <div class="col-md-6 no_padding">
-            <div id="cn_preview" class="cn_preview">
-              <div class="col-md-12" style="min-height: 450px">
-                <% @articles.each_with_index do |article, i| %>
-                    <% if i == 0%>
-                        <div class="cn_content">
-                    <% else %>
-                        <div class="cn_content cn_content_invisible">
-                    <% end %>
-                    <a href="<%= article_path(article)%>">
-                    <% if article.frontend_article_image %>
-                        <%= image_tag article.frontend_article_image.url(:frontpage_large), :style=> "max-height: 200px;"%>
-                    <% else %>
-                        <%=image_tag "article_images/"+article.id.to_s + "_3.jpg"%><br>
-                    <% end %>
-                    <h1 style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis"><%=article.title%></h1>
-                    </a>
-                    <span class="cn_date"><%=article.created_at.strftime("%F")%></span>
-                    <span class="cn_category"><%= article.byline.html_safe%></span>
-                    <p style="height: 85px; text-overflow: ellipsis"><%=article.ingress%></p>
-                    <div class="read_more">
-                      <%= link_to '<i class="fa fa-share"></i>'.html_safe + " " + t("tabs.articles.read_more"), article_path(article), class: 'blue-well-front' %>
-                    </div>
-                    </div>
-                <% end %>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 no_padding_right">
-          <div class="row">
-            <div class="col-md-12 no_padding_right">
-              <%= link_to image_tag(t("frontpage.button_images.volunteer"),class: "link_button", onmouseover: "this.src='" + t("frontpage.button_images.volunteer_hover") + "'", onmouseout: "this.src='"+ t("frontpage.button_images.volunteer") + "'"), 'https://opptak.isfit.org' %>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-12 no_padding_right">
+    <div class="col-md-8  no_padding">
+      <% @articles.each_with_index do |article, i| %>
+        <% if i == 0 %>
 
-              <div class="twitter-timeline-container"
-                   data-widget-id="503989856049983488"
-                   data-widget-options="<%= { height: '351px', width: '100%' }.to_json %>">
-              </div>
+          <div class="row no_padding">
+            <div class="col-md-12 wrapz">
+              <%= link_to article_path(article),  :style=> "width: 100%;" do %>
+                <% if article.frontend_article_image %>
+                  <%= image_tag article.frontend_article_image.url(:frontpage_large), class: 'article-frontpage-image'%>
+                <% else %>
+                  <%=image_tag "article_images/"+article.id.to_s + "_3.jpg"%><br>
+                <% end %>
+                <h1 class="frontend-article-title" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis"><%=article.title%></h1>
+              <% end %>
             </div>
           </div>
-        </div>
-      </div>
-      <hr>
-      <div class="col-md-12 no_padding">
-        <div class="col-md-8">
-          <div class="row video_wrapper">
-            <span id="button_left" class="button_left"><i class="fa fa-arrow-circle-left"></i></span>
-            <span id="button_right" class="button_right"><i class="fa fa-arrow-circle-right"></i></span>
-            <div id="show_video" class="show_video">
-              <div class="video_content">
-                <iframe class="frontpage_video" src="//www.youtube.com/embed/iR3SfdMZ58w" width="100%" height="364px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-              </div>
-              <div class="video_content video_content_invisible">
-                <iframe class="frontpage_video" src="//player.vimeo.com/video/85106242" width="100%" height="364px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-              </div>
-              <div class="video_content video_content_invisible">
-                <iframe class="frontpage_video" src="//player.vimeo.com/video/61421153" width="100%" height="364px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-              </div>
-            </div>
-          </div>
-          <div class="row" style="padding-bottom: 17px">
-            <div id="video_list" class="video_item" style="text-align: center">
-              <span class="video_item selected_video">
-                <i class="fa fa-circle"></i>
-              </span>
-              <span class="video_item">
-                <i class="fa fa-circle"></i>
-              </span>
-              <span class="video_item">
-                <i class="fa fa-circle"></i>
-              </span>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4"  style="border:1px solid #aaa;">
-          <div class="col-md-12 instagram-container" id="instagram-id">
-            <h4 style="margin-left:20px"><i class="fa fa-instagram fa-2x orange-text"></i> #tradeyourideas &nbsp;&nbsp;&nbsp; #isfit2015</h4>
-              <div id="instagram-div-1">
-              </div>
-              
-          </div>
-        </div>
-      </div>
-      <div class="col-md-12 hidden-xs hidden-sm" style="padding-left: 0px; padding-right: 30px">
-      <div class="col-md-12 blank-well" style="margin-left:15px; margin-right: 15px">
-        <div class="col-md-6">
-        <iframe src="http://www.myworld2015.org/?iframe=600&partner=ISFiT15" width="100%" height="380px" frameborder="0" style="border:1px solid #aaa;"></iframe>
-          </div>
-        <div class="col-md-6">
-          <%if I18n.locale.to_s == 'no'%>
-          <h2>Antikorrupsjon i FNs utviklingsmål?</h2>
-          <p>
-            FNs tusenårsmål har blitt nådd i varierende grad, og prosessen med å sette dem har blitt kritisert. Når nye utviklingsmål nå skal settes ønsker FN å gå i dialog med verden for å sette de satsningsområdene som virkelig kan føre til en bedre fremtid for mennesker i verden. Det vil vi i ISFiT gjerne kaste oss på!
-            <br /><br />
-            Hva mener du bør stå i de nye utviklingsmålene til FN? Er det viktigste å fokusere på utdanning, eller helse? Skal vi fokusere på jobbskapning eller likestilling på veien mot en bedre fremtid? FN vil høre din mening, og har derfor åpnet en nettside for ideutveksling rundt verdens fremtid. Her kan du gå inn for å stemme, diskutere, eller se hva andre mener.
-            <br /><br />
-            Vi mener fokus på <b>ærlig og responisivt styresett</b> er noe som bør inn i den nye satsningen. Mer åpenhet og mindre korupsjon er det som virkelig trengs for å skape en bedre og mer rettferdig verden.
-            Er du enig, eller bør noe helt annet være i fokus i årene som kommer? Gå inn og stem!</p>
-            <% else %>
-              <h2>Anti-corruption in the UN's development goals?</h2>
-              The UN's millenium goals have been to a varying degree, and the process of defining them has been criticized. When new development goals now are about to be set, the UN wants a dialogoue with the world to determine the focus areas which can really lead to a better future for the people of the world. We in ISFiT wish to join this process!
-              <br /><br />
-              What do you think should be in the new development goals? Is the most important focus area education or health? Should we focus on creating jobs or achiving gender equality on the road towards a better future? The UN wants hear your opinion, and has created a website for trading ideas about the world's future. Here you can vote, discuss or read other people's opinions.
-              <br /><br />
-              We in ISFiT think that <b>an honest and responsive government</b> should be in the new goals. More transparency and less corruption is what is really needed to create a better and more just world. Do you agree, or should it be something completely different? Join in and vote!
+
+        <% else %>
+
+          <% if i == 1 %> 
+            <div class="row no_padding">
           <% end %>
+            <div class="col-md-6">
+              <%= link_to (article_path(article)) do%>
+                <% if article.frontend_article_image %>
+                  <%= image_tag article.frontend_article_image.url(:frontpage_large), class: 'article-frontpage-image'%>
+                <% else %>
+                  <%=image_tag "article_images/"+article.id.to_s + "_3.jpg"%><br>
+                <% end %>
+                <h1 class="frontend-article-title"><%= article.title %></h1>
+              <% end %>
+            </div>
+            <% if i==2 %>
+            </div>
+            <% end %>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="col-md-4">
+      <div class="col-md-12 twitter-container no_padding">
+        <div class="col-md-12 no_padding">
+          <div class="twitter-timeline-container"
+          data-widget-id="503989856049983488"
+          data-widget-options="<%= { height: '351px', width: '100%' }.to_json %>">
+          </div>
         </div>
       </div>
+
+      <div class="col-md-12"  style="border:1px solid #aaa; margin-top: 40px;">
+        <div class="col-md-12 instagram-container" id="instagram-id">
+          <h4 style="margin-left:20px;"><i class="fa fa-instagram fa-2x orange-text"></i> #tradeyourideas &nbsp;&nbsp;&nbsp; #isfit2015</h4>
+          <div id="instagram-div-1">
+            <ul class="instagram-slider">
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </div>
+
+
+  <div class="col-md-12" style="margin-top:20px;">
+    <div class="col-md-12 no_padding">
+      <ul class="bxslider">
+        <li>
+          <iframe src="//www.youtube.com/embed/iR3SfdMZ58w" width="500" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+        </li>
+        <li> 
+          <iframe src="//player.vimeo.com/video/85106242" width="500" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></li>
+        <li> 
+          <iframe src="//player.vimeo.com/video/61421153" width="500" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="col-md-12 no_padding hidden-xs hidden-sm">
+    <div class="col-md-12 no_padding blank-well">
+      <div class="col-md-6">
+        <iframe src="http://www.myworld2015.org/?iframe=600&partner=ISFiT15" width="100%" height="380px" frameborder="0" style="border:1px solid #aaa;"></iframe>
+      </div>
+      
+      <div class="col-md-6">
+        <%if I18n.locale.to_s == 'no'%>
+        <h2>Antikorrupsjon i FNs utviklingsmål?</h2>
+        <p>
+          FNs tusenårsmål har blitt nådd i varierende grad, og prosessen med å sette dem har blitt kritisert. Når nye utviklingsmål nå skal settes ønsker FN å gå i dialog med verden for å sette de satsningsområdene som virkelig kan føre til en bedre fremtid for mennesker i verden. Det vil vi i ISFiT gjerne kaste oss på!
+          <br /><br />
+          Hva mener du bør stå i de nye utviklingsmålene til FN? Er det viktigste å fokusere på utdanning, eller helse? Skal vi fokusere på jobbskapning eller likestilling på veien mot en bedre fremtid? FN vil høre din mening, og har derfor åpnet en nettside for ideutveksling rundt verdens fremtid. Her kan du gå inn for å stemme, diskutere, eller se hva andre mener.
+          <br /><br />
+          Vi mener fokus på <b>ærlig og responisivt styresett</b> er noe som bør inn i den nye satsningen. Mer åpenhet og mindre korupsjon er det som virkelig trengs for å skape en bedre og mer rettferdig verden.
+          Er du enig, eller bør noe helt annet være i fokus i årene som kommer? Gå inn og stem!</p>
+          <% else %>
+          <h2>Anti-corruption in the UN's development goals?</h2>
+          The UN's millenium goals have been to a varying degree, and the process of defining them has been criticized. When new development goals now are about to be set, the UN wants a dialogoue with the world to determine the focus areas which can really lead to a better future for the people of the world. We in ISFiT wish to join this process!
+          <br /><br />
+          What do you think should be in the new development goals? Is the most important focus area education or health? Should we focus on creating jobs or achiving gender equality on the road towards a better future? The UN wants hear your opinion, and has created a website for trading ideas about the world's future. Here you can vote, discuss or read other people's opinions.
+          <br /><br />
+          We in ISFiT think that <b>an honest and responsive government</b> should be in the new goals. More transparency and less corruption is what is really needed to create a better and more just world. Do you agree, or should it be something completely different? Join in and vote!
+          <% end %>
+      </div>
+    </div>
+  </div>
+
 </div>
+
+
+
+
+
+
+
+

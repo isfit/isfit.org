@@ -13,7 +13,8 @@
  * file per style scope.
  *
  *= require_tree .
-  *= require font-awesome
+ *= require font-awesome
+ *= require bxslider
  *= require_self
  */
  // Extra small screen / phone
@@ -310,6 +311,10 @@ nav .container {
   .footer > div >div > p > a{
     color: #FFF;
   }
+  .footer > div >div > p > a:hover{
+    text-decoration: none;
+    color: #EFAB44;
+  }
 
   .footer > div > div > .socialmedia-logo{
     margin-top: 1%;
@@ -342,9 +347,10 @@ nav .container {
     width: 124px;
     height: 34px;
   }
-.fa-custom-size{
-  font-size: 1.4em; 
-}
+  .fa-custom-size{
+    font-size: 1.4em; 
+  }
+
   @media (max-width: 800px) {
     .navbar-nav > li.tabs{
       border-bottom:0;

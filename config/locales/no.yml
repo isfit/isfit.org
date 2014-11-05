@@ -46,6 +46,7 @@
     didyouknow: "Viste du at..."
     aboutisfit: "ISFiT står for Internasjonal Studentfestival i Trondheim. Det navnet imidlertidig ikke forteller, er at ISFiT også er verdens største internasjonale studentfestival."
   tabs:
+    frontpage: 'Forside'
     mailing_lists: 'Maillister'
     articles:
       main: 'Nyheter'

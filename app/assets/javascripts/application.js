@@ -16,6 +16,7 @@
 //= require turbolinks
 //= require bootstrap
 //= require bootstrap/scrollspy
+//= require bxslider
 //= require_tree .
 
 ready = function () {
