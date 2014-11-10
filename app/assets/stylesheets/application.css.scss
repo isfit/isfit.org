@@ -13,7 +13,8 @@
  * file per style scope.
  *
  *= require_tree .
-  *= require font-awesome
+ *= require font-awesome
+ *= require bxslider
  *= require_self
  */
  // Extra small screen / phone
@@ -190,7 +191,6 @@ nav .container {
   display: none;
 }
 .footer{
-  text-align: center;
   background-color: #0099CC;
   width: 100%;
   margin-bottom: 0;
@@ -298,33 +298,59 @@ nav .container {
   .navbar-logos{
     width: 40px;
   }
-  .footer > a > i {
+  .footer > div > a > i {
     color: #FFFFFF;
     margin-left: 10px;
   }
-  .footer > a > i:hover {
+  .footer > div > .copyright{
+    text-align: center;
+  }
+  .footer > div > div > p > a > i:hover {
     color: #EFAB44;
   }
-  .footer > p > a{
+  .footer > div >div > p > a{
     color: #FFF;
   }
+  .footer > div >div > p > a:hover{
+    text-decoration: none;
+    color: #EFAB44;
+  }
 
-  .footer .socialmedia-logo{
+  .footer > div > div > .socialmedia-logo{
     margin-top: 1%;
   }
+  .footer > div > div > ul{
+    color: #FFF;
+    padding: 0;
+    list-style: none;
+  }
+  .footer > div > div > ul > li{
+    color: #FFF;
 
-  .footer > p {
+  }
+    .footer > div > div > ul > li > a{
+    color: #FFF;
+  }
+      .footer > div > div > ul > li > a:hover{
+    color: #EFAB44;
+  }
+  .footer > div > div > h3 {
     color: #FFFFFF;
   }
+  .footer > div > div > p {
+    color: #FFFFFF;
+  }
+
   .isfit-logo{
     padding-top: 10px;
     background: image-image-url('nestenalleikoner.png') no-repeat -6px -166px;
     width: 124px;
     height: 34px;
   }
-.fa-custom-size{
-  font-size: 1.4em; 
-}
+  .fa-custom-size{
+    font-size: 1.4em; 
+  }
+
   @media (max-width: 800px) {
     .navbar-nav > li.tabs{
       border-bottom:0;

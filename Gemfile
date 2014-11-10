@@ -70,3 +70,6 @@ gem 'will_paginate-bootstrap'
 
 gem 'therubyracer'
 gem 'jquery-turbolinks'
+
+#video slider
+gem 'bxslider-rails'

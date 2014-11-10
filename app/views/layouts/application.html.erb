@@ -69,7 +69,7 @@
 
 					<li class="navbar-logos">			
 						<%= link_to tab_path(@info_tab) do %>
-							<i class="fa fa-info-circle fa-custom-size"></i>						
+							<i class="fa fa-question-circle fa-custom-size"></i>						
 						<% end %>
 					</li>
 					<li class="navbar-logos">			
@@ -92,31 +92,63 @@
 		<%= yield %>
 	</div>
 	<div class="footer">
-		<p>Connect with us at: </p>
-		<%= link_to "https://www.facebook.com/ISFiTNorway", :target => "_blank" do %>
-		<i class="fa fa-facebook-square fa-custom-size"></i>
-		<% end %>
-		<%= link_to "https://twitter.com/ISFiT", :target => "_blank" do %>
-		<i class="fa fa-twitter-square fa-custom-size"></i>
-		<% end %>
-		<%= link_to "http://vimeo.com/user12652193", :target => "_blank" do %>
-		<i class="fa fa-vimeo-square fa-custom-size"></i>
-		<% end %>
-		<p>
-			<%= t("footer.editor") %>: Simen Sundsbø, headofeditorial[at]isfit.no. <br/>
-		</p>
-		<p>
-			<%= link_to t("tabs.info.contact"), tab_path('contact') %> | 
-			<%= link_to t("tabs.info.main"), tab_path('information') %>
-		</p>
-		<p>
-			<%= t("footer.copyright") %>
-		</p>
-		<p>
-			&copy ISFiT 2015.
-		</p>
+		<div class="container">
+			<div class="col-md-4">
+				<h3><%= t("footer.didyouknow") %></h3>
+				<p><%= t("footer.aboutisfit") %></p>
+			</div>
 
+			<div class="col-md-4">
+				<h3><%= t("footer.socialmedias") %></h3>
+				<p>
+					<%= link_to "https://www.facebook.com/ISFiTNorway", :target => "_blank" do %>
+						<i class="fa fa-facebook-square fa-custom-size"></i>
+					<% end %>
+					Facebook
+				</p>
+				<p>
+					<%= link_to "https://twitter.com/ISFiT", :target => "_blank" do %>
+						<i class="fa fa-twitter-square fa-custom-size"></i>
+					<% end %>
+					Twitter
+				</p>
+				<p>
+					<%= link_to "http://instagram.com/isfit2015/", :target => "_blank" do %>
+						<i class="fa fa-instagram fa-custom-size"></i>
+					<% end %>
+					Instagram
+				</p>
+				<p>
+					<%= link_to "http://vimeo.com/user12652193", :target => "_blank" do %>
+						<i class="fa fa-vimeo-square fa-custom-size"></i>
+					<% end %>
+					Vimeo
+				</p>
+			</div>
+			<div class="col-md-4">
+				<h3><%= t("footer.contactus") %></h3>
+				<p>
+					<%= t("footer.editor") %>: Simen Sundsbø, headofeditorial[at]isfit.no.
+				</p>
+				<p>
+					<%= link_to t("tabs.frontpage"), root_path %> |
+					<%= link_to t("tabs.info.contact"), tab_path('contact') %> |
+					<%= link_to t("tabs.info.main"), tab_path('information') %>
+				</p>
+			
+			</div>
+			<div class="col-md-12">
+				<hr>
+			</div>
+			<div class="col-md-12 copyright">
+				<p>
+					<%= t("footer.copyright") %>
+				</p>
+				<p>
+					&copy ISFiT 2015.
+				</p>
+			</div>
+		</div>
 	</div>
-
 </body>
 </html>

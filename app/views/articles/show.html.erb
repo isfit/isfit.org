@@ -68,6 +68,24 @@
         <div class="col-md-3" style="padding-left: 30px">
           <div class="row">
             <div class="col-md-12 blue-well">
+              <% if I18n.locale.to_s == 'no' %>
+                <h3>#tradeyourideas: skriv til oss!</h3>
+                <hr>
+                <p>
+                Vi ser etter gjestebloggere som vil være med på å utveksle idéer om aktuelle temaer, korrupsjon, eller andre emner som kan være relevante. For mer informasjon, ta kontakt med bloggansvarlig Ellen: ellenhf[at]isfit.org
+                </p>
+              <% else %>
+                <h3>Do you want to #tradeyourideas? Write to us!</h3>
+                <hr>
+                <p>
+                We are looking for guest bloggers who can present their viewpoints on current events, the theme of ISFiT 2015, corruption, or other relevant subjects. 
+                For more information, please contact Ellen: ellenhf[at]isfit.org
+                </p>
+              <% end %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 blue-well">
               <h2>President Marius Jones</h2>
               <hr>
               <p>
