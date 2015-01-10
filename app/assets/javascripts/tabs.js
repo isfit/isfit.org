@@ -35,6 +35,25 @@ ready = function () {
       });
     });
   });
+  
+  $(document).scroll(function() {
+    var sidebar = $(".sidebar");
+    var footer = $(".footer");
+    var positionfooter = footer.offset();
+    var positionsidebar = sidebar.offset();
+    console.log("DD: " + ((positionsidebar.top + sidebar.height()) + " < " + positionfooter.top - 10));
+    if((positionsidebar.top + sidebar.height()) >= positionfooter.top){
+      console.log("Hei");
+      sidebar.fadeOut();
+    }
+    if($(document).scrollTop() + window.innerHeight < positionfooter.top){
+      sidebar.fadeIn();
+    }
+
+   
+
+  });
+
 }
 $(document).ready(ready);
 $(document).on('page:load', ready);
