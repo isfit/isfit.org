@@ -1,0 +1,54 @@
+<div class="row">
+  <div class="col-md-10 col-md-offset-1">
+    <div class="row">
+      <% time = Time.new %>
+      <% day_of_month = time.day %>
+      <% month = time.month %>
+      <% day_of_month = 3 %>
+      <% month = 2 %>
+      
+
+      <h1> YO </h1>
+      <% if month == 2 %>
+        <% if day_of_month == 3 %>
+          <a href="<%= image_path("Tirsdag.png") %>"><%= image_tag "Tirsdag.png", size: "1000x700", class: "img-responsive" %></a>
+        <% elsif day_of_month == 4 %>
+          <a href="<%= image_path("Onsdag.png") %>"><%= image_tag "Onsdag.png", size: "1000x700", class: "img-responsive" %></a>
+        <% elsif day_of_month == 5 %>
+          <a href="<%= image_path("Torsdag.png") %>"><%= image_tag "Torsdag.png", size: "1000x700", class: "img-responsive" %></a>
+        <% elsif day_of_month == 6 %>
+         <a href="<%= image_path("Fredag.png") %>"><%= image_tag "Fredag.png", size: "1000x700", class: "img-responsive" %></a>
+        <% end %>
+      <% elsif month < 3 %>
+        <a href="<%= image_path("Mandag.png") %>"><%= image_tag "Mandag.png", size: "1000x700", class: "img-responsive" %></a>
+      <% end %>
+  
+      </div>
+      <div class="row">
+        <div class="col-md-2">
+          <a href="<%= image_path("Mandag.png") %>"><%= image_tag "Mandag.png", class: "img-responsive" %></a>
+        </div>
+        <div class="col-md-2">
+          <a href="<%= image_path("Tirsdag.png") %>"><%= image_tag "Tirsdag.png",  class: "img-responsive" %></a>
+        </div>
+        <div class="col-md-2">
+          <a href="<%= image_path("Onsdag.png") %>"><%= image_tag "Onsdag.png",  class: "img-responsive" %></a>
+        </div>
+        <div class="col-md-2">
+          <a href="<%= image_path("Torsdag.png") %>"><%= image_tag "Torsdag.png",  class: "img-responsive" %></a>
+        </div>
+        <div class="col-md-2">
+          <a href="<%= image_path("Fredag.png") %>"><%= image_tag "Fredag.png",  class: "img-responsive" %></a>
+        </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
