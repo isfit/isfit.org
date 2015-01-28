@@ -18,6 +18,9 @@ class TabsController < ApplicationController
       #return
     #end
 	end
+
+	def jubileum
+	end
 	def show_tab_page
 	end
 	def redirect_page

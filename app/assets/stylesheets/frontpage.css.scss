@@ -295,5 +295,22 @@ a.cn_more:hover{
 
 }
 #twitter-widget-0{
-  width: 100%
+  width: 100%;
+}
+
+#jubileum-button{
+  background-color: #0099CC;
+  height: 50px;
+  color: #FFFFFF;
+  text-align: center;
+}
+#jubileum-button > h4{
+  color: #FFFFFF;
+  margin-top: 15px;
+}
+#jubileum-button:hover{
+  background-color: #EFAB44;
+  height: 50px;
+  color: #FFFFFF;
+  text-align: center;
 }

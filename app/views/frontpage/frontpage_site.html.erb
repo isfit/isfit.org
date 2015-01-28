@@ -38,25 +38,53 @@
         <% end %>
       <% end %>
     </div>
-    <div class="col-md-4">
-      <div class="col-md-12 twitter-container no_padding">
-        <div class="col-md-12 no_padding">
-          <div class="twitter-timeline-container"
-          data-widget-id="503989856049983488"
-          data-widget-options="<%= { height: '351px', width: '100%' }.to_json %>">
-          </div>
-        </div>
-      </div>
 
-      <div class="col-md-12"  style="border:1px solid #aaa; margin-top: 40px;">
-        <div class="col-md-12 instagram-container" id="instagram-id">
-          <h4 style="margin-left:20px;"><i class="fa fa-instagram fa-2x orange-text"></i> #tradeyourideas &nbsp;&nbsp;&nbsp; #isfit2015</h4>
-          <div id="instagram-div-1">
-            <ul class="instagram-slider">
-            </ul>
+
+    <div class="col-md-4">
+
+      <% if I18n.locale.to_s == 'no' %>
+        <%= link_to isfit_jubileum_path do %>
+          <div class="col-md-12 no_padding_right" id="jubileum-button">
+            <h4>ISFiT 25år!</h4>
+          </div>
+        <% end %>
+        <div class="col-md-12 twitter-container no_padding" style="margin-top: 20px;">
+          <div class="col-md-12 no_padding">
+            <div class="twitter-timeline-container"
+            data-widget-id="503989856049983488"
+            data-widget-options="<%= { height: '300px', width: '100%' }.to_json %>">
+            </div>
           </div>
         </div>
-      </div>
+        <div class="col-md-12"  style="border:1px solid #aaa; margin-top: 40px;">
+          <div class="col-md-12 instagram-container" id="instagram-id">
+            <h4 style="margin-left:20px;"><i class="fa fa-instagram fa-2x orange-text"></i> #tradeyourideas &nbsp;&nbsp;&nbsp; #isfit2015</h4>
+            <div id="instagram-div-1">
+              <ul class="instagram-slider">
+              </ul>
+            </div>
+          </div>
+        </div>      
+      <% else %>
+        <div class="col-md-12 twitter-container no_padding">
+          <div class="col-md-12 no_padding">
+            <div class="twitter-timeline-container"
+            data-widget-id="503989856049983488"
+            data-widget-options="<%= { height: '351px', width: '100%' }.to_json %>">
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12"  style="border:1px solid #aaa; margin-top: 40px;">
+          <div class="col-md-12 instagram-container" id="instagram-id">
+            <h4 style="margin-left:20px;"><i class="fa fa-instagram fa-2x orange-text"></i> #tradeyourideas &nbsp;&nbsp;&nbsp; #isfit2015</h4>
+            <div id="instagram-div-1">
+              <ul class="instagram-slider">
+              </ul>
+            </div>
+          </div>
+        </div>
+      <% end %>
     </div>
   </div>
 

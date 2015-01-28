@@ -19,6 +19,8 @@ Rails.application.routes.draw do
   get 'blog/:id' => "articles#show", as: "blog"
   get 'blogg/:id' => "articles#show"
 
+  get 'isfit_jubileum' => "tabs#jubileum"
+
   get 'pages/:id' => 'tabs#redirect_page'
   resources :articles
   resources :tabs, except: :index
