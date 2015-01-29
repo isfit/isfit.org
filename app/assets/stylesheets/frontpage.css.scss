@@ -314,3 +314,46 @@ a.cn_more:hover{
   color: #FFFFFF;
   text-align: center;
 }
+#buy_jubilee_ticket{
+  text-align: center;
+  background-color: #0099CC;
+  color: #FFFFFF;
+  height: 65px;
+}
+#buy_book{
+  text-align: center;
+  background-color: #EFAB44;
+  color: #FFFFFF;
+  height: 65px;
+}
+.jubileums_buttons{
+  margin-top: 30px;
+}
+#buy_jubilee_ticket:hover{
+  text-align: center;
+  background-color: #EFAB44;
+  color: #FFFFFF;
+  height: 65px;
+}
+#buy_book:hover{
+  text-align: center;
+  background-color: #0099CC;
+  color: #FFFFFF;
+  height: 65px;
+}
+.jubilee_photo{
+  height: 300px;
+  width: 300px !important;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  background: url(jubileum.jpg) no-repeat center center;
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  filter: grayscale(100%); 
+}
+#h1_isfit_jubi{
+  color: #EFAB44;
+}

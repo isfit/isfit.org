@@ -21,6 +21,10 @@ class TabsController < ApplicationController
 
 	def jubileum
 	end
+	def buy_jubilee_ticket
+	end
+	def buy_book
+	end
 	def show_tab_page
 	end
 	def redirect_page

@@ -1,6 +1,31 @@
 <div class="container top-margin no_padding">
+	<div class="col-md-12" id="h1_isfit_jubi">
+		<h1>ISFiT 25år</h1>
+	</div>
 	<div class="col-md-12">
-		<p>hallo</p>
+		<div class="col-md-8 no_padding_left">
+			<p>
+				Lorem Ipsum er rett og slett dummytekst fra og for trykkeindustrien. Lorem Ipsum har vært bransjens standard for dummytekst helt siden 1500-tallet, da en ukjent boktrykker stokket en mengde bokstaver for å lage et prøveeksemplar av en bok. Lorem Ipsum har tålt tidens tann usedvanlig godt, og har i tillegg til å bestå gjennom fem århundrer også tålt spranget over til elektronisk typografi uten vesentlige endringer. Lorem Ipsum ble gjort allment kjent i 1960-årene ved lanseringen av Letraset-ark med avsnitt fra Lorem Ipsum, og senere med sideombrekkingsprogrammet Aldus PageMaker som tok i bruk nettopp Lorem Ipsum for dummytekst.
+			</p>
+		</div>
+		<div class="col-md-4 no_padding">
+			<div class="col-md-12 jubilee_photo">
+			</div>
+			<div class="col-md-12 no_padding" style="text-align:center;">
+				<i>Foto: Fotogjengen, Samfundet</i>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-12 jubileums_buttons">
+		<%= link_to kjop_jubileums_billett_path do %>
+			<div class="col-md-6 no_padding" id="buy_jubilee_ticket">
+				<h3><i class="fa fa-ticket"></i>Kjøp jubileumsbillett</h3>
+			</div>
+		<% end %>
+		<%= link_to kjop_bok_path do %>
+			<div class="col-md-6 no_padding" id="buy_book">
+				<h3><i class="fa fa-book"></i> Kjøp ISFiT boken</h3>
+			</div>
+		<% end %>
 	</div>
 </div>
-
