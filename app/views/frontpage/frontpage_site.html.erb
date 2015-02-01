@@ -45,14 +45,14 @@
       <% if I18n.locale.to_s == 'no' %>
         <%= link_to isfit_jubileum_path do %>
           <div class="col-md-12 no_padding_right" id="jubileum-button">
-            <h4>ISFiT 25år!</h4>
+            <%= image_tag 'isfit_25ars.png', style: 'width: 100%;' %>
           </div>
         <% end %>
         <div class="col-md-12 twitter-container no_padding" style="margin-top: 20px;">
           <div class="col-md-12 no_padding">
             <div class="twitter-timeline-container"
             data-widget-id="503989856049983488"
-            data-widget-options="<%= { height: '300px', width: '100%' }.to_json %>">
+            data-widget-options="<%= { height: '450px', width: '100%' }.to_json %>">
             </div>
           </div>
         </div>

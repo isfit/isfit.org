@@ -3,29 +3,41 @@
 		<h1>ISFiT 25år</h1>
 	</div>
 	<div class="col-md-12">
-		<div class="col-md-8 no_padding_left">
+		<div class="col-md-12 no_padding">
 			<p>
-				Lorem Ipsum er rett og slett dummytekst fra og for trykkeindustrien. Lorem Ipsum har vært bransjens standard for dummytekst helt siden 1500-tallet, da en ukjent boktrykker stokket en mengde bokstaver for å lage et prøveeksemplar av en bok. Lorem Ipsum har tålt tidens tann usedvanlig godt, og har i tillegg til å bestå gjennom fem århundrer også tålt spranget over til elektronisk typografi uten vesentlige endringer. Lorem Ipsum ble gjort allment kjent i 1960-årene ved lanseringen av Letraset-ark med avsnitt fra Lorem Ipsum, og senere med sideombrekkingsprogrammet Aldus PageMaker som tok i bruk nettopp Lorem Ipsum for dummytekst.
+				I 2015 er det 25 år siden verdens største internasjonale studentfestival ble arrangert for første gang. I et kvart århundre har de beste studentene i Trondheim lagt til rette for at studenter fra hele verden kan møtes til dialog, debatt og relasjonsbygging. Dette skal selvfølgelig markeres!
 			</p>
 		</div>
-		<div class="col-md-4 no_padding">
-			<div class="col-md-12 jubilee_photo">
-			</div>
-			<div class="col-md-12 no_padding" style="text-align:center;">
-				<i>Foto: Fotogjengen, Samfundet</i>
-			</div>
-		</div>
 	</div>
-	<div class="col-md-12 jubileums_buttons">
-		<%= link_to kjop_jubileums_billett_path do %>
-			<div class="col-md-6 no_padding" id="buy_jubilee_ticket">
-				<h3><i class="fa fa-ticket"></i>Kjøp jubileumsbillett</h3>
+	<div class="col-md-12">
+			<div class="col-md-12 no_padding">
+				<h3 class="h3_isfit_jubi">25-årsjubileum for ISFiT</h3>
+				<i><h5>Den internasjonale studentfestivalen i Trondheim</h5></i>
+				<p>
+					I 2015 er det 25 år siden verdens største internasjonale studentfestival ble arrangert for første gang. I et kvart århundre har de beste studentene i Trondheim lagt til rette for at studenter fra hele verden kan møtes til dialog, debatt og relasjonsbygging. Dette skal selvfølgelig markeres! Lørdag 18.april inviterer vi alle ISFiT-frivillige gjennom tidene til Trondheim og vår jubileumsfest.
+				</p>
+				<p>
+					Feiringen vil foregå på Scandic Lerkendal, en liten rusletur fra Studentersamfundet.
+				</p>
+				<p>
+					Kveldens program:<br>
+					18.00: Mottakelse og aperitiff<br>
+					19.00: Treretters festmiddag, inkludert drikke<br>
+					21.30: Fest og konsert med Leisure Suit Lovers
+				</p>
+				<p>Antrekk: Galla</p>
+				<b><p>Er du en ISFiT-frivillig og ønsker å melde deg på? Gjør det <%= link_to 'her', kjop_jubileums_billett_path %>. Det koster 900 kr å delta, og dette skal overføres til konto 9235 11 25162. etter påmelding. </p></b>
 			</div>
-		<% end %>
-		<%= link_to kjop_bok_path do %>
-			<div class="col-md-6 no_padding" id="buy_book">
-				<h3><i class="fa fa-book"></i> Kjøp ISFiT boken</h3>
+			<div class="col-md-12 no_padding">
+				<h3 class="h3_isfit_jubi">Jubileumsboken ISFiT 25 år – Det umulige tar bare litt lenger tid</h3>
+				<p>
+					Boka "Det umulige tar bare litt lengre tid" (Tønseth og Djupedal red., 2014) er endelig i salg!
+				</p>
+				<p>Boken ble lansert 27.januar 2015, og selges på Studentersamfundet under ISFiT 2015 og under jubileumshelga (18.april). For deg som ikke har anledning til å kjøpe boka i Trondheim er det nå mulig å bestille boken her.</p>
+
+				<b><p>
+					Boken koster 299,- og kan kjøpes <%= link_to 'her', kjop_bok_path %>.
+				</p></b>	
 			</div>
-		<% end %>
 	</div>
 </div>
