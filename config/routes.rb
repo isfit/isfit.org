@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
+  get 'lunsj' => "lunch#index"
 
   root :to => "frontpage#frontpage_site"
   get 'test' => "frontpage#frontpage_site"
