@@ -20,6 +20,10 @@ Rails.application.routes.draw do
   get 'blog/:id' => "articles#show", as: "blog"
   get 'blogg/:id' => "articles#show"
 
+  get 'isfit_jubileum' => "tabs#jubileum"
+  get 'kjop_jubileums_billett' => "tabs#buy_jubilee_ticket"
+  get 'kjop_bok' => "tabs#buy_book"
+
   get 'pages/:id' => 'tabs#redirect_page'
   resources :articles
   resources :tabs, except: :index
