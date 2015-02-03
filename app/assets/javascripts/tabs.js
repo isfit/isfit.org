@@ -41,10 +41,8 @@ ready = function () {
     var footer = $(".footer");
     var positionfooter = footer.offset();
     var positionsidebar = sidebar.offset();
-    console.log("DD: " + ((positionsidebar.top + sidebar.height()) + " < " + positionfooter.top - 10));
     if((positionsidebar.top + sidebar.height()) >= positionfooter.top){
-      console.log("Hei");
-      sidebar.fadeOut();
+      sidebar.fadeOut(0);
     }
     if($(document).scrollTop() + window.innerHeight < positionfooter.top){
       sidebar.fadeIn();
