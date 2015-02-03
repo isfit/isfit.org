@@ -36,21 +36,21 @@ ready = function () {
     });
   });
   
-  /*$(document).scroll(function() {
+  $(document).scroll(function() {
     var sidebar = $(".sidebar");
     var footer = $(".footer");
     var positionfooter = footer.offset();
     var positionsidebar = sidebar.offset();
     if((positionsidebar.top + sidebar.height()) >= positionfooter.top){
-      //sidebar.fadeOut(0);
+      sidebar.fadeOut(0);
     }
     if($(document).scrollTop() + window.innerHeight < positionfooter.top){
-      //sidebar.fadeIn();
+      sidebar.fadeIn();
     }
 
    
 
-  });*/
+  });
 
 }
 $(document).ready(ready);
