@@ -339,17 +339,13 @@ a.cn_more:hover{
   height: 65px;
 }
 .jubilee_photo{
-  height: 300px;
-  width: 300px !important;
-  border-radius: 50%;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  background: url(jubileum.jpg) no-repeat center center;
+  width: 100%;  
   -webkit-filter: grayscale(100%);
   -moz-filter: grayscale(100%);
   -o-filter: grayscale(100%);
   -ms-filter: grayscale(100%);
-  filter: grayscale(100%); 
+  filter: grayscale(100%);
+  border: 1px solid #000000;
 }
 #h1_isfit_jubi{
   color: #EFAB44;
