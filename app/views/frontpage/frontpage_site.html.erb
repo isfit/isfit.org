@@ -1,10 +1,10 @@
 <div class="container top-margin no_padding">
   <div class="col-md-12 no_padding">
-    <div class="col-md-8  no_padding">
+    <div class="col-md-8">
       <% @articles.each_with_index do |article, i| %>
         <% if i == 0 %>
 
-          <div class="row no_padding">
+          <div class="row">
             <div class="col-md-12 wrapz">
               <%= link_to article_path(article),  :style=> "width: 100%;" do %>
                 <% if article.frontend_article_image %>
@@ -20,7 +20,7 @@
         <% else %>
 
           <% if i == 1 %> 
-            <div class="row no_padding">
+            <div class="row">
           <% end %>
             <div class="col-md-6">
               <%= link_to (article_path(article)) do%>
