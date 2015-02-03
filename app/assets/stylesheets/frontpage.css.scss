@@ -307,9 +307,8 @@ a.cn_more:hover{
   margin-top: 15px;
 }
 #jubileum-button:hover{
-  background-color: #EFAB44;
-  color: #FFFFFF;
-  text-align: center;
+  border-bottom: 5px solid #EFAB44;
+  margin-bottom: -5px;
 }
 #buy_jubilee_ticket{
   text-align: center;
@@ -352,4 +351,15 @@ a.cn_more:hover{
 }
 .h3_isfit_jubi{
     color: #EFAB44;
+}
+.isfit_online_button-nor{
+  margin-top: 10px;
+}
+.isfit_online_button-nor:hover{
+  border-bottom: 5px solid #EFAB44;
+  margin-bottom: -5px;
+}
+.isfit_online_button:hover{
+  border-bottom: 5px solid #EFAB44;
+  margin-bottom: -5px;
 }
