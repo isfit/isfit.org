@@ -1,4 +1,28 @@
 <div class="row">
+	<div class="col-md-12">
+		<div id="page-ingress" class="lead">
+			<p>
+				<% if I18n.locale.to_s.eql?("no") %>
+					"En workshop er en mindre gruppe deltakere der det deles erfaringer, jobbes kreativt og diskuteres emner med tilknytning til ISFiTs hovedtema for 2015: Korrupsjon."
+				<% else %>
+					"The workshops are small groups where the participants will share their experience, work creatively with and discuss topics related to the overall theme of ISFiT 2015: Corruption."
+				<% end %>
+			</p>
+		</div>
+	</div>
+	<div class="col-md-12">
+		<p>
+			<% if I18n.locale.to_s.eql?("no") %>
+				Workshopene ledes av en gruppe frivillige studenter fra Trondheim, og består av mellom 20 og 30 deltakere. Vårt ønske er å skape en konstruktiv debatt og dialog rundt holdningene til korrupsjon på tvers av ideologiske og nasjonale grenser. Vi samler unge mennesker fra hele verden som er åpne for nye perspektiver og meninger, og som ikke er redd for å fremme sine meninger. I workshopene vil dine holdninger mot korrupsjon bli utfordret, og sammen vil vi forme nye løsninger for fremtiden. ISFiT 2015 setter korrupsjon på agendaen for å skape en bedre fremtid for unge mennesker i verden. Dette er årets workshoper:
+			<% else %>
+				The workshops are led by a group of four volunteer students from Trondheim and consists of 20-30 participants. Our wish is to create a constructive debate and dialog about attitudes towards corruption, across ideological and national borders. We gather young people from around the world who are open to new perspectives and opinions, and who are not afraid to promote their opinions. In the workshops, your attitudes towards corruption will be challenged and new solutions for the future will be formed. ISFiT 2015 puts corruption on the agenda to create a better future for young people in the world. These are the workshops of this year's festival: 
+			<% end %>
+		</p>
+		<hr>
+	</div>
+
+</div>
+<div class="row">
 	<div class="col-md-6 workshop-list" id="workshop-list">
 		<%@workshops = get_workshops %>
 		<div class="col-md-6">
