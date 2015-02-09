@@ -1,15 +1,9 @@
 <div class="container top-margin no_padding">
-  <div class="col-md-12" id="outer-dalai-lama-banner">
-    <%= link_to 'http://online.isfit.org/' do %>
-      <div class="col-md-12" id="dalai-lama-banner">
-        <h1>Watch Dalai Lama online here!</h1>
-      </div>
-    <% end %>
-  </div>
   <div class="col-md-12 no_padding">
     <div class="col-md-8">
       <% @articles.each_with_index do |article, i| %>
         <% if i == 0 %>
+
           <div class="row">
             <div class="col-md-12 wrapz">
               <%= link_to article_path(article),  :style=> "width: 100%;" do %>

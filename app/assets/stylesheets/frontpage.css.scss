@@ -363,24 +363,3 @@ a.cn_more:hover{
   border-bottom: 5px solid #EFAB44;
   margin-bottom: -5px;
 }
-#dalai-lama-banner{
-  height: 150px;
-  background-color: #EFAB44;
-  color: #FFFFFF;
-  text-align: center;
-  margin-bottom: 20px;
-  border: 1px solid #000;
-}
-#dalai-lama-banner h1{
-  line-height: 100px;
-  font-size: 60px;
-  text-shadow: 1px 1px 5px rgba(0,0,0,0.75);
-}
-@media (max-width: 800px) {
-  #dalai-lama-banner{
-    height: auto;
-  }
-  #outer-dalai-lama-banner{
-    padding-right: 45px;
-  }
-}
