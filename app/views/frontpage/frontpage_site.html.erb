@@ -43,20 +43,6 @@
     <div class="col-md-4">
 
       <% if I18n.locale.to_s == 'no' %>
-        <div class="col-md-6 no_padding">
-          <%= link_to 'http://online.isfit.org/' do %>
-            <div class="col-md-12 isfit_online_button-nor">
-              <%= image_tag 'online_logo.png', style: 'width: 100%;' %>
-            </div>
-          <% end %>
-        </div>
-        <div class="col-md-6 no_padding">
-          <%= link_to isfit_jubileum_path do %>
-            <div class="col-md-12 no_padding_right" id="jubileum-button">
-              <%= image_tag 'isfit_25ars.png', style: 'width: 100%;' %>
-            </div>
-          <% end %>
-        </div>
         <div class="col-md-12 twitter-container no_padding" style="margin-top: 20px;">
           <div class="col-md-12 no_padding">
             <div class="twitter-timeline-container"
@@ -75,13 +61,6 @@
           </div>
         </div>      
       <% else %>
-        <div class="col-md-12 no_padding">
-          <%= link_to 'http://online.isfit.org/' do %>
-            <div class="col-md-12 isfit_online_button">
-              <%= image_tag 'online_logo.png', style: 'width: 100%;' %>
-            </div>
-          <% end %>
-        </div>
         <div class="col-md-12 twitter-container no_padding" style="margin-top:20px;">
           <div class="col-md-12 no_padding">
             <div class="twitter-timeline-container"
