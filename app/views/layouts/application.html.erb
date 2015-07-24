@@ -29,19 +29,14 @@
   <script src="//platform.twitter.com/widgets.js"></script>
 </head>
 <body>
-	<div class="header hidden-xs hidden-sm">
-    <div class="container primary-header">
-      <div class="col-md-12">
-        <%= link_to image_tag("logo_header.png"), root_path %>
-
-        <h3>
-        <% if norwegian? %>
-          februar 2017
-        <% else %>
-          February 2017
-        <% end %>
+  <div class="header hidden-xs hidden-sm">
+    <div class="primary-header">
+      <div class="container">
+        <div class="col-md-12">
+          <%= link_to image_tag("logo_header.png"), root_path %>
+          <h3><% if norwegian? %>februar 2017<% else %>February 2017<% end %></h3>
+         </div>
       </div>
-      </h3>
     </div>
 	</div>
 
