@@ -40,7 +40,7 @@
     blog_archive: 'Alle bloggposter'
     date: 'Dato'
   footer:
-          editor: "IT-sjef"
+    editor: "IT-sjef"
     copyright: Alt av skriftlig materiale og ISFiT-logoen er kopibeskyttet Stiftelsen ISFiT.
     socialmedias: "Sosiale medier"
     contactus: "Kontakt oss"
