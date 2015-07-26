@@ -363,3 +363,28 @@ a.cn_more:hover{
   border-bottom: 5px solid #EFAB44;
   margin-bottom: -5px;
 }
+
+.spp-nom-button {
+  a {
+    background-color: #6dc8ed;
+    display: block;
+    padding: 15px;
+
+    color: #fff;
+    cursor: pointer;
+    font-size: 22px;
+    text-align: center;
+    
+    transition-delay: 0s;
+    transition-duration: 0.3s;
+    transition-property: background-color;
+
+    small {
+      font-size: 18px;
+    }
+  }
+
+  a:hover {
+    background-color: #48B6E0;
+  }
+}
