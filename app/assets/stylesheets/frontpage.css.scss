@@ -391,3 +391,31 @@ a.cn_more:hover{
     text-decoration: none;
   }
 }
+
+.norwegian-button {
+  a {
+    background-color: #efab44;
+    display: block;
+    padding: 15px;
+
+    color: #fff;
+    cursor: pointer;
+    font-size: 22px;
+    text-align: center;
+    
+    transition-delay: 0s;
+    transition-duration: 0.3s;
+    transition-property: background-color;
+
+    small {
+      font-size: 18px;
+    }
+  }
+
+  a:hover {
+    background-color: #eda02d;
+
+    color: #fff;
+    text-decoration: none;
+  }
+}
