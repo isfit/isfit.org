@@ -44,7 +44,7 @@ gem 'capistrano-bundler', group: :development
 gem 'mysql2'
 
 # Use bootstrap-sass
-gem 'bootstrap-sass', '~> 3.2.0.1'
+gem 'bootstrap-sass', '~> 3.4.1'
 
 #Gem for binding.pry
 gem 'pry'
